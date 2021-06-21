@@ -1,0 +1,19 @@
+[package]
+name = "qemu"
+version = "0.1.0"
+authors = ["john <799433746@qq.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+riscv = "0.6.0"
+embedded-hal = "1.0.0-alpha.4"
+nb = "1"
+spin = "0.9"
+lazy_static = { version="1.4", features = ["spin_no_std"]  }
+buddy_system_allocator = "0.8"
+fdt = "0.1.3"
+if_chain = "1.0.1"
+gimli = { version = "0.24", default-features = false, features = ["read", "endian-reader", "stable_deref_trait"] }
+addr2line = { version = "0.15.2", default-features = false, features = ["rustc-demangle"] }
