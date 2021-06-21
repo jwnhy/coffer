@@ -1,4 +1,0 @@
-cargo:rustc-link-lib=static=riscv
-cargo:rustc-link-search=/home/john/Documents/hybrid/platform/qemu/target/riscv64imac-unknown-none-elf/debug/build/riscv-0e67aefa4e3cc0eb/out
-cargo:rustc-cfg=riscv
-cargo:rustc-cfg=riscv64
