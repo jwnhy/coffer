@@ -6,18 +6,18 @@
 
 extern crate alloc;
 
-mod rvbt;
 mod ecall;
 mod hal;
+mod rvbt;
 mod util;
 #[macro_use]
 mod sbi;
 
 use buddy_system_allocator::LockedHeap;
-use rvbt::frame::trace;
 use core::panic::PanicInfo;
+use rvbt::{frame::trace, symbol::resolve_frame};
 
-use crate::{rvbt::symbol::{find_frame, find_location, parse_info}, util::fdt::{detect_ns16550a, detect_sifive_uart, init_fdt}};
+use crate::{rvbt::init::debug_init, util::fdt::{detect_ns16550a, detect_sifive_uart, init_fdt}};
 
 const HART_STACK_SIZE: usize = 64 * 1024;
 const NUM_CORES: usize = 8;
@@ -50,11 +50,9 @@ fn outer_layer() {
 #[no_mangle]
 fn test_trace() {
     trace(&mut |frame| {
-              find_location(frame.ra);
-              find_frame(frame.ra);
-              println!("{:x} {:x} {:x}", frame.fp, frame.sp, frame.ra);
-              true
-          });
+        resolve_frame(frame, &|symbol| println!("{}", symbol));
+        true
+    });
 }
 
 extern "C" fn main(hartid: usize, dtb: usize) -> ! {
@@ -63,7 +61,7 @@ extern "C" fn main(hartid: usize, dtb: usize) -> ! {
         init_fdt(dtb);
         detect_ns16550a();
         detect_sifive_uart();
-        parse_info();
+        debug_init();
         outer_layer();
         println!("RISC-V TEE in Rust");
         println!("dtb addr: 0x{:x}", dtb);
