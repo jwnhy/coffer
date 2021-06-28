@@ -9,8 +9,6 @@ OUTPUT_ARCH(riscv)
 
 ENTRY(_start)
 
-
-
 SECTIONS
 {
 	. = _stext;
@@ -34,6 +32,7 @@ SECTIONS
 
 	/* .data section */
 	.data : ALIGN(4) {
+    _flash_data = LOADADDR(.data);
 		_data_start = .;
 		/* 
 		 * Linker relaxation
@@ -48,6 +47,7 @@ SECTIONS
 
 	/* .bss section */
 	.bss (NOLOAD) : ALIGN(4) {
+    *(.bss.uninit)
 		_bss_start = .;
 		*(.sbss .bss .bss.*)
 		. = ALIGN(4);

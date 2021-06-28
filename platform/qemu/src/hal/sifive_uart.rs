@@ -3,7 +3,6 @@ use core::convert::Infallible;
 use embedded_hal::serial::{Read, Write};
 use crate::util::reg::{read_reg, write_reg};
 
-use self::mask::TXEN;
 
 pub struct SifiveUart {
     base: usize,
@@ -53,10 +52,9 @@ impl SifiveUart {
 impl Read<u8> for SifiveUart {
     type Error = Infallible;
     fn try_read(&mut self) -> nb::Result<u8, Self::Error> {
-        let empty = unsafe { read_reg::<u32>(self.base, offset::RXDATA) & mask::RXEMPTY };
-        if empty == 0 {
-            let word = unsafe { read_reg::<u8>(self.base, offset::RXDATA) };
-            Ok(word)
+        let word = unsafe { read_reg::<u32>(self.base, offset::RXDATA * 0x4)};
+        if word & mask::RXEMPTY == 0 {
+            Ok(word as u8)
         } else {
             Err(nb::Error::WouldBlock)
         }
@@ -66,9 +64,9 @@ impl Read<u8> for SifiveUart {
 impl Write<u8> for SifiveUart {
     type Error = Infallible;
     fn try_write(&mut self, word: u8) -> nb::Result<(), Self::Error> {
-        let full = unsafe { read_reg::<u32>(self.base, offset::TXDATA) & mask::TXFULL};
+        let full = unsafe { read_reg::<u32>(self.base, offset::TXDATA * 0x4) & mask::TXFULL};
         if full == 0 {
-            unsafe { write_reg::<u32>(self.base, offset::TXDATA, word as u32) };
+            unsafe { write_reg::<u32>(self.base, offset::TXDATA * 0x4, word as u32) };
             Ok(())
         } else {
             Err(nb::Error::WouldBlock)

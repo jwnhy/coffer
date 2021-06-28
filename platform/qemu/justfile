@@ -1,13 +1,29 @@
 TARGET := "riscv64imac-unknown-none-elf"
 BINARY := "qemu"
 PAYLOAD := "target/"+TARGET+"/debug/"+BINARY
+RELEASE := "target/"+TARGET+"/release/"+BINARY
 
 build:
-	cargo build
+  cargo build
+  rust-objcopy {{PAYLOAD}} -O binary  qemu.striped
+
+release:
+  cargo build --release
+  for sec in 'abbrev' 'addr' 'aranges' 'info' 'line' 'line_str' 'ranges' 'rnglists' 'str' 'str_offsets'; do \
+    rust-objcopy {{RELEASE}} --remove-section .rvbt_$sec; \
+  done
+  rust-objcopy -g {{RELEASE}}
+  rust-objcopy {{RELEASE}} -O binary qemu.striped
+
+xfel:
+  xfel version
+  xfel ddr ddr3
+  xfel write 0x40000000 qemu.striped
+  xfel exec 0x40000000
 
 copy-debug:
 	for sec in 'abbrev' 'addr' 'aranges' 'info' 'line' 'line_str' 'ranges' 'rnglists' 'str' 'str_offsets'; do \
-		eval "rust-objcopy {{PAYLOAD}} --dump-section .debug_$sec=tmp_$sec"; \
+		rust-objcopy {{PAYLOAD}} --dump-section .debug_$sec=tmp_$sec; \
 		riscv64-unknown-elf-objcopy {{PAYLOAD}} --update-section .rvbt_$sec=tmp_$sec; \
 	done
 	rm tmp*; 

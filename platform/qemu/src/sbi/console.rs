@@ -58,6 +58,7 @@ pub fn init_console_embedded_serial<T>(serial: T)
 where
     T: Read<u8> + Write<u8> + Send + 'static,
 {
+    lazy_static::initialize(&CONSOLE);
     let serial = EmbeddedSerial::new(serial);
     *CONSOLE.lock() = Some(Box::new(serial));
 }
@@ -113,6 +114,6 @@ macro_rules! print {
 #[macro_export(local_inner_macro)]
 macro_rules! println {
     ($fmt: literal $(, $($arg: tt)+)?) => {
-        $crate::sbi::console::_print(core::format_args!(core::concat!($fmt, "\n") $(, $($arg)+)?));
+        $crate::sbi::console::_print(core::format_args!(core::concat!($fmt, "\r\n") $(, $($arg)+)?));
     }
 }
