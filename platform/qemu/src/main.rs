@@ -3,6 +3,7 @@
 #![feature(default_alloc_error_handler)]
 #![feature(naked_functions)]
 #![feature(asm)]
+#![feature(arbitrary_enum_discriminant)]
 
 extern crate alloc;
 

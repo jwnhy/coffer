@@ -17,7 +17,7 @@ where T: Ipi + Send + 'static
     *IPI.lock() = Some(Box::new(ipi));
 }
 
-pub fn send_ipi_many(hart_mask: HartMask) -> SbiRet {
+pub(crate) fn send_ipi_many(hart_mask: HartMask) -> SbiRet {
     if let Some(ipi) = IPI.lock().as_ref() {
         ipi.send_ipi_many(hart_mask)
     } else {

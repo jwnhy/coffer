@@ -58,7 +58,6 @@ pub fn init_console_embedded_serial<T>(serial: T)
 where
     T: Read<u8> + Write<u8> + Send + 'static,
 {
-    lazy_static::initialize(&CONSOLE);
     let serial = EmbeddedSerial::new(serial);
     *CONSOLE.lock() = Some(Box::new(serial));
 }
@@ -72,13 +71,13 @@ where
     *CONSOLE.lock() = Some(Box::new(serial));
 }
 
-pub fn console_putchar(ch: u8) {
+pub(crate) fn console_putchar(ch: u8) {
     if let Some(serial) = CONSOLE.lock().as_mut() {
         serial.putchar(ch)
     }
 }
 
-pub fn console_getchar() -> u8 {
+pub(crate) fn console_getchar() -> u8 {
     if let Some(serial) = CONSOLE.lock().as_mut() {
         serial.getchar()
     } else {
