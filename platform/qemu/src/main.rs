@@ -7,6 +7,8 @@
 
 extern crate alloc;
 
+mod memory;
+mod runtime;
 mod ecall;
 mod hal;
 mod rvbt;
@@ -20,7 +22,7 @@ use rvbt::{frame::trace, symbol::resolve_frame};
 
 use crate::{rvbt::init::debug_init, sbi::console_getchar, util::{fdt::{detect_ns16550a, detect_sifive_uart, detect_sunxi_uart, init_fdt}, status::{print_machine, print_mstatus, print_mtvec}}};
 
-const HART_STACK_SIZE: usize = 64 * 1024;
+const HART_STACK_SIZE: usize = 8 * 1024;
 const NUM_CORES: usize = 2;
 const SBI_STACK_SIZE: usize = NUM_CORES * HART_STACK_SIZE;
 #[link_section = ".bss.uninit"]
@@ -70,18 +72,6 @@ fn rust_oom() -> ! {
     loop {}
 }
 
-#[no_mangle]
-fn outer_layer() {
-    test_trace();
-}
-
-#[no_mangle]
-fn test_trace() {
-    trace(&mut |frame| {
-        resolve_frame(frame, &|symbol| println!("{}", symbol));
-        true
-    });
-}
 
 extern "C" fn main(hartid: usize, dtb: usize) -> ! {
     let hartid = riscv::register::mhartid::read();
@@ -94,7 +84,6 @@ extern "C" fn main(hartid: usize, dtb: usize) -> ! {
         //detect_ns16550a();
         //detect_sunxi_uart();
         //debug_init();
-        //outer_layer();
 
         println!("RISC-V TEE in Rust");
         println!("dtb addr: 0x{:x}", dtb);
@@ -125,6 +114,7 @@ fn init_heap() {
             .init(HEAP_SPACE.as_ptr() as usize, SBI_HEAP_SIZE)
     }
 }
+
 #[naked]
 #[link_section = ".text.entry"]
 #[export_name = "_start"]

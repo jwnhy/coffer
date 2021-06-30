@@ -22,7 +22,6 @@ pub fn init_fdt(fdt_addr: usize) -> Result<(), FdtError> {
 }
 
 pub fn detect_sunxi_uart() {
-    
     let serial = SunxiUart::new(0x02500000 as usize);
     init_console_embedded_serial(serial);
     return;
