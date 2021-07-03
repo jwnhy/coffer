@@ -7,6 +7,10 @@ build:
   cargo build
   rust-objcopy {{PAYLOAD}} -O binary  qemu.striped
 
+test:
+  cargo build --tests --release
+  qemu-system-riscv64  -machine sifive_u -bios {{RELEASE}} -nographic
+
 release:
   cargo build --release
   for sec in 'abbrev' 'addr' 'aranges' 'info' 'line' 'line_str' 'ranges' 'rnglists' 'str' 'str_offsets'; do \

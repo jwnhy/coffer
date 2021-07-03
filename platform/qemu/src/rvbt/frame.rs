@@ -1,20 +1,18 @@
+use crate::util::fdt::XLEN;
+
 #[derive(Debug, Clone)]
 pub struct Frame {
-    pub fp: u64,
-    pub sp: u64,
-    pub ra: u64,
+    pub fp: usize,
+    pub sp: usize,
+    pub ra: usize,
 }
 
 impl Frame {
-    pub fn new(fp: u64, sp: u64, ra: u64) -> Self {
+    pub fn new(fp: usize, sp: usize, ra: usize) -> Self {
         Self { fp, sp, ra }
     }
 }
 
-#[cfg(target_arch="riscv64")]
-const XLEN: u64 = 8;
-#[cfg(target_arch="riscv32")]
-const XLEN: u64 = 4;
 
 #[inline(always)]
 pub fn trace_from(mut curframe: Frame, action: &dyn Fn(&Frame) -> bool) {
@@ -23,9 +21,9 @@ pub fn trace_from(mut curframe: Frame, action: &dyn Fn(&Frame) -> bool) {
         if keep_going {
             unsafe {
                 // TODO: decide incr depending on arch
-                curframe.ra = *((curframe.fp + XLEN) as *mut u64);
+                curframe.ra = *((curframe.fp + XLEN) as *mut usize);
                 curframe.sp = curframe.fp;
-                curframe.fp = *(curframe.fp as *mut u64);
+                curframe.fp = *(curframe.fp as *mut usize);
                 if curframe.ra == 0 || curframe.fp == 0 {
                     break;
                 }
@@ -38,7 +36,7 @@ pub fn trace_from(mut curframe: Frame, action: &dyn Fn(&Frame) -> bool) {
 
 #[inline(always)]
 pub fn trace(action: &dyn Fn(&Frame) -> bool) {
-    let (fp, sp, ra): (u64, u64, u64);
+    let (fp, sp, ra): (usize, usize, usize);
     unsafe {
         asm!("
         mv {0}, s0

@@ -1,39 +1,45 @@
-use bitflags::*;
+use bit_field::BitField;
 
-bitflags! {
-    pub struct PmpFlags: u8 {
-        const READABLE =    1 << 0;
-        const WRITABLE =    1 << 1;
-        const EXECUTABLE =  1 << 2;
-        const MODE_TOR =    1 << 3;
-        const MODE_NA4 =    2 << 3;
-        const MODE_NAPOT =  3 << 3;
-        const LOCKED =      1 << 7;
-    }
-}
-struct Region {
+use super::pmp::{PmpFlags, pmpaddr_write, pmpcfg_write};
+use crate::util::fdt::XLEN;
+
+pub struct Region {
+    /* one protected region */
     addr: usize,
     size: usize,
-    enabled: bool,
-    pmp_cfg: PmpFlags,
-    pmp_num: usize,
+    pub enabled: bool,
+    pub pmp_cfg: PmpFlags,
 }
 
 impl Region {
     fn to_napot(&self) -> usize {
         if self.size <= 2 {
-            self.addr
+            self.addr >> 2
         } else {
-            self.addr | !(1 << (self.size - 2))
+            let mut pmpaddr = self.addr;
+            pmpaddr.set_bit(self.size-3, false);
+            pmpaddr.set_bits(0..(self.size-4), (1 << (self.size-3))-1);
+            pmpaddr >> 2
         }
     }
 
     fn to_tor(&self) -> (usize, usize) {
-        (self.addr, self.addr + self.size)
+        (self.addr >> 2, (self.addr + self.size) >> 2)
+    }
+
+    fn enforce(&self, index: usize) {
+        if self.pmp_cfg.contains(PmpFlags::MODE_NAPOT) {
+            pmpaddr_write(index, self.to_napot())
+        } else {
+            let (s, e) = self.to_tor();
+            pmpaddr_write(index-1, s);
+            pmpaddr_write(index, e);
+        }
+        pmpcfg_write(index, self.pmp_cfg.bits());
     }
 }
 
 pub struct MemoryLayout {
     /* at most 16 pmp region is allowed */
-    regions: [Region; 16]
+    //regions: [Region; 16]
 }

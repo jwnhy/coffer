@@ -3,6 +3,11 @@ use fdt::{node::FdtNode, Fdt, FdtError};
 use if_chain::if_chain;
 use spin::Mutex;
 
+#[cfg(target_arch="riscv64")]
+pub const XLEN: usize = 8;
+#[cfg(target_arch="riscv32")]
+pub const XLEN: usize = 4;
+
 use crate::{
     hal::{Ns16550a, SifiveUart, SunxiUart},
     println,

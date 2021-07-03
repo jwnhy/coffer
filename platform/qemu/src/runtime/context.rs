@@ -1,6 +1,8 @@
+use riscv::register::mstatus::Mstatus;
+
 #[repr(C)]
 pub struct Context {
-    pub ra: usize,  // x0 
+    pub ra: usize,  // x0
     pub sp: usize,  // x1
     pub gp: usize,  // x2
     pub tp: usize,  // x3
@@ -32,19 +34,24 @@ pub struct Context {
     pub t5: usize,  // x29
     pub t6: usize,  // x30
 
-    pub mstatus: usize, // x31
+    pub mstatus: Mstatus, // x31
     pub mepc: usize,    // x32
+    pub msp: usize,     //x33
+}
 
-    /* machine stack pointer */
-    pub msp: usize, // x33
-    
+impl Context {
+    pub fn new() -> Self {
+        unsafe { core::mem::MaybeUninit::zeroed().assume_init() }
+    }
 }
 
 /* this function only saves callee-saved registers */
-#[cfg(target_arch="riscv64")]
+#[cfg(target_arch = "riscv64")]
 #[naked]
 #[link_section = ".text"]
-unsafe extern "C" fn from_machine(context: *mut Context) {
+pub(super) unsafe extern "C" fn from_machine(context: *mut Context) {
+    // sp: main machine stack
+    // a0.sp: per rt user stack
     asm!("
         addi    sp,     sp,     -15*8
         /* return addr */
@@ -53,7 +60,7 @@ unsafe extern "C" fn from_machine(context: *mut Context) {
         sd      gp,     1*8(sp)
         sd      tp,     2*8(sp)
         sd      s0,     3*8(sp)
-        sd      s1,     4*8(sp) 
+        sd      s1,     4*8(sp)
         sd      s2,     5*8(sp)
         sd      s3,     6*8(sp)
         sd      s4,     7*8(sp)
@@ -68,10 +75,10 @@ unsafe extern "C" fn from_machine(context: *mut Context) {
         ", to_user_or_supervisor = sym to_user_or_supervisor, options(noreturn))
 }
 
-#[cfg(target_arch="riscv64")]
+#[cfg(target_arch = "riscv64")]
 #[naked]
 #[link_section = ".text"]
-unsafe extern "C" fn from_user_or_supervisor() {
+pub(super) unsafe extern "C" fn from_user_or_supervisor() {
     asm!("
          /* Page 36 of https://riscv.org/wp-content/uploads/2017/05/riscv-privileged-v1.10.pdf */
          .p2align 2
@@ -120,15 +127,17 @@ unsafe extern "C" fn from_user_or_supervisor() {
           */
          csrrw  t1, mscratch, a0
          sd     t1, 9*8(a0)
+         ld      sp,     33*8(a0)
          j      {to_machine}
          ",to_machine = sym to_machine, options(noreturn))
 }
 
-#[cfg(target_arch="riscv64")]
+#[cfg(target_arch = "riscv64")]
 #[naked]
 #[link_section = ".text"]
-unsafe extern "C" fn to_machine() {
-    asm!("
+pub(super) unsafe extern "C" fn to_machine() {
+    asm!(
+        "
         /* return addr */
         ld      ra,     0*8(sp)
         /* saved register */
@@ -148,19 +157,21 @@ unsafe extern "C" fn to_machine() {
         ld      s11,    14*8(sp)
         addi    sp,     sp,     15*8
         ret
-         ", options(noreturn))
+         ",
+        options(noreturn)
+    )
 }
 
-#[cfg(target_arch="riscv64")]
+#[cfg(target_arch = "riscv64")]
 #[naked]
 #[link_section = ".text"]
-unsafe extern "C" fn to_user_or_supervisor(context: *mut Context) {
-    asm!("
-        /* context.msp = sp */
+pub(super) unsafe extern "C" fn to_user_or_supervisor(context: *mut Context) {
+    asm!(
+        "
         sd      sp,         33*8(a0)
         csrw    mscratch,   a0
-        mv      t0,         31*8(a0)
-        mv      t1,         32*8(a0)
+        ld      t0,         31*8(a0)
+        ld      t1,         32*8(a0)
         csrw    mstatus,    t0
         csrw    mepc,       t1
 
@@ -197,5 +208,7 @@ unsafe extern "C" fn to_user_or_supervisor(context: *mut Context) {
         ld      t6,         30*8(a0)		// x30
         ld      a0,         9*8(a0)		// x9
         mret
-         ", options(noreturn))
+         ",
+        options(noreturn)
+    )
 }

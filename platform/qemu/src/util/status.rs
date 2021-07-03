@@ -1,8 +1,9 @@
+use crate::memory::pmp::PmpFlags;
+use crate::memory::pmp::{pmpaddr_read, pmpcfg_read};
 use crate::{print, println};
 use riscv::register::misa::MXL;
 use riscv::register::mstatus::{MPP, SPP};
 use riscv::register::mtvec::TrapMode;
-
 
 macro_rules! dbg_bool{
     () => {};
@@ -98,7 +99,14 @@ pub fn print_mtvec() {
     let mtvec = riscv::register::mtvec::read();
     println!("Machine Trap Handler:");
     if let Some(mode) = mtvec.trap_mode() {
-        println!("\t[MODE] Trap Mode: {}", if mode == TrapMode::Direct {"Direct"} else {"Vectorized"});
+        println!(
+            "\t[MODE] Trap Mode: {}",
+            if mode == TrapMode::Direct {
+                "Direct"
+            } else {
+                "Vectorized"
+            }
+        );
     } else {
         println!("\t[ERROR] Unknown Trap Mode");
     }
@@ -108,9 +116,18 @@ pub fn print_mtvec() {
 pub fn print_medeleg() {
     let medeleg = riscv::register::medeleg::read();
     println!("Machine Exception Delegate:");
-    flag_println!("\t0. Instruction Misaligned: {}", medeleg.instruction_misaligned());
-    flag_println!("\t1. Instruction Access Fault: {}", medeleg.instruction_fault());
-    flag_println!("\t2. Illegal Instruction: {}", medeleg.illegal_instruction());
+    flag_println!(
+        "\t0. Instruction Misaligned: {}",
+        medeleg.instruction_misaligned()
+    );
+    flag_println!(
+        "\t1. Instruction Access Fault: {}",
+        medeleg.instruction_fault()
+    );
+    flag_println!(
+        "\t2. Illegal Instruction: {}",
+        medeleg.illegal_instruction()
+    );
     flag_println!("\t3. Breakpoint: {}", medeleg.breakpoint());
     flag_println!("\t4. Load Misaligned: {}", medeleg.load_misaligned());
     flag_println!("\t5. Load Access Fault: {}", medeleg.load_fault());
@@ -119,7 +136,10 @@ pub fn print_medeleg() {
     flag_println!("\t8. User ECall: {}", medeleg.user_env_call());
     flag_println!("\t9. Supervisor ECall: {}", medeleg.supervisor_env_call());
     flag_println!("\t11. Machine ECall: {}", medeleg.machine_env_call());
-    flag_println!("\t12. Instruction Page Fault: {}", medeleg.load_page_fault());
+    flag_println!(
+        "\t12. Instruction Page Fault: {}",
+        medeleg.load_page_fault()
+    );
     flag_println!("\t13. Load Page Fault: {}", medeleg.store_page_fault());
     flag_println!("\t15. Store Page Fault: {}", medeleg.store_page_fault());
 }
@@ -158,8 +178,22 @@ pub fn print_mie() {
 }
 
 pub fn print_mscratch() {
-    let mscratch = riscv::register::mscratch::read();   
+    let mscratch = riscv::register::mscratch::read();
     println!("Machine Scratch Register: 0x{:x}", mscratch);
+}
+
+pub fn print_pmp() {
+    for i in 0..16 {
+        let cfg = pmpcfg_read(i);
+        let addr = pmpaddr_read(i);
+        if cfg == 0 {
+            println!("PMP[{}] Status: Off", i);
+        } else {
+            println!("PMP[{}] Status: On", i);
+            println!("PMP[{}] Config: {:?}", i, PmpFlags::from_bits(cfg));
+            println!("PMP[{}] Addr: 0x{:x}", i, addr);
+        }
+    }
 }
 
 pub fn print_machine() {
@@ -171,4 +205,5 @@ pub fn print_machine() {
     print_mip();
     print_mie();
     print_mscratch();
+    print_pmp();
 }

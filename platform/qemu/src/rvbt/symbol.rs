@@ -24,10 +24,10 @@ pub fn resolve_frame(frame: &Frame, action: &dyn Fn(&Symbol)) {
 }
 
 #[inline(always)]
-pub fn resolve(addr: u64, action: &dyn Fn(&Symbol)) {
+pub fn resolve(addr: usize, action: &dyn Fn(&Symbol)) {
     if_chain! {
         if let Some(ctx) = DEBUG_CTX.lock().as_ref();
-        if let Ok(mut frame_iter) = ctx.find_frames(addr);
+        if let Ok(mut frame_iter) = ctx.find_frames(addr as u64);
         then {
             while let Ok(Some(frame)) = frame_iter.next() {
                 let name = match frame.function {
