@@ -25,7 +25,7 @@ use buddy_system_allocator::LockedHeap;
 use core::panic::PanicInfo;
 use rvbt::{frame::trace, symbol::resolve_frame};
 
-use crate::{rvbt::init::debug_init, sbi::console_getchar, util::{fdt::{detect_ns16550a, detect_sifive_uart, detect_sunxi_uart, init_fdt}, self_test::{test_context, test_pmp}, status::{print_machine, print_mstatus, print_mtvec}}};
+use crate::{rvbt::init::debug_init, sbi::console_getchar, util::{fdt::{detect_ns16550a, detect_sifive_uart, detect_sunxi_uart, init_fdt}, self_test::test_pmp, status::{print_machine, print_mstatus, print_mtvec}}};
 
 const HART_STACK_SIZE: usize = 8 * 1024;
 const NUM_CORES: usize = 2;
@@ -84,10 +84,10 @@ extern "C" fn main(hartid: usize, dtb: usize) -> ! {
         init_bss();
         init_heap();
         init_fdt(dtb);
+        detect_ns16550a();
         detect_sifive_uart();
-        test_context();
-
         test_pmp();
+
         print_machine();
         //detect_ns16550a();
         //detect_sunxi_uart();

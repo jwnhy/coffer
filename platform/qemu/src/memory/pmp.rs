@@ -2,6 +2,7 @@ use bitflags::*;
 use riscv::register::*;
 
 bitflags! {
+    #[repr(C)]
     pub struct PmpFlags: u8 {
         const READABLE =    1 << 0;
         const WRITABLE =    1 << 1;

@@ -1602,8 +1602,8 @@
 13	platform/qemu/target/riscv64imac-unknown-none-elf/debug/.fingerprint/qemu-d068edbb2bfe3e42/test-bin-qemu.json	/^{"rustc":14626598257756768560,"features":"[]","target":3021838958455221964,"profile":64153482883/;"	a	array:deps
 13	platform/qemu/target/riscv64imac-unknown-none-elf/release/.fingerprint/qemu-98eed5d398865f4a/test-bin-qemu.json	/^{"rustc":14626598257756768560,"features":"[]","target":3021838958455221964,"profile":17404613210/;"	a	array:deps
 13	platform/qemu/target/riscv64imac-unknown-none-elf/release/.fingerprint/qemu-be9a3c6b8a20d80b/bin-qemu.json	/^{"rustc":14626598257756768560,"features":"[]","target":3021838958455221964,"profile":87057353125/;"	a	array:deps
-1306171226424672110	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	o	object:outputs
-17598535894874457435	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	o	object:outputs
+1306171226424672110	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o	object:outputs
+17598535894874457435	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o	object:outputs
 17598535894874457435	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o	object:outputs
 2	platform/qemu/target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	b	array:deps.0
 2	platform/qemu/target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	b	array:deps.0
@@ -2217,7 +2217,7 @@
 2	platform/qemu/target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-418f3fab5b8782c6/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":2479778259/;"	s	array:rustflags
 2	platform/qemu/target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-6c290958baa7ecd6/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":1054765450/;"	s	array:rustflags
 2	platform/qemu/target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-c30fb9ef0923318b/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":2285152228/;"	s	array:rustflags
-2797684049618456168	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	o	object:outputs
+2797684049618456168	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o	object:outputs
 2797684049618456168	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o	object:outputs
 3	platform/qemu/target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	n	array:deps.0
 3	platform/qemu/target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	n	array:deps.0
@@ -2690,7 +2690,7 @@
 3	platform/qemu/target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-033069c41ba78f49/lib-spin.json	/^{"rustc":14626598257756768560,"features":"[\\"barrier\\", \\"default\\", \\"lazy\\", \\"lock_api/;"	n	array:deps.0
 3	platform/qemu/target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-8176f5df2572409f/lib-spin.json	/^{"rustc":14626598257756768560,"features":"[\\"barrier\\", \\"default\\", \\"lazy\\", \\"lock_api/;"	n	array:deps.0
 3	platform/qemu/target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-996c11bc976a983b/lib-spin.json	/^{"rustc":14626598257756768560,"features":"[\\"barrier\\", \\"default\\", \\"lazy\\", \\"lock_api/;"	n	array:deps.0
-3208861856002986417	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	o	object:outputs
+3208861856002986417	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o	object:outputs
 4	platform/qemu/target/riscv64imac-unknown-none-elf/debug/.fingerprint/qemu-0a695103944e730a/bin-qemu.json	/^{"rustc":14626598257756768560,"features":"[]","target":3021838958455221964,"profile":18108590124/;"	a	array:deps
 4	platform/qemu/target/riscv64imac-unknown-none-elf/debug/.fingerprint/qemu-0efadfbf0298c138/test-bin-qemu.json	/^{"rustc":14626598257756768560,"features":"[]","target":3021838958455221964,"profile":64153482883/;"	a	array:deps
 4	platform/qemu/target/riscv64imac-unknown-none-elf/debug/.fingerprint/qemu-13eb09d976e816d1/test-bin-qemu.json	/^{"rustc":14626598257756768560,"features":"[]","target":3021838958455221964,"profile":64153482883/;"	a	array:deps
@@ -2847,7 +2847,7 @@
 9	platform/qemu/target/riscv64imac-unknown-none-elf/release/.fingerprint/qemu-be9a3c6b8a20d80b/bin-qemu.json	/^{"rustc":14626598257756768560,"features":"[]","target":3021838958455221964,"profile":87057353125/;"	a	array:deps
 9	platform/qemu/target/riscv64imac-unknown-none-elf/release/.fingerprint/qemu-c7f5693cec4332d5/bin-qemu.json	/^{"rustc":14626598257756768560,"features":"[]","target":3021838958455221964,"profile":87057353125/;"	a	array:deps
 9	platform/qemu/target/riscv64imac-unknown-none-elf/release/.fingerprint/qemu-f02e832ffc8c499b/bin-qemu.json	/^{"rustc":14626598257756768560,"features":"[]","target":3021838958455221964,"profile":87057353125/;"	a	array:deps
-931469667778813386	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	o	object:outputs
+931469667778813386	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o	object:outputs
 931469667778813386	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o	object:outputs
 CheckDepInfo	platform/qemu/target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	o	object:local.0
 CheckDepInfo	platform/qemu/target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	o	object:local.0
@@ -3041,6 +3041,7 @@ ColdReboot	platform/qemu/src/sbi/srst.rs	/^    ColdReboot = 0x0000_0001,$/;"	e	e
 Console	platform/qemu/src/sbi/console.rs	/^pub trait Console: Send {$/;"	i
 Context	platform/qemu/src/runtime/context.rs	/^impl Context {$/;"	c
 Context	platform/qemu/src/runtime/context.rs	/^pub struct Context {$/;"	s
+EXEC_FLAG	platform/qemu/src/util/self_test.rs	/^static mut EXEC_FLAG: AtomicBool = AtomicBool::new(false);$/;"	v
 EmbeddedSerial	platform/qemu/src/sbi/console.rs	/^impl<T> Console for EmbeddedSerial<T>$/;"	c
 EmbeddedSerial	platform/qemu/src/sbi/console.rs	/^impl<T> EmbeddedSerial<T> {$/;"	c
 EmbeddedSerial	platform/qemu/src/sbi/console.rs	/^struct EmbeddedSerial<T> {$/;"	s
@@ -3059,6 +3060,7 @@ HartMask	platform/qemu/src/sbi/hart_mask.rs	/^pub struct HartMask {$/;"	s
 HartState	platform/qemu/src/sbi/hsm.rs	/^pub enum HartState {$/;"	g
 Hsm	platform/qemu/src/sbi/hsm.rs	/^pub trait Hsm : Send {$/;"	i
 Ipi	platform/qemu/src/sbi/ipi.rs	/^pub trait Ipi: Send {$/;"	i
+MemoryLayout	platform/qemu/src/memory/memory_layout.rs	/^impl MemoryLayout {$/;"	c
 MemoryLayout	platform/qemu/src/memory/memory_layout.rs	/^pub struct MemoryLayout {$/;"	s
 NoReason	platform/qemu/src/sbi/srst.rs	/^    NoReason = 0x0000_0000,$/;"	e	enum:ResetReason
 Ns16550a	platform/qemu/src/hal/ns16550a.rs	/^impl Ns16550a {$/;"	c
@@ -3085,6 +3087,7 @@ Precalculated	platform/qemu/target/riscv64imac-unknown-none-elf/release/.fingerp
 Precalculated	platform/qemu/target/riscv64imac-unknown-none-elf/release/.fingerprint/riscv-4f71e42e276d009d/run-build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"","target":0,"profile":0,"path":0,"deps":[[64624974916/;"	s	object:local.0
 Precalculated	platform/qemu/target/riscv64imac-unknown-none-elf/release/.fingerprint/riscv-948d6a7e1ea460c7/run-build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"","target":0,"profile":0,"path":0,"deps":[[64624974916/;"	s	object:local.0
 Precalculated	platform/qemu/target/riscv64imac-unknown-none-elf/release/.fingerprint/riscv-d9f6228e33c5f25b/run-build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"","target":0,"profile":0,"path":0,"deps":[[70931567251/;"	s	object:local.0
+READ_FLAG	platform/qemu/src/util/self_test.rs	/^static mut READ_FLAG: AtomicBool = AtomicBool::new(false);$/;"	v
 Region	platform/qemu/src/memory/memory_layout.rs	/^impl Region {$/;"	c
 Region	platform/qemu/src/memory/memory_layout.rs	/^pub struct Region {$/;"	s
 ResetReason	platform/qemu/src/sbi/srst.rs	/^pub enum ResetReason {$/;"	g
@@ -3123,6 +3126,7 @@ Symbol	platform/qemu/src/rvbt/symbol.rs	/^impl fmt::Display for Symbol {$/;"	c
 Symbol	platform/qemu/src/rvbt/symbol.rs	/^pub struct Symbol {$/;"	s
 SystemFailure	platform/qemu/src/sbi/srst.rs	/^    SystemFailure = 0x0000_0001,$/;"	e	enum:ResetReason
 Timer	platform/qemu/src/sbi/timer.rs	/^pub trait Timer: Send {$/;"	i
+WRITE_FLAG	platform/qemu/src/util/self_test.rs	/^static mut WRITE_FLAG: AtomicBool = AtomicBool::new(false);$/;"	v
 WarmReboot	platform/qemu/src/sbi/srst.rs	/^    WarmReboot = 0x0000_0002,$/;"	e	enum:ResetType
 Yield	platform/qemu/src/runtime/runtime.rs	/^    type Yield = Y;$/;"	t	implementation:Runtime
 __global_pointer	platform/qemu/linkscript/link-qemu-64.ld	/^		PROVIDE(__global_pointer$ = . + 0x800);$/;"	s	section:.data	assignment:provide
@@ -3188,6 +3192,7 @@ _max_hart	platform/qemu/target/riscv64imac-unknown-none-elf/debug/build/qemu-6bd
 _min_clk_div	platform/qemu/src/hal/sifive_uart.rs	/^fn _min_clk_div(clk: u64, target_hz: u64) -> u64 {$/;"	f
 _print	platform/qemu/src/sbi/console.rs	/^pub fn _print(args: fmt::Arguments) {$/;"	f
 _ranges_section	platform/qemu/src/rvbt/init.rs	/^fn _ranges_section() -> DebugRanges<EndianSlice<'static, LittleEndian>> {$/;"	f
+_read_test	platform/qemu/src/util/self_test.rs	/^unsafe fn _read_test(addr: usize, expected: bool) {$/;"	f
 _rnglists_section	platform/qemu/src/rvbt/init.rs	/^fn _rnglists_section() -> DebugRngLists<EndianSlice<'static, LittleEndian>> {$/;"	f
 _rodata_end	platform/qemu/linkscript/link-qemu-64.ld	/^		_rodata_end = .;$/;"	s	section:.rodata
 _rodata_end	platform/qemu/linkscript/link-sunxi-64.ld	/^		_rodata_end = .;$/;"	s	section:.rodata
@@ -3246,13 +3251,14 @@ _stext	platform/qemu/linkscript/link-sunxi-64.ld	/^PROVIDE(_stext = 0x40000000);
 _stext	platform/qemu/target/riscv64imac-unknown-none-elf/debug/build/qemu-6bda00b7d129f8e6/out/link-qemu-64.ld	/^PROVIDE(_stext = 0x80000000); $/;"	s
 _str_offsets_section	platform/qemu/src/rvbt/init.rs	/^fn _str_offsets_section() -> DebugStrOffsets<EndianSlice<'static, LittleEndian>> {$/;"	f
 _str_section	platform/qemu/src/rvbt/init.rs	/^fn _str_section() -> DebugStr<EndianSlice<'static, LittleEndian>> {$/;"	f
-_test_context	platform/qemu/src/util/self_test.rs	/^unsafe extern "C" fn _test_context() {$/;"	f
+_test_pmp	platform/qemu/src/util/self_test.rs	/^unsafe extern "C" fn _test_pmp(region: &Region) {$/;"	f
 _text_end	platform/qemu/linkscript/link-qemu-64.ld	/^		_text_end = .;$/;"	s	section:.text
 _text_end	platform/qemu/linkscript/link-sunxi-64.ld	/^		_text_end = .;$/;"	s	section:.text
 _text_end	platform/qemu/target/riscv64imac-unknown-none-elf/debug/build/qemu-6bda00b7d129f8e6/out/link-qemu-64.ld	/^		_text_end = .;$/;"	s	section:.text
 _text_start	platform/qemu/linkscript/link-qemu-64.ld	/^		_text_start = .;$/;"	s	section:.text
 _text_start	platform/qemu/linkscript/link-sunxi-64.ld	/^		_text_start = .;$/;"	s	section:.text
 _text_start	platform/qemu/target/riscv64imac-unknown-none-elf/debug/build/qemu-6bda00b7d129f8e6/out/link-qemu-64.ld	/^		_text_start = .;$/;"	s	section:.text
+_write_test	platform/qemu/src/util/self_test.rs	/^unsafe fn _write_test(addr: usize, expected: bool) {$/;"	f
 a0	platform/qemu/src/runtime/context.rs	/^    pub a0: usize,  \/\/ x9$/;"	m	struct:Context
 a1	platform/qemu/src/runtime/context.rs	/^    pub a1: usize,  \/\/ x10$/;"	m	struct:Context
 a2	platform/qemu/src/runtime/context.rs	/^    pub a2: usize,  \/\/ x11$/;"	m	struct:Context
@@ -3261,8 +3267,9 @@ a4	platform/qemu/src/runtime/context.rs	/^    pub a4: usize,  \/\/ x13$/;"	m	str
 a5	platform/qemu/src/runtime/context.rs	/^    pub a5: usize,  \/\/ x14$/;"	m	struct:Context
 a6	platform/qemu/src/runtime/context.rs	/^    pub a6: usize,  \/\/ x15$/;"	m	struct:Context
 a7	platform/qemu/src/runtime/context.rs	/^    pub a7: usize,  \/\/ x16$/;"	m	struct:Context
-addr	platform/qemu/src/memory/memory_layout.rs	/^    addr: usize,$/;"	m	struct:Region
+addr	platform/qemu/src/memory/memory_layout.rs	/^    pub addr: usize,$/;"	m	struct:Region
 addr	platform/qemu/src/util/mod.rs	/^pub mod addr;$/;"	n
+addr_range	platform/qemu/src/memory/memory_layout.rs	/^    pub fn addr_range(&self) -> Range<usize> {$/;"	P	implementation:Region
 already_available	platform/qemu/src/sbi/sbiret.rs	/^    pub fn already_available() -> SbiRet {$/;"	P	implementation:SbiRet
 already_started	platform/qemu/src/sbi/sbiret.rs	/^    pub fn already_started() -> SbiRet {$/;"	P	implementation:SbiRet
 already_stopped	platform/qemu/src/sbi/sbiret.rs	/^    pub fn already_stopped() -> SbiRet {$/;"	P	implementation:SbiRet
@@ -3273,11 +3280,11 @@ base	platform/qemu/src/hal/sunxi_uart.rs	/^    base: usize,$/;"	m	struct:SunxiUa
 base	platform/qemu/src/sbi/hart_mask.rs	/^    base: usize,$/;"	m	struct:HartMask
 clear_soft_irq	platform/qemu/src/hal/clint.rs	/^    pub fn clear_soft_irq(&self, hart_id: usize) {$/;"	P	implementation:Clint
 clint	platform/qemu/src/hal/mod.rs	/^mod clint;$/;"	n
-code	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	n	object:outputs.1306171226424672110
-code	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	n	object:outputs.17598535894874457435
-code	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	n	object:outputs.2797684049618456168
-code	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	n	object:outputs.3208861856002986417
-code	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	n	object:outputs.931469667778813386
+code	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n	object:outputs.1306171226424672110
+code	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n	object:outputs.17598535894874457435
+code	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n	object:outputs.2797684049618456168
+code	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n	object:outputs.3208861856002986417
+code	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n	object:outputs.931469667778813386
 code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	n	object:outputs.17598535894874457435
 code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	n	object:outputs.2797684049618456168
 code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	n	object:outputs.931469667778813386
@@ -4082,10 +4089,13 @@ detect_sunxi_uart	platform/qemu/src/util/fdt.rs	/^pub fn detect_sunxi_uart() {$/
 dtb_base	platform/qemu/src/main.rs	/^    pub dtb_base: u32,$/;"	m	struct:SunxiHead
 ecall	platform/qemu/src/main.rs	/^mod ecall;$/;"	n
 enabled	platform/qemu/src/memory/memory_layout.rs	/^    pub enabled: bool,$/;"	m	struct:Region
-enforce	platform/qemu/src/memory/memory_layout.rs	/^    fn enforce(&self, index: usize) {$/;"	P	implementation:Region
+enforce	platform/qemu/src/memory/memory_layout.rs	/^    pub fn enforce(&self) {$/;"	P	implementation:MemoryLayout
+enforce	platform/qemu/src/memory/memory_layout.rs	/^    pub fn enforce(&self, index: usize) {$/;"	P	implementation:Region
 entry	platform/qemu/src/main.rs	/^unsafe extern "C" fn entry() -> ! {$/;"	f
 error	platform/qemu/src/sbi/sbiret.rs	/^    error: usize,$/;"	m	struct:SbiRet
 exception_handler	platform/qemu/src/runtime/runtime.rs	/^    exception_handler: Box<dyn FnMut(*mut Context) -> Option<Y>>,$/;"	m	struct:Runtime
+exempt	platform/qemu/src/memory/memory_layout.rs	/^    pub fn exempt(&self) {$/;"	P	implementation:MemoryLayout
+exempt	platform/qemu/src/memory/memory_layout.rs	/^    pub fn exempt(&self, index: usize) {$/;"	P	implementation:Region
 fdt	platform/qemu/src/util/mod.rs	/^pub mod fdt;$/;"	n
 features	platform/qemu/target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	s
 features	platform/qemu/target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	s
@@ -4331,7 +4341,7 @@ invalid_param	platform/qemu/src/sbi/sbiret.rs	/^    pub fn invalid_param() -> Sb
 ipi	platform/qemu/src/ecall/mod.rs	/^mod ipi;$/;"	n
 ipi	platform/qemu/src/sbi/mod.rs	/^pub mod ipi;$/;"	n
 jump_inst	platform/qemu/src/main.rs	/^    pub jump_inst: u32,$/;"	m	struct:SunxiHead
-layout	platform/qemu/src/runtime/runtime.rs	/^    layout: MemoryLayout,$/;"	m	struct:Runtime
+layout	platform/qemu/src/runtime/runtime.rs	/^    layout: Option<MemoryLayout>,$/;"	m	struct:Runtime
 line	platform/qemu/src/rvbt/symbol.rs	/^    pub line: u32,$/;"	m	struct:Symbol
 local	platform/qemu/target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	a
 local	platform/qemu/target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	a
@@ -4772,7 +4782,7 @@ offset	platform/qemu/src/hal/sunxi_uart.rs	/^mod offset {$/;"	n
 ok	platform/qemu/src/hal/ns16550a.rs	/^    fn ok(&self) -> Result<u8, Error> {$/;"	P	implementation:Ns16550a
 ok	platform/qemu/src/sbi/sbiret.rs	/^    pub fn ok(value: usize) -> SbiRet {$/;"	P	implementation:SbiRet
 opensbi_base	platform/qemu/src/main.rs	/^    pub opensbi_base: u32,$/;"	m	struct:SunxiHead
-outputs	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	o
+outputs	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o
 outputs	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o
 panic	platform/qemu/src/main.rs	/^fn panic(info: &PanicInfo) -> ! {$/;"	f
 path	platform/qemu/target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	n
@@ -5201,6 +5211,7 @@ ra	platform/qemu/src/runtime/context.rs	/^    pub ra: usize,  \/\/ x0$/;"	m	stru
 ra	platform/qemu/src/rvbt/frame.rs	/^    pub ra: usize,$/;"	m	struct:Frame
 read_reg	platform/qemu/src/util/reg.rs	/^pub unsafe fn read_reg<T>(addr: usize, offset: usize) -> T {$/;"	f
 reg	platform/qemu/src/util/mod.rs	/^pub mod reg;$/;"	n
+regions	platform/qemu/src/memory/memory_layout.rs	/^    regions: [Region; 16]$/;"	m	struct:MemoryLayout
 remote_fence_i	platform/qemu/src/sbi/rfence.rs	/^    fn remote_fence_i(&mut self, hart_mask: HartMask) -> SbiRet;$/;"	P	interface:Rfence
 remote_fence_i	platform/qemu/src/sbi/rfence.rs	/^pub(crate) fn remote_fence_i(hart_mask: HartMask) -> SbiRet {$/;"	f
 remote_hfence_gvma	platform/qemu/src/sbi/rfence.rs	/^    fn remote_hfence_gvma(&mut self, hart_mask: HartMask, start_addr: usize, size: usize) -> Sbi/;"	P	interface:Rfence
@@ -5427,7 +5438,7 @@ rustc	target/debug/.fingerprint/hybrid-31c8a00c0ed8f1f7/test-bin-hybrid.json	/^{
 rustc	target/debug/.fingerprint/hybrid-81ecb4a6681183ac/bin-hybrid.json	/^{"rustc":9067460952518582175,"features":"[]","target":12865452057367123689,"profile":14673113333/;"	n
 rustc	target/debug/.fingerprint/hybrid-9a89a2c44c4824d5/bin-hybrid.json	/^{"rustc":9067460952518582175,"features":"[]","target":12865452057367123689,"profile":73486718723/;"	n
 rustc	target/debug/.fingerprint/hybrid-d14b17eba1221c1c/bin-hybrid.json	/^{"rustc":14626598257756768560,"features":"[]","target":12865452057367123689,"profile":1144844575/;"	n
-rustc_fingerprint	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	n
+rustc_fingerprint	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n
 rustc_fingerprint	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	n
 rustflags	platform/qemu/target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	a
 rustflags	platform/qemu/target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	a
@@ -5656,44 +5667,44 @@ set_timer	platform/qemu/src/sbi/timer.rs	/^    fn set_timer(&mut self, stime_val
 set_timer	platform/qemu/src/sbi/timer.rs	/^pub(crate) fn set_timer(stime_value: usize) -> SbiRet {$/;"	f
 shift	platform/qemu/src/hal/ns16550a.rs	/^    shift: usize,$/;"	m	struct:Ns16550a
 sifive_uart	platform/qemu/src/hal/mod.rs	/^mod sifive_uart;$/;"	n
-size	platform/qemu/src/memory/memory_layout.rs	/^    size: usize,$/;"	m	struct:Region
+size	platform/qemu/src/memory/memory_layout.rs	/^    pub size: usize,$/;"	m	struct:Region
 sp	platform/qemu/src/runtime/context.rs	/^    pub sp: usize,  \/\/ x1$/;"	m	struct:Context
 sp	platform/qemu/src/rvbt/frame.rs	/^    pub sp: usize,$/;"	m	struct:Frame
 srst	platform/qemu/src/sbi/mod.rs	/^pub mod srst;$/;"	n
 status	platform/qemu/src/util/mod.rs	/^pub mod status;$/;"	n
-status	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	s	object:outputs.1306171226424672110
-status	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	s	object:outputs.17598535894874457435
-status	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	s	object:outputs.2797684049618456168
-status	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	s	object:outputs.3208861856002986417
-status	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	s	object:outputs.931469667778813386
+status	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.1306171226424672110
+status	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.17598535894874457435
+status	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.2797684049618456168
+status	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.3208861856002986417
+status	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.931469667778813386
 status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.17598535894874457435
 status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.2797684049618456168
 status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.931469667778813386
-stderr	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	s	object:outputs.1306171226424672110
-stderr	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	s	object:outputs.17598535894874457435
-stderr	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	s	object:outputs.2797684049618456168
-stderr	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	s	object:outputs.3208861856002986417
-stderr	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	s	object:outputs.931469667778813386
+stderr	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.1306171226424672110
+stderr	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.17598535894874457435
+stderr	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.2797684049618456168
+stderr	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.3208861856002986417
+stderr	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.931469667778813386
 stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.17598535894874457435
 stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.2797684049618456168
 stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.931469667778813386
-stdout	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	s	object:outputs.1306171226424672110
-stdout	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	s	object:outputs.17598535894874457435
-stdout	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	s	object:outputs.2797684049618456168
-stdout	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	s	object:outputs.3208861856002986417
-stdout	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	s	object:outputs.931469667778813386
+stdout	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.1306171226424672110
+stdout	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.17598535894874457435
+stdout	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.2797684049618456168
+stdout	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.3208861856002986417
+stdout	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.931469667778813386
 stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.17598535894874457435
 stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.2797684049618456168
 stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.931469667778813386
-success	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	b	object:outputs.1306171226424672110
-success	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	b	object:outputs.17598535894874457435
-success	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	b	object:outputs.2797684049618456168
-success	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	b	object:outputs.3208861856002986417
-success	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	b	object:outputs.931469667778813386
+success	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	b	object:outputs.1306171226424672110
+success	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	b	object:outputs.17598535894874457435
+success	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	b	object:outputs.2797684049618456168
+success	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	b	object:outputs.3208861856002986417
+success	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	b	object:outputs.931469667778813386
 success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	b	object:outputs.17598535894874457435
 success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	b	object:outputs.2797684049618456168
 success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	b	object:outputs.931469667778813386
-successes	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"931469667778813386":{"success":true,"statu/;"	o
+successes	platform/qemu/target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o
 successes	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o
 sunxi_uart	platform/qemu/src/hal/mod.rs	/^mod sunxi_uart;$/;"	n
 symbol	platform/qemu/src/rvbt/mod.rs	/^pub mod symbol;$/;"	n
@@ -5907,7 +5918,6 @@ target	target/debug/.fingerprint/hybrid-31c8a00c0ed8f1f7/test-bin-hybrid.json	/^
 target	target/debug/.fingerprint/hybrid-81ecb4a6681183ac/bin-hybrid.json	/^{"rustc":9067460952518582175,"features":"[]","target":12865452057367123689,"profile":14673113333/;"	n
 target	target/debug/.fingerprint/hybrid-9a89a2c44c4824d5/bin-hybrid.json	/^{"rustc":9067460952518582175,"features":"[]","target":12865452057367123689,"profile":73486718723/;"	n
 target	target/debug/.fingerprint/hybrid-d14b17eba1221c1c/bin-hybrid.json	/^{"rustc":14626598257756768560,"features":"[]","target":12865452057367123689,"profile":1144844575/;"	n
-test_context	platform/qemu/src/util/self_test.rs	/^pub fn test_context() {$/;"	f
 test_pmp	platform/qemu/src/util/self_test.rs	/^pub fn test_pmp() {$/;"	f
 timer	platform/qemu/src/sbi/mod.rs	/^pub mod timer;$/;"	n
 to_machine	platform/qemu/src/runtime/context.rs	/^pub(super) unsafe extern "C" fn to_machine() {$/;"	f

@@ -12,7 +12,7 @@ pub struct Runtime<Y> {
     /* registers */
     context: Context,
     /* pmp layout */
-    layout: MemoryLayout,
+    layout: Option<MemoryLayout>,
     /* exception handler */
     exception_handler: Box<dyn FnMut(*mut Context) -> Option<Y>>,
 }
@@ -28,7 +28,7 @@ impl<Y> Runtime<Y> {
 
     pub fn new(
         context: Context,
-        layout: MemoryLayout,
+        layout: Option<MemoryLayout>,
         exception_handler: Box<dyn FnMut(*mut Context) -> Option<Y>>,
     ) -> Self {
         Runtime {
