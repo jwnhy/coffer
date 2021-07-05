@@ -1,7 +1,0 @@
-[target.riscv64imac-unknown-none-elf]
-rustflags = [
-	 "-Cforce-frame-pointers=yes", "-C", "link-arg=-Tlink-qemu-64.ld",
-]
-
-[build]
-target = "riscv64imac-unknown-none-elf"
