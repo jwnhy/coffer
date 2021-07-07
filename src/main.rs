@@ -5,36 +5,48 @@
 #![feature(asm)]
 #![feature(arbitrary_enum_discriminant)]
 #![feature(generator_trait)]
-
-#![allow(dead_code)]
-#![allow(unused_imports)]
-#![allow(unused_variables)]
+#![feature(fn_align)]
 
 extern crate alloc;
 
-mod memory;
-mod runtime;
 mod ecall;
 mod hal;
+mod memory;
+mod runtime;
 mod rvbt;
 mod util;
 #[macro_use]
 mod sbi;
 
+use alloc::boxed::Box;
 use buddy_system_allocator::LockedHeap;
+use ecall::handle_ecall;
+use crate::memory::pmp::PmpFlags;
+use core::{ops::Generator, panic::PanicInfo, pin::Pin, ptr::slice_from_raw_parts_mut};
 use goblin::elf::Elf;
-use core::{panic::PanicInfo, ptr::slice_from_raw_parts_mut};
+use riscv::register::{mcause::{self, Exception, Interrupt, Trap}, medeleg, mideleg, mie, mstatus::MPP, satp, sie::Sie, sscratch, stvec};
+use runtime::{context::Context, runtime::Runtime};
 use rvbt::{frame::trace, symbol::resolve_frame};
 
-use crate::{rvbt::init::debug_init, sbi::console_getchar, util::{fdt::{detect_ns16550a, detect_sifive_uart, detect_sunxi_uart, init_fdt}, self_test::test_pmp, status::{print_machine, print_mstatus, print_mtvec}}};
+use crate::{memory::memory_layout::Region, rvbt::init::debug_init, sbi::console_getchar, util::{
+        fdt::{detect_clint, detect_ns16550a, detect_sifive_uart, detect_sunxi_uart, init_fdt},
+        self_test::test_pmp,
+        status::{print_machine, print_mstatus, print_mtvec},
+    }};
 
 const HART_STACK_SIZE: usize = 8 * 1024;
-const NUM_CORES: usize = 2;
+const NUM_CORES: usize = 1;
 const SBI_STACK_SIZE: usize = NUM_CORES * HART_STACK_SIZE;
+
+#[no_mangle]
 #[link_section = ".bss.uninit"]
 static mut SBI_STACK: [u8; SBI_STACK_SIZE] = [0; SBI_STACK_SIZE];
 
-const SBI_HEAP_SIZE: usize = 64 * 1024;
+static DEVICE_TREE: &[u8] = include_bytes!("../board.dtb");
+
+const SBI_HEAP_SIZE: usize = 8 * 1024;
+
+#[no_mangle]
 #[link_section = ".bss.uninit"]
 static mut HEAP_SPACE: [u8; SBI_HEAP_SIZE] = [0; SBI_HEAP_SIZE];
 
@@ -54,12 +66,13 @@ struct SunxiHead {
     pub opensbi_base: u32,
 }
 
+#[no_mangle]
 #[link_section = ".head_data"]
 static SUNXI_HEAD: SunxiHead = SunxiHead {
     jump_inst: 0x4000_006f, // j 0x4000_0400
     magic: *b"opensbi\0",
-    dtb_base: 0,
     uboot_base: 0,
+    dtb_base: 0,
     res3: 0,
     res4: 0,
     res5: [0; 8],
@@ -78,34 +91,104 @@ fn rust_oom() -> ! {
     loop {}
 }
 
-
 extern "C" fn main(hartid: usize, dtb: usize) -> ! {
     let hartid = riscv::register::mhartid::read();
     if hartid == 0 {
         init_bss();
         init_heap();
-        //init_fdt(SUNXI_HEAD.dtb_base as usize);
-        //detect_ns16550a();
+        init_fdt(DEVICE_TREE.as_ptr() as usize);
+        //init_fdt(dtb);
+        detect_ns16550a();
         //detect_sifive_uart();
         detect_sunxi_uart();
+        println!("dtb is {:x}", dtb);
+        println!("sunxi dtb is {:x}", SUNXI_HEAD.dtb_base);
+        println!("sunxi second dtb is {:x}", SUNXI_HEAD.uboot_base);
+        println!("Serial is fine");
         //test_pmp();
+        //detect_clint();
+        let global_region = Region{
+        addr: 0x0,
+        size: 56,
+        enabled: true,
+        pmp_cfg: PmpFlags::READABLE
+            | PmpFlags::WRITABLE
+            | PmpFlags::EXECUTABLE
+            | PmpFlags::MODE_NAPOT,
+        };
 
-        //print_machine();
+        global_region.enforce(7);
         //detect_ns16550a();
         //detect_sunxi_uart();
         //debug_init();
 
         println!("RISC-V TEE in Rust");
         println!("dtb addr: 0x{:x}", dtb);
-        let cpu_num = util::fdt::FDT.lock().as_ref().unwrap().cpus().count();
-        println!("I have {} cores", cpu_num);
+        let mut rt = kernel_runtime(hartid, dtb as usize, 0x4200_0000);
+        Pin::new(&mut rt).resume(());
     }
-    unsafe {
-       // asm!("mv a1, {0}
-        //    call _coffer_end", in(reg) dtb);
-    }
-    
     loop {}
+}
+
+fn delegate_exception() {
+    unsafe {
+        mideleg::set_stimer();
+        mideleg::set_ssoft();
+        mideleg::set_sext();
+
+        medeleg::set_instruction_misaligned();
+        medeleg::set_load_misaligned();
+        medeleg::set_store_misaligned();
+        medeleg::set_illegal_instruction();
+        medeleg::set_breakpoint();
+        medeleg::set_user_env_call();
+        medeleg::set_instruction_page_fault();
+        medeleg::set_load_page_fault();
+        medeleg::set_store_page_fault();
+        medeleg::set_instruction_fault();
+        medeleg::set_load_fault();
+        medeleg::set_store_fault();
+
+        mie::set_mext();
+        mie::set_msoft();
+    }
+}
+
+fn kernel_runtime(hartid: usize, dtb: usize, kernel_addr: usize) -> Runtime::<()> {
+    let mut ctx = Context::new();
+    ctx.a0 = hartid;
+    ctx.a1 = dtb;
+    ctx.mepc = kernel_addr;
+    ctx.mstatus.set_mpp(MPP::Supervisor);
+    unsafe {
+        riscv::register::mie::set_mtimer();
+        stvec::write(kernel_addr, riscv::register::mtvec::TrapMode::Direct);
+        sscratch::write(0x0);
+        riscv::register::sie::clear_sext();
+        riscv::register::sie::clear_uext();
+        riscv::register::sie::clear_ssoft();
+        riscv::register::sie::clear_usoft();
+        riscv::register::sie::clear_stimer();
+        riscv::register::sie::clear_utimer();
+        satp::write(0x0);
+    }
+    //delegate_exception();
+    print_machine();
+    let runtime = Runtime::<()>::new(ctx, None, Box::new(|ctx_ptr| unsafe { 
+        let cause = mcause::read().cause();
+        match cause {
+            Trap::Exception(Exception::SupervisorEnvCall) => {
+                println!("Handling ECALL@{:x}", (*ctx_ptr).mepc);
+                let sbi_ret = handle_ecall(ctx_ptr);
+                (*ctx_ptr).a0 = sbi_ret.error;
+                (*ctx_ptr).a1 = sbi_ret.value;
+                (*ctx_ptr).mepc = (*ctx_ptr).mepc+4;
+            },
+            e @ _ => println!("unknown exception {:?}", e),
+        }
+        None
+    }));
+    runtime
 }
 
 fn init_bss() {
@@ -118,7 +201,7 @@ fn init_bss() {
     }
     unsafe {
         r0::zero_bss(&mut _bss_start, &mut _bss_end);
-        r0::init_data(&mut _data_start,&mut _data_end , &_flash_data);
+        r0::init_data(&mut _data_start, &mut _data_end, &_flash_data);
     }
 }
 
@@ -135,7 +218,7 @@ fn init_heap() {
 #[export_name = "_start"]
 unsafe extern "C" fn entry() -> ! {
     asm!(
-    "
+    "   
         /* flush the instruction cache */
 	    fence.i
 	    /* Reset all registers except ra, a0, a1 and a2 */
