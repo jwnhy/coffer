@@ -1,0 +1,8 @@
+[target.riscv64imac-unknown-none-elf]
+rustflags = [
+	 "-Cforce-frame-pointers=yes", "-C", "link-arg=-Tlink-sunxi-64.ld",
+]
+
+[build]
+target = "riscv64imac-unknown-none-elf"
+
