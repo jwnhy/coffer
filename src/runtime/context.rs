@@ -38,6 +38,11 @@ pub struct Context {
     pub mstatus: Mstatus, // x31
     pub mepc: usize,    // x32
     pub msp: usize,     //x33
+
+    pub mideleg: usize,
+    pub medeleg: usize,
+    pub mcounteren: usize,
+    pub mie: usize,
 }
 
 impl Context {
@@ -98,10 +103,21 @@ pub(super) unsafe extern "C" fn to_user_or_supervisor(context: *mut Context) {
         "
         sd      sp,         33*8(a0)
         csrw    mscratch,   a0
+        /* TODO: uboot assumes all register is cleared */
+       
         ld      t0,         31*8(a0)
         ld      t1,         32*8(a0)
-        csrw    mstatus,    t0
-        csrw    mepc,       t1
+        ld      t2,         34*8(a0)
+        ld      t3,         35*8(a0)
+        ld      t4,         36*8(a0)
+        ld      t5,         37*8(a0)
+        csrw    mstatus    ,t0
+        csrw    mepc       ,t1
+        csrw    mideleg    ,t2
+        csrw    medeleg    ,t3
+        csrw    mcounteren ,t4
+        csrw    mie        ,t5
+
 
         ld      ra,         0*8(a0)
         ld      sp,         1*8(a0)
@@ -135,6 +151,7 @@ pub(super) unsafe extern "C" fn to_user_or_supervisor(context: *mut Context) {
         ld      t5,         29*8(a0)		// x29
         ld      t6,         30*8(a0)		// x30
         ld      a0,         9*8(a0)		// x9
+
         mret
          ",
         options(noreturn)
@@ -184,10 +201,20 @@ pub(crate) unsafe extern "C" fn from_user_or_supervisor() {
          sd     t4,     28*8(a0)		// x28
          sd     t5,     29*8(a0)		// x29
          sd     t6,     30*8(a0)		// x30
-         csrr   t1,     mstatus
-         sd     t1,     31*8(a0)
-         csrr   t1,     mepc
-         sd     t1,     32*8(a0)
+
+         csrr  t0,mstatus    
+         csrr  t1,mepc       
+         csrr  t2,mideleg    
+         csrr  t3,medeleg    
+         csrr  t4,mcounteren 
+         csrr  t5,mie        
+         
+         sd      t0,         31*8(a0)
+         sd      t1,         32*8(a0)
+         sd      t2,         34*8(a0)
+         sd      t3,         35*8(a0)
+         sd      t4,         36*8(a0)
+         sd      t5,         37*8(a0)
          
          /* mscratch = a0;
           * t1 = mscratch;

@@ -18,10 +18,11 @@ release:
   rust-objcopy {{RELEASE}} -O binary coffer.striped
   cp coffer.striped ~/tools/tina/device/config/chips/d1/bin/opensbi_sun20iw1p1.bin
 
-xfel:
+xfel: release
   xfel version
   xfel ddr ddr3
   xfel write 0x40000000 coffer.striped
+  xfel write 0x42000000 ~/tools/tina/out/d1-nezha/image/u-boot.fex
   xfel exec 0x40000000
 
 copy-debug:

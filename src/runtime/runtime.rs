@@ -3,6 +3,8 @@ use core::ops::{Generator, GeneratorState};
 use alloc::boxed::Box;
 use riscv::register::mtvec::{self, Mtvec};
 
+use crate::println;
+
 use super::super::memory::memory_layout::MemoryLayout;
 use super::context::{from_machine, from_user_or_supervisor, Context};
 

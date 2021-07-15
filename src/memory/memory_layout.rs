@@ -1,9 +1,10 @@
 use core::ops::Range;
 
 use bit_field::BitField;
+use riscv::register::pmpaddr0;
 
 use super::pmp::{PmpFlags, pmpaddr_write, pmpcfg_write};
-use crate::util::fdt::XLEN;
+use crate::{println, util::fdt::XLEN};
 
 #[repr(C)]
 pub struct Region {
@@ -33,7 +34,6 @@ impl Region {
             let mut pmpaddr = self.addr;
             pmpaddr = pmpaddr >> 2;
             pmpaddr.set_bit(self.size-3, false);
-            let k = 1usize << (self.size-3)-1;
             pmpaddr.set_bits(0..(self.size-3), (1 << (self.size-3))-1);
             pmpaddr
         }
@@ -47,7 +47,7 @@ impl Region {
         if !self.enabled {
             return
         }
-
+        pmpcfg_write(index, self.pmp_cfg.bits());
         if self.pmp_cfg.contains(PmpFlags::MODE_NA4) || self.pmp_cfg.contains(PmpFlags::MODE_NAPOT) {
             pmpaddr_write(index, self.to_napot());
         } else {
@@ -55,7 +55,6 @@ impl Region {
             pmpaddr_write(index-1, s);
             pmpaddr_write(index, e);
         }
-        pmpcfg_write(index, self.pmp_cfg.bits());
     }
 
     pub fn exempt(&self, index: usize) {

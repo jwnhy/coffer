@@ -26,7 +26,6 @@ pub(crate) fn pmpcfg_read(index: usize) -> u8 {
 #[cfg(target_arch="riscv64")]
 pub(crate) fn pmpcfg_write(index: usize, value: u8) {
 use bit_field::BitField;
-
     match index {
         0..=7 => {
             let range = index * 8..(index + 1) * 8;

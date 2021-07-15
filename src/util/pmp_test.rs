@@ -1,19 +1,16 @@
-use core::ops::Generator; use core::pin::Pin;
+use core::ops::Generator;
+use core::pin::Pin;
 use core::sync::atomic::AtomicBool;
 
 use alloc::boxed::Box;
+use riscv::register::mcause::Exception::*;
 use riscv::register::mstatus::{self, Mstatus, MPP};
 use riscv::register::{self, mcause, mtval, pmpcfg0};
-use riscv::register::mcause::Exception::*;
 
 use crate::memory::memory_layout::{MemoryLayout, Region};
 use crate::memory::pmp::PmpFlags;
-use crate::memory::pmp::{pmpaddr_read, pmpcfg_read, pmpcfg_write};
 use crate::runtime::context::Context;
 use crate::runtime::runtime::Runtime;
-use crate::rvbt::frame::{Frame, trace_from};
-
-use super::status::print_pmp;
 
 /* global flag to indicate exception status */
 static mut READ_FLAG: AtomicBool = AtomicBool::new(false);
@@ -21,7 +18,7 @@ static mut WRITE_FLAG: AtomicBool = AtomicBool::new(false);
 static mut EXEC_FLAG: AtomicBool = AtomicBool::new(false);
 
 #[no_mangle]
-#[cfg(target_arch="riscv64")]
+#[cfg(target_arch = "riscv64")]
 unsafe fn _write_test(addr: usize, expected: bool) {
     *WRITE_FLAG.get_mut() = false;
     mstatus::set_mpp(MPP::Supervisor);
@@ -35,7 +32,7 @@ unsafe fn _write_test(addr: usize, expected: bool) {
 }
 
 #[no_mangle]
-#[cfg(target_arch="riscv64")]
+#[cfg(target_arch = "riscv64")]
 unsafe fn _read_test(addr: usize, expected: bool) {
     *READ_FLAG.get_mut() = false;
     mstatus::set_mpp(MPP::Supervisor);
@@ -47,7 +44,7 @@ unsafe fn _read_test(addr: usize, expected: bool) {
     assert_eq!(*READ_FLAG.get_mut(), expected);
 }
 
-#[cfg(target_arch="riscv64")]
+#[cfg(target_arch = "riscv64")]
 unsafe extern "C" fn _test_pmp(region: &Region) {
     /* first we allow all PMP config */
     let global_region = Region {
@@ -65,12 +62,15 @@ unsafe extern "C" fn _test_pmp(region: &Region) {
     region.enforce(0);
 
     /* test what we can access */
-    let (s, e) = (region.addr_range().min().unwrap(), region.addr_range().max().unwrap());
-    for addr in (s-1024..s).step_by(8) {
+    let (s, e) = (
+        region.addr_range().min().unwrap(),
+        region.addr_range().max().unwrap(),
+    );
+    for addr in (s - 1024..s).step_by(8) {
         _read_test(addr, false);
         _write_test(addr, false);
     }
-    for addr in (e+1..e+1024).step_by(8) {
+    for addr in (e + 1..e + 1024).step_by(8) {
         _read_test(addr, false);
         _write_test(addr, false);
     }
@@ -109,11 +109,19 @@ pub fn test_pmp() {
             unsafe {
                 mstatus::set_mpp(MPP::Machine);
                 match mcause::read().cause() {
-                    mcause::Trap::Exception(LoadFault) => { *READ_FLAG.get_mut() = true; },
-                    mcause::Trap::Exception(StoreFault) => { *WRITE_FLAG.get_mut() = true; },
-                    mcause::Trap::Exception(InstructionFault) => { *EXEC_FLAG.get_mut() = true; }
-                    mcause::Trap::Exception(Breakpoint) => { return Some(()); },
-                    e @ _ => panic!("[ERROR] unexpected exception@{:x}: {:?}", (*x).mepc,  e)
+                    mcause::Trap::Exception(LoadFault) => {
+                        *READ_FLAG.get_mut() = true;
+                    }
+                    mcause::Trap::Exception(StoreFault) => {
+                        *WRITE_FLAG.get_mut() = true;
+                    }
+                    mcause::Trap::Exception(InstructionFault) => {
+                        *EXEC_FLAG.get_mut() = true;
+                    }
+                    mcause::Trap::Exception(Breakpoint) => {
+                        return Some(());
+                    }
+                    e @ _ => panic!("[ERROR] unexpected exception@{:x}: {:?}", (*x).mepc, e),
                 }
                 (*x).mepc = (*x).mepc + 4;
             }

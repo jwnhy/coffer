@@ -18,21 +18,30 @@ mod util;
 #[macro_use]
 mod sbi;
 
+use crate::{memory::pmp::PmpFlags, util::{fdt::init_sunxi_clint, timer_test::test_timer}};
 use alloc::boxed::Box;
 use buddy_system_allocator::LockedHeap;
+use core::{
+    ops::Generator,
+    panic::PanicInfo,
+    pin::Pin,
+    ptr::{slice_from_raw_parts_mut, write_volatile},
+};
 use ecall::handle_ecall;
-use crate::memory::pmp::PmpFlags;
-use core::{ops::Generator, panic::PanicInfo, pin::Pin, ptr::slice_from_raw_parts_mut};
 use goblin::elf::Elf;
-use riscv::register::{mcause::{self, Exception, Interrupt, Trap}, medeleg, mideleg, mie, mstatus::MPP, satp, sie::Sie, sscratch, stvec};
+use riscv::register::{mcause::{self, Exception, Interrupt, Trap}, mcounteren, medeleg, mideleg, mie, mstatus::{self, MPP}, satp::{self, Satp}, sie::Sie, sscratch, stvec};
 use runtime::{context::Context, runtime::Runtime};
 use rvbt::{frame::trace, symbol::resolve_frame};
 
-use crate::{memory::memory_layout::Region, rvbt::init::debug_init, sbi::console_getchar, util::{
+use crate::{
+    memory::memory_layout::Region,
+    rvbt::init::debug_init,
+    sbi::console_getchar,
+    util::{
         fdt::{detect_clint, detect_ns16550a, detect_sifive_uart, detect_sunxi_uart, init_fdt},
-        self_test::test_pmp,
         status::{print_machine, print_mstatus, print_mtvec},
-    }};
+    },
+};
 
 const HART_STACK_SIZE: usize = 8 * 1024;
 const NUM_CORES: usize = 1;
@@ -98,96 +107,76 @@ extern "C" fn main(hartid: usize, dtb: usize) -> ! {
         init_heap();
         init_fdt(DEVICE_TREE.as_ptr() as usize);
         //init_fdt(dtb);
-        detect_ns16550a();
+        //detect_ns16550a();
         //detect_sifive_uart();
         detect_sunxi_uart();
+        init_sunxi_clint(0x1400_0000);
         println!("dtb is {:x}", dtb);
         println!("sunxi dtb is {:x}", SUNXI_HEAD.dtb_base);
         println!("sunxi second dtb is {:x}", SUNXI_HEAD.uboot_base);
         println!("Serial is fine");
-        //test_pmp();
+        //test_timer();
         //detect_clint();
-        let global_region = Region{
-        addr: 0x0,
-        size: 56,
-        enabled: true,
-        pmp_cfg: PmpFlags::READABLE
-            | PmpFlags::WRITABLE
-            | PmpFlags::EXECUTABLE
-            | PmpFlags::MODE_NAPOT,
-        };
+        //test_pmp();
 
-        global_region.enforce(7);
+        let global_region = Region {
+            addr: 0x0,
+            size: 56,
+            enabled: true,
+            pmp_cfg: PmpFlags::EXECUTABLE
+                | PmpFlags::READABLE
+                | PmpFlags::WRITABLE
+                | PmpFlags::MODE_NAPOT,
+        };
+        global_region.enforce(0);
         //detect_ns16550a();
         //detect_sunxi_uart();
-        //debug_init();
 
         println!("RISC-V TEE in Rust");
         println!("dtb addr: 0x{:x}", dtb);
-        let mut rt = kernel_runtime(hartid, dtb as usize, 0x4200_0000);
+        let mut rt = kernel_runtime(hartid, 0x4200_0000, 0x4200_0000);
         Pin::new(&mut rt).resume(());
     }
     loop {}
 }
 
-fn delegate_exception() {
-    unsafe {
-        mideleg::set_stimer();
-        mideleg::set_ssoft();
-        mideleg::set_sext();
-
-        medeleg::set_instruction_misaligned();
-        medeleg::set_load_misaligned();
-        medeleg::set_store_misaligned();
-        medeleg::set_illegal_instruction();
-        medeleg::set_breakpoint();
-        medeleg::set_user_env_call();
-        medeleg::set_instruction_page_fault();
-        medeleg::set_load_page_fault();
-        medeleg::set_store_page_fault();
-        medeleg::set_instruction_fault();
-        medeleg::set_load_fault();
-        medeleg::set_store_fault();
-
-        mie::set_mext();
-        mie::set_msoft();
-    }
-}
-
-fn kernel_runtime(hartid: usize, dtb: usize, kernel_addr: usize) -> Runtime::<()> {
+fn kernel_runtime(hartid: usize, dtb: usize, kernel_addr: usize) -> Runtime<()> {
     let mut ctx = Context::new();
     ctx.a0 = hartid;
     ctx.a1 = dtb;
     ctx.mepc = kernel_addr;
     ctx.mstatus.set_mpp(MPP::Supervisor);
+    ctx.mstatus.set_fs(riscv::register::sstatus::FS::Dirty);
+    ctx.mcounteren = 0xffff_ffff;
+    ctx.medeleg = 0xb1ff;
+    ctx.mideleg = 0x222;
+    ctx.mie = 0x8;
     unsafe {
-        riscv::register::mie::set_mtimer();
+        riscv::register::sscratch::write(0x0);
+        riscv::register::satp::write(0x0);
         stvec::write(kernel_addr, riscv::register::mtvec::TrapMode::Direct);
-        sscratch::write(0x0);
-        riscv::register::sie::clear_sext();
-        riscv::register::sie::clear_uext();
-        riscv::register::sie::clear_ssoft();
-        riscv::register::sie::clear_usoft();
-        riscv::register::sie::clear_stimer();
-        riscv::register::sie::clear_utimer();
-        satp::write(0x0);
+        // TODO: SETUP PLIC
+        write_volatile(0x101F_FFFC as *mut u32, 0x1);
     }
-    //delegate_exception();
-    print_machine();
-    let runtime = Runtime::<()>::new(ctx, None, Box::new(|ctx_ptr| unsafe { 
-        let cause = mcause::read().cause();
-        match cause {
-            Trap::Exception(Exception::SupervisorEnvCall) => {
-                println!("Handling ECALL@{:x}", (*ctx_ptr).mepc);
-                let sbi_ret = handle_ecall(ctx_ptr);
-                (*ctx_ptr).a0 = sbi_ret.error;
-                (*ctx_ptr).a1 = sbi_ret.value;
-                (*ctx_ptr).mepc = (*ctx_ptr).mepc+4;
-            },
-            e @ _ => println!("unknown exception {:?}", e),
-        }
-        None
-    }));
+    let runtime = Runtime::<()>::new(
+        ctx,
+        None,
+        Box::new(|ctx_ptr| unsafe {
+            let cause = mcause::read().cause();
+            print_machine();
+            match cause {
+                Trap::Exception(Exception::SupervisorEnvCall) => {
+                    println!("Handling ECALL@{:x}", (*ctx_ptr).mepc);
+                    let sbi_ret = handle_ecall(ctx_ptr);
+                    (*ctx_ptr).a0 = sbi_ret.error;
+                    (*ctx_ptr).a1 = sbi_ret.value;
+                    (*ctx_ptr).mepc = (*ctx_ptr).mepc + 4;
+                }
+                e @ _ => println!("unknown exception {:?}@{:x}", e, (*ctx_ptr).mepc),
+            }
+            None
+        }),
+    );
     runtime
 }
 
@@ -218,7 +207,7 @@ fn init_heap() {
 #[export_name = "_start"]
 unsafe extern "C" fn entry() -> ! {
     asm!(
-    "   
+    "
         /* flush the instruction cache */
 	    fence.i
 	    /* Reset all registers except ra, a0, a1 and a2 */

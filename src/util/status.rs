@@ -53,6 +53,7 @@ pub fn print_misa() {
 
 pub fn print_mstatus() {
     let mstatus = riscv::register::mstatus::read();
+    println!("mstatus: {:?}", mstatus);
 
     println!("[xIE] Interrupt Status:");
     flag_println!("\tMachine Mode Interrupt: {}", mstatus.mie());
@@ -157,24 +158,30 @@ pub fn print_mideleg() {
 
 pub fn print_mip() {
     let mip = riscv::register::mip::read();
-    println!("Machine Interrupt Delegate:");
+    println!("Machine Interrupt Pending:");
     flag_println!("\t0. User Soft IRQ: {}", mip.usoft());
     flag_println!("\t1. Supervisor Soft IRQ: {}", mip.ssoft());
-    flag_println!("\t4. User Timer IRQ: {}", mip.utimer());
-    flag_println!("\t5. Supervisor Timer IRQ: {}", mip.stimer());
-    flag_println!("\t8. User External IRQ: {}", mip.uext());
-    flag_println!("\t9. Supervisor External IRQ: {}", mip.sext());
+    flag_println!("\t2. Machine Soft IRQ: {}", mip.msoft());
+    flag_println!("\t3. User Timer IRQ: {}", mip.utimer());
+    flag_println!("\t4. Supervisor Timer IRQ: {}", mip.stimer());
+    flag_println!("\t5. Machine Timer IRQ: {}", mip.mtimer());
+    flag_println!("\t6. User External IRQ: {}", mip.uext());
+    flag_println!("\t7. Supervisor External IRQ: {}", mip.sext());
+    flag_println!("\t8. Machine External IRQ: {}", mip.mext());
 }
 
 pub fn print_mie() {
     let mie = riscv::register::mie::read();
-    println!("Machine Interrupt Pending:");
+    println!("Machine Interrupt Enable:");
     flag_println!("\t0. User Soft IRQ: {}", mie.usoft());
     flag_println!("\t1. Supervisor Soft IRQ: {}", mie.ssoft());
-    flag_println!("\t4. User Timer IRQ: {}", mie.utimer());
-    flag_println!("\t5. Supervisor Timer IRQ: {}", mie.stimer());
-    flag_println!("\t8. User External IRQ: {}", mie.uext());
-    flag_println!("\t9. Supervisor External IRQ: {}", mie.sext());
+    flag_println!("\t2. Machine Soft IRQ: {}", mie.msoft());
+    flag_println!("\t3. User Timer IRQ: {}", mie.utimer());
+    flag_println!("\t4. Supervisor Timer IRQ: {}", mie.stimer());
+    flag_println!("\t5. Machine Timer IRQ: {}", mie.mtimer());
+    flag_println!("\t6. User External IRQ: {}", mie.uext());
+    flag_println!("\t7. Supervisor External IRQ: {}", mie.sext());
+    flag_println!("\t8. Machine External IRQ: {}", mie.mext());
 }
 
 pub fn print_mscratch() {

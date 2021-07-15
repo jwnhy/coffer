@@ -1,6 +1,6 @@
 use crate::runtime::context::Context;
 use crate::sbi::sbiret::SbiRet;
-use crate::sbi::*;
+use crate::{println, sbi::*};
 
 use self::base::handle_ecall_base;
 use self::hsm::handle_ecall_hsm;
@@ -28,6 +28,7 @@ pub fn handle_ecall(ctx: *mut Context) -> SbiRet {
             (*ctx).a4,
         )
     };
+    println!("EID: {:x}, FID: {:x}, P0: {:x}, P1: {:x}", ext, fid, p0, p1);
     match ext {
         EXT_BASE => handle_ecall_base(fid, p0),
         EXT_TIME => handle_ecall_timer(fid, p0),

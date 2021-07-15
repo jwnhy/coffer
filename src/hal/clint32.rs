@@ -1,13 +1,15 @@
-use core::ptr::{read_volatile, write_volatile};
+use core::{ops::Add, ptr::{read_volatile, write_volatile}};
 
-use crate::sbi::{hart_mask::HartMask, ipi::Ipi, sbiret::SbiRet, timer::Timer};
-pub struct Clint {
+use bit_field::BitField;
+
+use crate::{println, sbi::{hart_mask::HartMask, ipi::Ipi, sbiret::SbiRet, timer::Timer}};
+pub struct Clint32 {
     base: usize,
     mtimecmp_offset: usize,
     max_hart_id: usize,
 }
 
-impl Clint {
+impl Clint32 {
     pub fn new(base: usize, mtimecmp_offset: usize, max_hart_id: usize) -> Self {
         Self {
             base,
@@ -19,8 +21,11 @@ impl Clint {
     pub fn set_timer(&self, hart_id: usize, wait_for: u64) {
         unsafe {
             let base = self.base as *mut u8;
-            let reg = (base.add(self.mtimecmp_offset) as *mut u64).add(hart_id);
-            write_volatile(reg, wait_for)
+            let reg_l = (base.add(self.mtimecmp_offset) as *mut u64).add(hart_id) as *mut u32;
+            let reg_h = reg_l.add(1);
+            write_volatile(reg_l, u32::max_value());
+            write_volatile(reg_h, wait_for.get_bits(32..64) as u32);
+            write_volatile(reg_l, wait_for.get_bits(0..32) as u32);
         }
     }
 
@@ -41,7 +46,7 @@ impl Clint {
     }
 }
 
-impl Ipi for Clint {
+impl Ipi for Clint32 {
     fn max_hart_id(&self) -> usize {
         self.max_hart_id
     } 
@@ -55,7 +60,7 @@ impl Ipi for Clint {
     }
 }
 
-impl Timer for Clint {
+impl Timer for Clint32 {
     fn set_timer(&self, stime_value: u64) {
         let hart_id = riscv::register::mhartid::read();
         self.set_timer(hart_id, stime_value);

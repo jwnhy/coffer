@@ -8,7 +8,7 @@ pub const XLEN: usize = 8;
 #[cfg(target_arch = "riscv32")]
 pub const XLEN: usize = 4;
 
-use crate::{hal::{Clint, Ns16550a, SifiveUart, SunxiUart}, println, sbi::{init_console_embedded_serial, ipi::init_ipi, timer::init_timer}};
+use crate::{hal::{Clint, Clint32, Ns16550a, SifiveUart, SunxiUart}, println, sbi::{init_console_embedded_serial, ipi::init_ipi, timer::init_timer}};
 
 lazy_static::lazy_static! {
     pub static ref FDT: Mutex<Option<Box<Fdt<'static>>>> = Mutex::new(None);
@@ -31,14 +31,22 @@ pub fn detect_clint() {
         then {
             let base = reg.starting_address;
             let cpucnt = fdt.cpus().count();
-            let clint = Clint::new(base as usize, 0x4000, 0xbff8, cpucnt);
+            let clint = Clint::new(base as usize, 0x4000, cpucnt);
             init_ipi(clint);
-            let clint = Clint::new(base as usize, 0x4000, 0xbff8, cpucnt);
+            let clint = Clint::new(base as usize, 0x4000, cpucnt);
             init_timer(clint);
         } else {
             panic!("init clint failed");
         }
     } 
+}
+
+pub fn init_sunxi_clint(base_addr: usize) {
+    let cpucnt = detect_hart();
+    let clint = Clint32::new(base_addr, 0x4000, cpucnt);
+    init_ipi(clint);
+    let clint = Clint32::new(base_addr, 0x4000, cpucnt);
+    init_timer(clint);
 }
 
 pub fn detect_sunxi_uart() {

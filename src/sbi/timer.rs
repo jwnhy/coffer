@@ -1,3 +1,5 @@
+use crate::println;
+
 use super::{hart_mask, sbiret::SbiRet};
 pub trait Timer: Send {
     fn set_timer(&self, stime_value: u64);
@@ -18,9 +20,15 @@ where T: Timer + Send + 'static
 
 pub(crate) fn set_timer(stime_value: u64) -> SbiRet {
     if let Some(timer) = TIMER.lock().as_mut() {
+        println!("setting timer {:x}", stime_value);
         timer.set_timer(stime_value);
+        unsafe {
+            riscv::register::mip::clear_stimer();
+            riscv::register::mie::set_mtimer();
+        };
         SbiRet::ok(0)
     } else {
+        panic!("timer does not exist");
         SbiRet::not_supported()
     }
 }
