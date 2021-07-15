@@ -37,10 +37,10 @@ pub fn test_timer() {
     ctx.sp = &sp as *const u8 as usize;
     ctx.sp = ctx.sp + 8192;
     ctx.mepc = _test_timer as usize;
-    ctx.mie = 1 << 7;
     set_timer(riscv::register::time::read64() + 100_0000);
     unsafe {
         riscv::register::mip::clear_mtimer();
+        riscv::register::mie::set_mtimer();
     }
     let mut runtime = Runtime::<()>::new(
         ctx,
@@ -48,9 +48,7 @@ pub fn test_timer() {
         Box::new(|x| unsafe {
             match mcause::read().cause() {
                 mcause::Trap::Interrupt(mcause::Interrupt::MachineTimer) => {
-                    set_timer(riscv::register::time::read64() + 100_0000);
                     (*x).mstatus.set_mie(true);
-                    (*x).mie = 1 << 7;
                     TICKS = TICKS + 1;
                     riscv::register::mip::clear_mtimer();
                 }

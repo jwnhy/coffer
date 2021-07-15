@@ -18,7 +18,7 @@ mod util;
 #[macro_use]
 mod sbi;
 
-use crate::{memory::pmp::PmpFlags, util::{fdt::init_sunxi_clint, timer_test::test_timer}};
+use crate::{memory::pmp::PmpFlags, sbi::timer::process_timer, util::{fdt::init_sunxi_clint, timer_test::test_timer}};
 use alloc::boxed::Box;
 use buddy_system_allocator::LockedHeap;
 use core::{
@@ -115,7 +115,6 @@ extern "C" fn main(hartid: usize, dtb: usize) -> ! {
         println!("sunxi dtb is {:x}", SUNXI_HEAD.dtb_base);
         println!("sunxi second dtb is {:x}", SUNXI_HEAD.uboot_base);
         println!("Serial is fine");
-        //test_timer();
         //detect_clint();
         //test_pmp();
 
@@ -150,8 +149,8 @@ fn kernel_runtime(hartid: usize, dtb: usize, kernel_addr: usize) -> Runtime<()> 
     ctx.mcounteren = 0xffff_ffff;
     ctx.medeleg = 0xb1ff;
     ctx.mideleg = 0x222;
-    ctx.mie = 0x8;
     unsafe {
+        riscv::register::mie::set_msoft();
         riscv::register::sscratch::write(0x0);
         riscv::register::satp::write(0x0);
         stvec::write(kernel_addr, riscv::register::mtvec::TrapMode::Direct);
@@ -163,14 +162,15 @@ fn kernel_runtime(hartid: usize, dtb: usize, kernel_addr: usize) -> Runtime<()> 
         None,
         Box::new(|ctx_ptr| unsafe {
             let cause = mcause::read().cause();
-            print_machine();
             match cause {
                 Trap::Exception(Exception::SupervisorEnvCall) => {
-                    println!("Handling ECALL@{:x}", (*ctx_ptr).mepc);
                     let sbi_ret = handle_ecall(ctx_ptr);
                     (*ctx_ptr).a0 = sbi_ret.error;
                     (*ctx_ptr).a1 = sbi_ret.value;
                     (*ctx_ptr).mepc = (*ctx_ptr).mepc + 4;
+                }
+                Trap::Interrupt(Interrupt::MachineTimer) => {
+                    process_timer();
                 }
                 e @ _ => println!("unknown exception {:?}@{:x}", e, (*ctx_ptr).mepc),
             }

@@ -28,7 +28,6 @@ pub fn handle_ecall(ctx: *mut Context) -> SbiRet {
             (*ctx).a4,
         )
     };
-    println!("EID: {:x}, FID: {:x}, P0: {:x}, P1: {:x}", ext, fid, p0, p1);
     match ext {
         EXT_BASE => handle_ecall_base(fid, p0),
         EXT_TIME => handle_ecall_timer(fid, p0),

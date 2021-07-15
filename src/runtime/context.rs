@@ -42,7 +42,6 @@ pub struct Context {
     pub mideleg: usize,
     pub medeleg: usize,
     pub mcounteren: usize,
-    pub mie: usize,
 }
 
 impl Context {
@@ -104,19 +103,16 @@ pub(super) unsafe extern "C" fn to_user_or_supervisor(context: *mut Context) {
         sd      sp,         33*8(a0)
         csrw    mscratch,   a0
         /* TODO: uboot assumes all register is cleared */
-       
         ld      t0,         31*8(a0)
         ld      t1,         32*8(a0)
         ld      t2,         34*8(a0)
         ld      t3,         35*8(a0)
         ld      t4,         36*8(a0)
-        ld      t5,         37*8(a0)
         csrw    mstatus    ,t0
         csrw    mepc       ,t1
         csrw    mideleg    ,t2
         csrw    medeleg    ,t3
         csrw    mcounteren ,t4
-        csrw    mie        ,t5
 
 
         ld      ra,         0*8(a0)
@@ -207,14 +203,12 @@ pub(crate) unsafe extern "C" fn from_user_or_supervisor() {
          csrr  t2,mideleg    
          csrr  t3,medeleg    
          csrr  t4,mcounteren 
-         csrr  t5,mie        
          
          sd      t0,         31*8(a0)
          sd      t1,         32*8(a0)
          sd      t2,         34*8(a0)
          sd      t3,         35*8(a0)
          sd      t4,         36*8(a0)
-         sd      t5,         37*8(a0)
          
          /* mscratch = a0;
           * t1 = mscratch;
