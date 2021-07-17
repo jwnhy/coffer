@@ -10,7 +10,7 @@ build:
   rust-objcopy {{PAYLOAD}} -O binary  coffer.striped
 
 release:
-  cargo build --release
+  cargo build --release --features "sunxi"
   for sec in 'abbrev' 'addr' 'aranges' 'info' 'line' 'line_str' 'ranges' 'rnglists' 'str' 'str_offsets'; do \
     rust-objcopy {{RELEASE}} --remove-section .rvbt_$sec; \
   done
