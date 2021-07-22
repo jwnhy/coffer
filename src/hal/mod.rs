@@ -3,6 +3,7 @@ mod ns16550a;
 mod sifive_uart;
 mod sunxi_uart;
 mod clint32;
+mod tlb;
 pub use clint::Clint;
 pub use clint32::Clint32;
 pub use ns16550a::Ns16550a;

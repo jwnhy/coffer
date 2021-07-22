@@ -20,16 +20,16 @@ impl HartMask {
         }
     }
 
-    pub fn has(&self, hart_id: usize) -> bool {
+    pub fn has(&self, hartid: usize) -> bool {
         // TODO: add maximum assertion here
         if self.base == usize::MAX {
             return true;
         }
-        if hart_id < self.base {
+        if hartid < self.base {
             return false;
         }
         let usize_bits = size_of::<usize>() * 8;
-        let idx = hart_id - self.base;
+        let idx = hartid - self.base;
         let (i, j) = (idx / usize_bits, idx % usize_bits);
         let mask = unsafe {
             vaddr_deref(self.mask_arr.add(i), self.mode)

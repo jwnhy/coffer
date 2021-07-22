@@ -4,9 +4,9 @@ use if_chain::if_chain;
 use spin::Mutex;
 
 #[cfg(target_arch = "riscv64")]
-pub const XLEN: usize = 8;
+pub const XLEN: usize = 64;
 #[cfg(target_arch = "riscv32")]
-pub const XLEN: usize = 4;
+pub const XLEN: usize = 32;
 
 use crate::{hal::{Clint, Clint32, Ns16550a, SifiveUart, SunxiUart}, println, sbi::{init_console_embedded_serial, ipi::init_ipi, timer::init_timer}};
 
@@ -99,6 +99,6 @@ pub fn detect_hart() -> usize {
     if let Some(fdt) = FDT.lock().as_ref() {
         fdt.cpus().count()
     } else {
-        1
+        panic!("hart detect without fdt");
     }
 }

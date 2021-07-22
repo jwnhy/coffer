@@ -21,7 +21,7 @@ pub fn trace_from(mut curframe: Frame, action: &dyn Fn(&Frame) -> bool) {
         if keep_going {
             unsafe {
                 // TODO: decide incr depending on arch
-                curframe.ra = *((curframe.fp + XLEN) as *mut usize);
+                curframe.ra = *((curframe.fp + XLEN / 8) as *mut usize);
                 curframe.sp = curframe.fp;
                 curframe.fp = *(curframe.fp as *mut usize);
                 if curframe.ra == 0 || curframe.fp == 0 {

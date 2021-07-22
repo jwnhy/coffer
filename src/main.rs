@@ -6,6 +6,7 @@
 #![feature(arbitrary_enum_discriminant)]
 #![feature(generator_trait)]
 #![feature(fn_align)]
+#![feature(core_intrinsics)]
 
 extern crate alloc;
 

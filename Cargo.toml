@@ -24,5 +24,6 @@ addr2line = { version = "0.15.2", default-features = false, features = ["rustc-d
 goblin = { version = "0.4.2", default-features = false, features = ["elf32", "elf64", "endian_fd"] }
 
 [features]
-default = ["sunxi"]
+default = []
 sunxi = []
+virt = []
