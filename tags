@@ -1502,10 +1502,10 @@
 14	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-631d93f17a38e999/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"sunxi\\"]","target":875618249955676/;"	a	array:deps
 14	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-978bff26e15e08f0/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":228515222820/;"	a	array:deps
 14	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-bf9199bd620e03db/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":870573531258/;"	a	array:deps
-1430904780814706315	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o	object:outputs
+1430904780814706315	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o	object:outputs
 15	target/riscv64imac-unknown-none-elf/debug/.fingerprint/coffer-7a06da2029fd5ec2/test-bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":875618249955676063,"profile"/;"	a	array:deps
 15	target/riscv64imac-unknown-none-elf/debug/.fingerprint/coffer-7ad958a61c270169/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":875618249955676063,"profile"/;"	a	array:deps
-17598535894874457435	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o	object:outputs
+17598535894874457435	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o	object:outputs
 2	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	b	array:deps.0
 2	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	b	array:deps.0
 2	target/debug/.fingerprint/lazy_static-3d97cbb93e69fe72/lib-lazy_static.json	/^{"rustc":14626598257756768560,"features":"[\\"spin\\", \\"spin_no_std\\"]","target":331075826843/;"	b	array:deps.0
@@ -1984,7 +1984,7 @@
 2	target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-bc035c1335e5f767/lib-spin.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"ticket_mutex\\"]","target":85243370/;"	s	array:rustflags
 2	target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-f66f8612c3ed3ae0/lib-spin.json	/^{"rustc":14626598257756768560,"features":"[\\"barrier\\", \\"default\\", \\"lazy\\", \\"lock_api/;"	b	array:deps.0
 2	target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-6c290958baa7ecd6/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":1054765450/;"	s	array:rustflags
-2797684049618456168	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o	object:outputs
+2797684049618456168	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o	object:outputs
 3	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	n	array:deps.0
 3	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	n	array:deps.0
 3	target/debug/.fingerprint/lazy_static-3d97cbb93e69fe72/lib-lazy_static.json	/^{"rustc":14626598257756768560,"features":"[\\"spin\\", \\"spin_no_std\\"]","target":331075826843/;"	n	array:deps.0
@@ -2466,7 +2466,7 @@
 6	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-631d93f17a38e999/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"sunxi\\"]","target":875618249955676/;"	a	array:deps
 6	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-978bff26e15e08f0/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":228515222820/;"	a	array:deps
 6	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-bf9199bd620e03db/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":870573531258/;"	a	array:deps
-6572305938076538090	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o	object:outputs
+6572305938076538090	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o	object:outputs
 7	target/riscv64imac-unknown-none-elf/debug/.fingerprint/coffer-0b8b33b75d27565f/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":875618249955676063,"profile"/;"	a	array:deps
 7	target/riscv64imac-unknown-none-elf/debug/.fingerprint/coffer-1b9f51302700a857/test-bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":641534828839/;"	a	array:deps
 7	target/riscv64imac-unknown-none-elf/debug/.fingerprint/coffer-29ad113c6588a349/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"virt\\"]","target":8756182499556760/;"	a	array:deps
@@ -2515,7 +2515,7 @@
 9	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-631d93f17a38e999/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"sunxi\\"]","target":875618249955676/;"	a	array:deps
 9	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-978bff26e15e08f0/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":228515222820/;"	a	array:deps
 9	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-bf9199bd620e03db/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":870573531258/;"	a	array:deps
-931469667778813386	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o	object:outputs
+931469667778813386	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o	object:outputs
 CheckDepInfo	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	o	object:local.0
 CheckDepInfo	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	o	object:local.0
 CheckDepInfo	target/debug/.fingerprint/bitflags-14c53acb05618961/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":10088282520713642473,"profil/;"	o	object:local.0
@@ -2980,11 +2980,11 @@ clear_soft_irq	src/sbi/ipi.rs	/^    fn clear_soft_irq(&self, hartid: usize);$/;"
 clear_triggered	src/sbi/hart_scratch.rs	/^    pub fn clear_triggered(&mut self) {$/;"	P	implementation:IpiScratch
 clint	src/hal/mod.rs	/^mod clint;$/;"	n
 clint32	src/hal/mod.rs	/^mod clint32;$/;"	n
-code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	n	object:outputs.1430904780814706315
-code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	n	object:outputs.17598535894874457435
-code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	n	object:outputs.2797684049618456168
-code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	n	object:outputs.6572305938076538090
-code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	n	object:outputs.931469667778813386
+code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n	object:outputs.1430904780814706315
+code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n	object:outputs.17598535894874457435
+code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n	object:outputs.2797684049618456168
+code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n	object:outputs.6572305938076538090
+code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n	object:outputs.931469667778813386
 coffer	README.md	/^# coffer$/;"	c
 compile_kind	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	n
 compile_kind	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	n
@@ -4663,7 +4663,7 @@ output	target/release/.fingerprint/proc-macro2-4f88b0d9cc3c9091/run-build-script
 output	target/riscv64imac-unknown-none-elf/debug/.fingerprint/log-03ad2ed4d4cc3ca2/run-build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"","target":0,"profile":0,"path":0,"deps":[[13203967679/;"	s	object:local.0.RerunIfChanged
 output	target/riscv64imac-unknown-none-elf/release/.fingerprint/log-3999d6e7adc21676/run-build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"","target":0,"profile":0,"path":0,"deps":[[13203967679/;"	s	object:local.0.RerunIfChanged
 output	target/riscv64imac-unknown-none-elf/release/.fingerprint/log-91ac3229f0ee4102/run-build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"","target":0,"profile":0,"path":0,"deps":[[13203967679/;"	s	object:local.0.RerunIfChanged
-outputs	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o
+outputs	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o
 panic	src/platform/generic.rs	/^fn panic(info: &PanicInfo) -> ! {$/;"	f
 path	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	n
 path	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	n
@@ -5386,7 +5386,7 @@ rustc	target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-bc035c1335e5
 rustc	target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-f66f8612c3ed3ae0/lib-spin.json	/^{"rustc":14626598257756768560,"features":"[\\"barrier\\", \\"default\\", \\"lazy\\", \\"lock_api/;"	n
 rustc	target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-6c290958baa7ecd6/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":1054765450/;"	n
 rustc	target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-c30fb9ef0923318b/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":2285152228/;"	n
-rustc_fingerprint	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	n
+rustc_fingerprint	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n
 rustflags	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	a
 rustflags	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	a
 rustflags	target/debug/.fingerprint/bitflags-14c53acb05618961/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":10088282520713642473,"profil/;"	a
@@ -5650,27 +5650,27 @@ srst	src/ecall/mod.rs	/^mod srst;$/;"	n
 srst	src/sbi/mod.rs	/^pub mod srst;$/;"	n
 start	src/sbi/fence_info.rs	/^    pub start: Option<usize>,$/;"	m	struct:FenceInfo
 status	src/util/mod.rs	/^pub mod status;$/;"	n
-status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.1430904780814706315
-status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.17598535894874457435
-status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.2797684049618456168
-status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.6572305938076538090
-status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.931469667778813386
-stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.1430904780814706315
-stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.17598535894874457435
-stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.2797684049618456168
-stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.6572305938076538090
-stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.931469667778813386
-stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.1430904780814706315
-stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.17598535894874457435
-stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.2797684049618456168
-stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.6572305938076538090
-stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.931469667778813386
-success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	b	object:outputs.1430904780814706315
-success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	b	object:outputs.17598535894874457435
-success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	b	object:outputs.2797684049618456168
-success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	b	object:outputs.6572305938076538090
-success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	b	object:outputs.931469667778813386
-successes	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o
+status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.1430904780814706315
+status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.17598535894874457435
+status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.2797684049618456168
+status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.6572305938076538090
+status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.931469667778813386
+stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.1430904780814706315
+stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.17598535894874457435
+stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.2797684049618456168
+stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.6572305938076538090
+stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.931469667778813386
+stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.1430904780814706315
+stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.17598535894874457435
+stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.2797684049618456168
+stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.6572305938076538090
+stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.931469667778813386
+success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	b	object:outputs.1430904780814706315
+success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	b	object:outputs.17598535894874457435
+success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	b	object:outputs.2797684049618456168
+success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	b	object:outputs.6572305938076538090
+success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	b	object:outputs.931469667778813386
+successes	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o
 sunxi	src/platform/mod.rs	/^pub mod sunxi;$/;"	n
 sunxi_init	src/platform/sunxi.rs	/^pub fn sunxi_init(dtb: usize) -> usize {$/;"	f
 sunxi_uart	src/hal/mod.rs	/^mod sunxi_uart;$/;"	n
