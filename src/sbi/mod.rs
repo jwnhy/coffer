@@ -9,6 +9,7 @@ pub mod srst;
 
 pub mod hart_mask;
 pub mod hart_scratch;
+pub mod fence_info;
 
 pub use console::*;
 pub const SBI_SPEC_MAJOR: usize = 0;

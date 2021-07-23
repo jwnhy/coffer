@@ -1,8 +1,14 @@
-use core::{ops::Add, ptr::{read_volatile, write_volatile}};
+use core::{
+    ops::Add,
+    ptr::{read_volatile, write_volatile},
+};
 
 use bit_field::BitField;
 
-use crate::{println, sbi::{hart_mask::HartMask, ipi::Ipi, sbiret::SbiRet, timer::Timer}};
+use crate::{
+    println,
+    sbi::{hart_mask::HartMask, ipi::Ipi, sbiret::SbiRet, timer::Timer},
+};
 pub struct Clint32 {
     base: usize,
     mtimecmp_offset: usize,
@@ -49,19 +55,13 @@ impl Clint32 {
 impl Ipi for Clint32 {
     fn max_hartid(&self) -> usize {
         self.max_hartid
-    } 
-    fn send_ipi_many(&self, hart_mask: HartMask) -> SbiRet {
-        for i in 0..=self.max_hartid() {
-            if hart_mask.has(i) {
-                self.send_soft_irq(i);
-            }
-        }
-        SbiRet::ok(0)
     }
+
     #[inline]
     fn clear_soft_irq(&self, hartid: usize) {
         self.clear_soft_irq(hartid);
     }
+
     #[inline]
     fn send_soft_irq(&self, hartid: usize) {
         self.send_soft_irq(hartid);

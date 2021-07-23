@@ -45,14 +45,7 @@ impl Ipi for Clint {
     fn max_hartid(&self) -> usize {
         self.max_hartid
     } 
-    fn send_ipi_many(&self, hart_mask: HartMask) -> SbiRet {
-        for i in 0..=self.max_hartid() {
-            if hart_mask.has(i) {
-                self.send_soft_irq(i);
-            }
-        }
-        SbiRet::ok(0)
-    }
+    
     #[inline]
     fn clear_soft_irq(&self, hartid: usize) {
         self.clear_soft_irq(hartid);
