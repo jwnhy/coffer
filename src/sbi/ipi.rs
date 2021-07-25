@@ -1,4 +1,10 @@
-use super::{hart_mask::HartMask, hart_scratch::get_hart_scratch, ipi_event::{create_ipi_event, get_ipi_evnet, IpiEvent, IpiEventOps}, rfence, sbiret::SbiRet};
+use super::{
+    hart_mask::HartMask,
+    hart_scratch::get_hart_scratch,
+    ipi_event::{create_ipi_event, get_ipi_evnet, IpiEvent, IpiEventOps},
+    rfence,
+    sbiret::SbiRet,
+};
 use crate::util::fdt::XLEN;
 use alloc::boxed::Box;
 use spin::{Mutex, RwLock};
@@ -42,9 +48,9 @@ pub(crate) fn send_ipi_smode(hart_mask: HartMask) {
 
 pub(crate) fn send_ipi_many(hart_mask: HartMask, event_id: usize) -> SbiRet {
     if let Some(ipi) = IPI.lock().as_ref() {
-        for i in 0..=ipi.max_hartid() {
+        for i in 0..ipi.max_hartid() {
             if hart_mask.has(i) {
-                send_ipi(i, event_id);
+                send_ipi(ipi, i, event_id);
             }
         }
         SbiRet::ok(0)
@@ -53,24 +59,20 @@ pub(crate) fn send_ipi_many(hart_mask: HartMask, event_id: usize) -> SbiRet {
     }
 }
 
-pub(crate) fn clear_ipi(hartid: usize) {
-    if let Some(ipi) = IPI.lock().as_ref() {
-        ipi.clear_soft_irq(hartid);
-    }
+pub(crate) fn clear_ipi(ipi: &Box<dyn Ipi>, hartid: usize) {
+    ipi.clear_soft_irq(hartid);
 }
 
-pub(crate) fn send_ipi(hartid: usize, event_id: usize) {
-    if let Some(ipi) = IPI.lock().as_ref() {
-        let mut remote_scratch = get_hart_scratch(hartid).lock();
-        let ipi_event = get_ipi_evnet(event_id);
-        if let Some(before) = ipi_event.ops.before {
-            (before)(hartid, &mut remote_scratch.ipi_scratch)
-        }
-        remote_scratch.ipi_scratch.trigger(event_id);
-        ipi.send_soft_irq(hartid);
-        if let Some(after) = ipi_event.ops.after {
-            (after)()
-        }
+pub(crate) fn send_ipi(ipi: &Box<dyn Ipi>, hartid: usize, event_id: usize) {
+    let mut remote_scratch = get_hart_scratch(hartid).lock();
+    let ipi_event = get_ipi_evnet(event_id);
+    if let Some(before) = ipi_event.ops.before {
+        (before)(hartid, &mut remote_scratch.ipi_scratch)
+    }
+    remote_scratch.ipi_scratch.trigger(event_id);
+    ipi.send_soft_irq(hartid);
+    if let Some(after) = ipi_event.ops.after {
+        (after)()
     }
 }
 
@@ -83,8 +85,11 @@ pub(crate) fn process_ipi() {
             (event.ops.process)();
         }
     }
-    clear_ipi(hartid);
+    if let Some(ipi) = IPI.lock().as_ref() {
+        clear_ipi(ipi, hartid);
+    }
     scratch.ipi_scratch.clear_triggered();
+
 }
 
 pub(crate) fn probe_ipi() -> SbiRet {

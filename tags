@@ -1502,10 +1502,10 @@
 14	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-631d93f17a38e999/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"sunxi\\"]","target":875618249955676/;"	a	array:deps
 14	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-978bff26e15e08f0/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":228515222820/;"	a	array:deps
 14	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-bf9199bd620e03db/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":870573531258/;"	a	array:deps
-1430904780814706315	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o	object:outputs
+1430904780814706315	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	o	object:outputs
 15	target/riscv64imac-unknown-none-elf/debug/.fingerprint/coffer-7a06da2029fd5ec2/test-bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":875618249955676063,"profile"/;"	a	array:deps
 15	target/riscv64imac-unknown-none-elf/debug/.fingerprint/coffer-7ad958a61c270169/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":875618249955676063,"profile"/;"	a	array:deps
-17598535894874457435	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o	object:outputs
+17598535894874457435	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	o	object:outputs
 2	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	b	array:deps.0
 2	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	b	array:deps.0
 2	target/debug/.fingerprint/lazy_static-3d97cbb93e69fe72/lib-lazy_static.json	/^{"rustc":14626598257756768560,"features":"[\\"spin\\", \\"spin_no_std\\"]","target":331075826843/;"	b	array:deps.0
@@ -1984,7 +1984,7 @@
 2	target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-bc035c1335e5f767/lib-spin.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"ticket_mutex\\"]","target":85243370/;"	s	array:rustflags
 2	target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-f66f8612c3ed3ae0/lib-spin.json	/^{"rustc":14626598257756768560,"features":"[\\"barrier\\", \\"default\\", \\"lazy\\", \\"lock_api/;"	b	array:deps.0
 2	target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-6c290958baa7ecd6/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":1054765450/;"	s	array:rustflags
-2797684049618456168	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o	object:outputs
+2797684049618456168	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	o	object:outputs
 3	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	n	array:deps.0
 3	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	n	array:deps.0
 3	target/debug/.fingerprint/lazy_static-3d97cbb93e69fe72/lib-lazy_static.json	/^{"rustc":14626598257756768560,"features":"[\\"spin\\", \\"spin_no_std\\"]","target":331075826843/;"	n	array:deps.0
@@ -2466,7 +2466,7 @@
 6	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-631d93f17a38e999/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"sunxi\\"]","target":875618249955676/;"	a	array:deps
 6	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-978bff26e15e08f0/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":228515222820/;"	a	array:deps
 6	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-bf9199bd620e03db/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":870573531258/;"	a	array:deps
-6572305938076538090	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o	object:outputs
+6572305938076538090	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	o	object:outputs
 7	target/riscv64imac-unknown-none-elf/debug/.fingerprint/coffer-0b8b33b75d27565f/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":875618249955676063,"profile"/;"	a	array:deps
 7	target/riscv64imac-unknown-none-elf/debug/.fingerprint/coffer-1b9f51302700a857/test-bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":641534828839/;"	a	array:deps
 7	target/riscv64imac-unknown-none-elf/debug/.fingerprint/coffer-29ad113c6588a349/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"virt\\"]","target":8756182499556760/;"	a	array:deps
@@ -2515,7 +2515,7 @@
 9	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-631d93f17a38e999/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"sunxi\\"]","target":875618249955676/;"	a	array:deps
 9	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-978bff26e15e08f0/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":228515222820/;"	a	array:deps
 9	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-bf9199bd620e03db/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":870573531258/;"	a	array:deps
-931469667778813386	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o	object:outputs
+931469667778813386	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	o	object:outputs
 CheckDepInfo	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	o	object:local.0
 CheckDepInfo	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	o	object:local.0
 CheckDepInfo	target/debug/.fingerprint/bitflags-14c53acb05618961/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":10088282520713642473,"profil/;"	o	object:local.0
@@ -2744,6 +2744,8 @@ HartScratch	src/sbi/hart_scratch.rs	/^impl HartScratch {$/;"	c
 HartScratch	src/sbi/hart_scratch.rs	/^pub struct HartScratch {$/;"	s
 HartState	src/sbi/hsm.rs	/^pub enum HartState {$/;"	g
 Hsm	src/sbi/hsm.rs	/^pub trait Hsm : Send {$/;"	i
+IPI_RFENCE_I_EVENT_ID	src/sbi/rfence.rs	/^pub static IPI_RFENCE_I_EVENT_ID: RwLock<usize> = RwLock::new(XLEN);$/;"	v
+IPI_SFENCE_VMA_EVENT_ID	src/sbi/rfence.rs	/^pub static IPI_SFENCE_VMA_EVENT_ID: RwLock<usize> = RwLock::new(XLEN);$/;"	v
 IPI_SMODE_EVENT_ID	src/sbi/ipi.rs	/^pub static IPI_SMODE_EVENT_ID: RwLock<usize> = RwLock::new(XLEN);$/;"	v
 Ipi	src/sbi/ipi.rs	/^pub trait Ipi: Send {$/;"	i
 IpiEvent	src/sbi/ipi_event.rs	/^pub struct IpiEvent {$/;"	s
@@ -2971,7 +2973,7 @@ base	src/hal/sifive_uart.rs	/^    base: usize,$/;"	m	struct:SifiveUart
 base	src/hal/sunxi_uart.rs	/^    base: usize,$/;"	m	struct:SunxiUart
 base	src/sbi/hart_mask.rs	/^    base: usize,$/;"	m	struct:HartMask
 before	src/sbi/ipi_event.rs	/^    pub before: Option<fn(usize, &mut IpiScratch)>,$/;"	m	struct:IpiEventOps
-clear_ipi	src/sbi/ipi.rs	/^pub(crate) fn clear_ipi(hartid: usize) {$/;"	f
+clear_ipi	src/sbi/ipi.rs	/^pub(crate) fn clear_ipi(ipi: &Box<dyn Ipi>, hartid: usize) {$/;"	f
 clear_soft_irq	src/hal/clint.rs	/^    fn clear_soft_irq(&self, hartid: usize) {$/;"	P	implementation:Clint
 clear_soft_irq	src/hal/clint.rs	/^    pub fn clear_soft_irq(&self, hartid: usize) {$/;"	P	implementation:Clint
 clear_soft_irq	src/hal/clint32.rs	/^    fn clear_soft_irq(&self, hartid: usize) {$/;"	P	implementation:Clint32
@@ -2980,11 +2982,11 @@ clear_soft_irq	src/sbi/ipi.rs	/^    fn clear_soft_irq(&self, hartid: usize);$/;"
 clear_triggered	src/sbi/hart_scratch.rs	/^    pub fn clear_triggered(&mut self) {$/;"	P	implementation:IpiScratch
 clint	src/hal/mod.rs	/^mod clint;$/;"	n
 clint32	src/hal/mod.rs	/^mod clint32;$/;"	n
-code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n	object:outputs.1430904780814706315
-code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n	object:outputs.17598535894874457435
-code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n	object:outputs.2797684049618456168
-code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n	object:outputs.6572305938076538090
-code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n	object:outputs.931469667778813386
+code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	n	object:outputs.1430904780814706315
+code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	n	object:outputs.17598535894874457435
+code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	n	object:outputs.2797684049618456168
+code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	n	object:outputs.6572305938076538090
+code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	n	object:outputs.931469667778813386
 coffer	README.md	/^# coffer$/;"	c
 compile_kind	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	n
 compile_kind	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	n
@@ -4396,7 +4398,7 @@ main	src/main.rs	/^pub extern "C" fn main(hartid: usize, dtb: usize) -> ! {$/;"	
 mask	src/hal/ns16550a.rs	/^mod mask {$/;"	n
 mask	src/hal/sifive_uart.rs	/^mod mask {$/;"	n
 mask	src/hal/sunxi_uart.rs	/^mod mask {$/;"	n
-mask_arr	src/sbi/hart_mask.rs	/^    mask_arr: *const usize,$/;"	m	struct:HartMask
+mask	src/sbi/hart_mask.rs	/^    mask: usize,$/;"	m	struct:HartMask
 max_hartid	src/hal/clint.rs	/^    fn max_hartid(&self) -> usize {$/;"	P	implementation:Clint
 max_hartid	src/hal/clint.rs	/^    max_hartid: usize,$/;"	m	struct:Clint
 max_hartid	src/hal/clint32.rs	/^    fn max_hartid(&self) -> usize {$/;"	P	implementation:Clint32
@@ -4630,7 +4632,6 @@ metadata	target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-f66f8612c
 metadata	target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-6c290958baa7ecd6/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":1054765450/;"	n
 metadata	target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-c30fb9ef0923318b/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":2285152228/;"	n
 mideleg	src/runtime/context.rs	/^    pub mideleg: usize,$/;"	m	struct:Context
-mode	src/sbi/hart_mask.rs	/^    mode: MPP,$/;"	m	struct:HartMask
 msp	src/runtime/context.rs	/^    pub msp: usize,     \/\/x33$/;"	m	struct:Context
 mstatus	src/runtime/context.rs	/^    pub mstatus: Mstatus, \/\/ x31$/;"	m	struct:Context
 mtimecmp_offset	src/hal/clint.rs	/^    mtimecmp_offset: usize,$/;"	m	struct:Clint
@@ -4646,7 +4647,7 @@ new	src/runtime/context.rs	/^    pub fn new() -> Self {$/;"	P	implementation:Con
 new	src/runtime/runtime.rs	/^    pub fn new($/;"	P	implementation:Runtime
 new	src/rvbt/frame.rs	/^    pub fn new(fp: usize, sp: usize, ra: usize) -> Self {$/;"	P	implementation:Frame
 new	src/sbi/console.rs	/^    fn new(inner: T) -> Self {$/;"	P	implementation:EmbeddedSerial
-new	src/sbi/hart_mask.rs	/^    pub unsafe fn new(vaddr: usize, base: usize, mode: MPP) -> Self {$/;"	P	implementation:HartMask
+new	src/sbi/hart_mask.rs	/^    pub unsafe fn new(mask: usize, base: usize) -> Self {$/;"	P	implementation:HartMask
 new	src/sbi/hart_scratch.rs	/^    pub fn new() -> Self {$/;"	P	implementation:HartScratch
 new	src/sbi/hart_scratch.rs	/^    pub fn new() -> Self {$/;"	P	implementation:IpiScratch
 not_supported	src/sbi/sbiret.rs	/^    pub fn not_supported() -> SbiRet {$/;"	P	implementation:SbiRet
@@ -4663,7 +4664,7 @@ output	target/release/.fingerprint/proc-macro2-4f88b0d9cc3c9091/run-build-script
 output	target/riscv64imac-unknown-none-elf/debug/.fingerprint/log-03ad2ed4d4cc3ca2/run-build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"","target":0,"profile":0,"path":0,"deps":[[13203967679/;"	s	object:local.0.RerunIfChanged
 output	target/riscv64imac-unknown-none-elf/release/.fingerprint/log-3999d6e7adc21676/run-build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"","target":0,"profile":0,"path":0,"deps":[[13203967679/;"	s	object:local.0.RerunIfChanged
 output	target/riscv64imac-unknown-none-elf/release/.fingerprint/log-91ac3229f0ee4102/run-build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"","target":0,"profile":0,"path":0,"deps":[[13203967679/;"	s	object:local.0.RerunIfChanged
-outputs	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o
+outputs	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	o
 panic	src/platform/generic.rs	/^fn panic(info: &PanicInfo) -> ! {$/;"	f
 path	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	n
 path	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	n
@@ -4922,6 +4923,8 @@ probe_timer	src/sbi/timer.rs	/^pub(crate) fn probe_timer() -> SbiRet {$/;"	f
 process	src/sbi/ipi_event.rs	/^    pub process: fn()$/;"	m	struct:IpiEventOps
 process_ipi	src/sbi/ipi.rs	/^pub(crate) fn process_ipi() {$/;"	f
 process_ipi_smode	src/sbi/ipi.rs	/^fn process_ipi_smode() {$/;"	f
+process_rfence_i	src/sbi/rfence.rs	/^pub fn process_rfence_i() {$/;"	f
+process_sfence_vma	src/sbi/rfence.rs	/^pub fn process_sfence_vma() {$/;"	f
 process_timer	src/sbi/timer.rs	/^pub(crate) fn process_timer() {$/;"	f
 profile	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	n
 profile	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	n
@@ -5152,6 +5155,8 @@ ra	src/rvbt/frame.rs	/^    pub ra: usize,$/;"	m	struct:Frame
 read_reg	src/util/reg.rs	/^pub unsafe fn read_reg<T>(addr: usize, offset: usize) -> T {$/;"	f
 reg	src/util/mod.rs	/^pub mod reg;$/;"	n
 regions	src/memory/memory_layout.rs	/^    regions: [Region; 16]$/;"	m	struct:MemoryLayout
+remote_fence_i	src/sbi/rfence.rs	/^pub(crate) fn remote_fence_i(hart_mask: HartMask) -> SbiRet {$/;"	f
+remote_sfence_vma	src/sbi/rfence.rs	/^pub(crate) fn remote_sfence_vma(hart_mask: HartMask, start: usize, size: usize) -> SbiRet {$/;"	f
 res3	src/platform/sunxi.rs	/^    pub res3: u32,$/;"	m	struct:SunxiHead
 res4	src/platform/sunxi.rs	/^    pub res4: u32,$/;"	m	struct:SunxiHead
 res5	src/platform/sunxi.rs	/^    pub res5: [u8; 8],$/;"	m	struct:SunxiHead
@@ -5386,7 +5391,7 @@ rustc	target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-bc035c1335e5
 rustc	target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-f66f8612c3ed3ae0/lib-spin.json	/^{"rustc":14626598257756768560,"features":"[\\"barrier\\", \\"default\\", \\"lazy\\", \\"lock_api/;"	n
 rustc	target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-6c290958baa7ecd6/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":1054765450/;"	n
 rustc	target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-c30fb9ef0923318b/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":2285152228/;"	n
-rustc_fingerprint	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	n
+rustc_fingerprint	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	n
 rustflags	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	a
 rustflags	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	a
 rustflags	target/debug/.fingerprint/bitflags-14c53acb05618961/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":10088282520713642473,"profil/;"	a
@@ -5624,8 +5629,8 @@ s9	src/runtime/context.rs	/^    pub s9: usize,  \/\/ x24$/;"	m	struct:Context
 sbi	src/main.rs	/^mod sbi;$/;"	n
 sbi_error	src/sbi/sbiret.rs	/^mod sbi_error {$/;"	n
 sbiret	src/sbi/mod.rs	/^pub mod sbiret;$/;"	n
-send_ipi	src/ecall/ipi.rs	/^fn send_ipi(hart_mask_arr: usize, hart_mask_base: usize) -> SbiRet {$/;"	f
-send_ipi	src/sbi/ipi.rs	/^pub(crate) fn send_ipi(hartid: usize, event_id: usize) {$/;"	f
+send_ipi	src/ecall/ipi.rs	/^fn send_ipi(param0: usize, param1: usize) -> SbiRet {$/;"	f
+send_ipi	src/sbi/ipi.rs	/^pub(crate) fn send_ipi(ipi: &Box<dyn Ipi>, hartid: usize, event_id: usize) {$/;"	f
 send_ipi_many	src/sbi/ipi.rs	/^pub(crate) fn send_ipi_many(hart_mask: HartMask, event_id: usize) -> SbiRet {$/;"	f
 send_ipi_smode	src/sbi/ipi.rs	/^pub(crate) fn send_ipi_smode(hart_mask: HartMask) {$/;"	f
 send_soft_irq	src/hal/clint.rs	/^    fn send_soft_irq(&self, hartid: usize) {$/;"	P	implementation:Clint
@@ -5650,27 +5655,27 @@ srst	src/ecall/mod.rs	/^mod srst;$/;"	n
 srst	src/sbi/mod.rs	/^pub mod srst;$/;"	n
 start	src/sbi/fence_info.rs	/^    pub start: Option<usize>,$/;"	m	struct:FenceInfo
 status	src/util/mod.rs	/^pub mod status;$/;"	n
-status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.1430904780814706315
-status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.17598535894874457435
-status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.2797684049618456168
-status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.6572305938076538090
-status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.931469667778813386
-stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.1430904780814706315
-stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.17598535894874457435
-stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.2797684049618456168
-stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.6572305938076538090
-stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.931469667778813386
-stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.1430904780814706315
-stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.17598535894874457435
-stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.2797684049618456168
-stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.6572305938076538090
-stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	s	object:outputs.931469667778813386
-success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	b	object:outputs.1430904780814706315
-success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	b	object:outputs.17598535894874457435
-success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	b	object:outputs.2797684049618456168
-success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	b	object:outputs.6572305938076538090
-success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	b	object:outputs.931469667778813386
-successes	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"2797684049618456168":{"success":false,"sta/;"	o
+status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.1430904780814706315
+status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.17598535894874457435
+status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.2797684049618456168
+status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.6572305938076538090
+status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.931469667778813386
+stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.1430904780814706315
+stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.17598535894874457435
+stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.2797684049618456168
+stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.6572305938076538090
+stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.931469667778813386
+stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.1430904780814706315
+stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.17598535894874457435
+stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.2797684049618456168
+stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.6572305938076538090
+stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.931469667778813386
+success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	b	object:outputs.1430904780814706315
+success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	b	object:outputs.17598535894874457435
+success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	b	object:outputs.2797684049618456168
+success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	b	object:outputs.6572305938076538090
+success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	b	object:outputs.931469667778813386
+successes	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	o
 sunxi	src/platform/mod.rs	/^pub mod sunxi;$/;"	n
 sunxi_init	src/platform/sunxi.rs	/^pub fn sunxi_init(dtb: usize) -> usize {$/;"	f
 sunxi_uart	src/hal/mod.rs	/^mod sunxi_uart;$/;"	n

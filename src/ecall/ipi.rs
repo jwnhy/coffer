@@ -13,8 +13,7 @@ pub fn handle_ecall_ipi(fid: usize, param0: usize, param1: usize) -> SbiRet {
 }
 
 #[inline]
-fn send_ipi(hart_mask_arr: usize, hart_mask_base: usize) -> SbiRet {
-    let mpp = mstatus::read().mpp();
-    let hart_mask = unsafe { HartMask::new(hart_mask_arr, hart_mask_base, mpp) };
+fn send_ipi(param0: usize, param1: usize) -> SbiRet {
+    let hart_mask = unsafe { HartMask::new(param0, param1) };
     send_ipi_many(hart_mask, *IPI_SMODE_EVENT_ID.read())
 }

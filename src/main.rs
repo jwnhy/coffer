@@ -20,7 +20,7 @@ mod util;
 #[macro_use]
 mod sbi;
 
-use crate::{memory::pmp::PmpFlags, sbi::timer::process_timer};
+use crate::{memory::pmp::PmpFlags, sbi::{ipi::process_ipi, timer::process_timer}};
 use alloc::boxed::Box;
 use core::{ops::Generator, pin::Pin, ptr::write_volatile};
 use ecall::handle_ecall;
@@ -70,7 +70,7 @@ fn kernel_runtime(hartid: usize, dtb: usize, kernel_addr: usize) -> Runtime<()> 
         riscv::register::satp::write(0x0);
         stvec::write(kernel_addr, riscv::register::mtvec::TrapMode::Direct);
         // TODO: SETUP PLIC
-        write_volatile(0x101F_FFFC as *mut u32, 0x1);
+        //write_volatile(0x101F_FFFC as *mut u32, 0x1);
     }
     let runtime = Runtime::<()>::new(
         ctx,
@@ -86,6 +86,9 @@ fn kernel_runtime(hartid: usize, dtb: usize, kernel_addr: usize) -> Runtime<()> 
                 }
                 Trap::Interrupt(Interrupt::MachineTimer) => {
                     process_timer();
+                }
+                Trap::Interrupt(Interrupt::MachineSoft) => {
+                    process_ipi();
                 }
                 e @ _ => println!("unknown exception {:?}@{:x}", e, (*ctx_ptr).mepc),
             }
