@@ -8,7 +8,6 @@ use crate::println;
 use super::super::memory::memory_layout::MemoryLayout;
 use super::context::{from_machine, from_user_or_supervisor, Context};
 
-
 pub struct Runtime<Y> {
     /* registers */
     context: Context,
@@ -34,7 +33,6 @@ impl<Y> Runtime<Y> {
     }
 }
 
-
 impl<Y> Generator for Runtime<Y> {
     /* when `exception_handler` cannot handle, yield */
     type Yield = Y;
@@ -52,7 +50,12 @@ impl<Y> Generator for Runtime<Y> {
         loop {
             unsafe { from_machine(context_pointer) };
             if let Some(yield_value) = (self.exception_handler)(context_pointer) {
-                unsafe { mtvec::write(self.global_mtvec.address(), self.global_mtvec.trap_mode().unwrap()) }
+                unsafe {
+                    mtvec::write(
+                        self.global_mtvec.address(),
+                        self.global_mtvec.trap_mode().unwrap(),
+                    )
+                }
                 return GeneratorState::Yielded(yield_value);
             } else {
                 continue;

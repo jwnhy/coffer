@@ -1,4 +1,9 @@
-use crate::{println, util::fdt::{detect_sunxi_uart, init_fdt, init_sunxi_clint}};
+use core::ptr::write_volatile;
+
+use crate::{
+    println,
+    util::fdt::{detect_sunxi_uart, init_fdt, init_sunxi_clint},
+};
 
 #[repr(C)]
 struct SunxiHead {
@@ -33,6 +38,7 @@ pub fn sunxi_init(dtb: usize) -> usize {
     init_fdt(DEVICE_TREE.as_ptr() as usize);
     detect_sunxi_uart();
     init_sunxi_clint(0x1400_0000);
-    println!("init sunxi");
+    // TODO: SETUP PLIC
+    unsafe { write_volatile(0x101F_FFFC as *mut u32, 0x1) };
     0x4200_0000
 }

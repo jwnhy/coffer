@@ -9,7 +9,7 @@ use super::hart_scratch::IpiScratch;
 pub struct IpiEventOps {
     pub before: Option<fn(usize, &mut IpiScratch)>,
     pub after: Option<fn()>,
-    pub process: fn()
+    pub process: fn(),
 }
 
 pub struct IpiEvent {
@@ -17,17 +17,17 @@ pub struct IpiEvent {
     pub ops: IpiEventOps,
 }
 
-lazy_static::lazy_static!{
-    static ref IPI_EVENTS: RwLock<[Option<&'static IpiEvent>; XLEN]> = RwLock::new([None; XLEN]); 
+lazy_static::lazy_static! {
+    static ref IPI_EVENTS: RwLock<[Option<&'static IpiEvent>; XLEN]> = RwLock::new([None; XLEN]);
 }
 
 pub fn create_ipi_event(new_event: &'static IpiEvent) -> usize {
     let mut events = IPI_EVENTS.write();
-    match events.iter_mut().enumerate().find(|(_ ,x)| x.is_none()) {
-        Some((idx,slot)) => {
+    match events.iter_mut().enumerate().find(|(_, x)| x.is_none()) {
+        Some((idx, slot)) => {
             *slot = Some(new_event);
             idx
-        },
+        }
         None => panic!("[ERROR]: ipi event creation failed, not enough slot, max XLEN"),
     }
 }

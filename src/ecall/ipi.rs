@@ -1,6 +1,10 @@
 use riscv::register::mstatus::{self, MPP};
 
-use crate::sbi::{hart_mask::HartMask, ipi::{self, IPI_SMODE_EVENT_ID, send_ipi_many}, sbiret::SbiRet};
+use crate::sbi::{
+    hart_mask::HartMask,
+    ipi::{self, send_ipi_many, IPI_SMODE_EVENT_ID},
+    sbiret::SbiRet,
+};
 
 pub const FID_SEND_IPI: usize = 0x0;
 

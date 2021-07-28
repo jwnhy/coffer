@@ -44,8 +44,8 @@ impl Clint {
 impl Ipi for Clint {
     fn max_hartid(&self) -> usize {
         self.max_hartid
-    } 
-    
+    }
+
     #[inline]
     fn clear_soft_irq(&self, hartid: usize) {
         self.clear_soft_irq(hartid);

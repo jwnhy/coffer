@@ -13,7 +13,6 @@ impl Frame {
     }
 }
 
-
 #[inline(always)]
 pub fn trace_from(mut curframe: Frame, action: &dyn Fn(&Frame) -> bool) {
     loop {

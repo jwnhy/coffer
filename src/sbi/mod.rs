@@ -1,15 +1,15 @@
 pub mod console;
+pub mod hsm;
 pub mod ipi;
 pub mod ipi_event;
-pub mod sbiret;
 pub mod rfence;
-pub mod timer;
-pub mod hsm;
+pub mod sbiret;
 pub mod srst;
+pub mod timer;
 
+pub mod fence_info;
 pub mod hart_mask;
 pub mod hart_scratch;
-pub mod fence_info;
 
 pub use console::*;
 pub const SBI_SPEC_MAJOR: usize = 0;

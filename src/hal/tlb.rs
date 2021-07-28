@@ -5,7 +5,7 @@ pub struct Tlb;
 #[naked]
 #[no_mangle]
 extern "C" fn __tlb_flush_all() {
-   unsafe { asm!("sfence.vma", options(noreturn)) }
+    unsafe { asm!("sfence.vma", options(noreturn)) }
 }
 
 impl LocalFence for Tlb {
@@ -16,8 +16,8 @@ impl LocalFence for Tlb {
         let start = finfo.start.unwrap();
         let size = finfo.size.unwrap();
         if finfo.asid.is_some() {
-            for addr in start..start+size {
-                unsafe {asm!("sfence.vma {0}, {1}", in(reg) addr, in(reg) finfo.asid.unwrap())}
+            for addr in start..start + size {
+                unsafe { asm!("sfence.vma {0}, {1}", in(reg) addr, in(reg) finfo.asid.unwrap()) }
             }
         }
     }

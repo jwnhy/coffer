@@ -1502,10 +1502,10 @@
 14	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-631d93f17a38e999/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"sunxi\\"]","target":875618249955676/;"	a	array:deps
 14	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-978bff26e15e08f0/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":228515222820/;"	a	array:deps
 14	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-bf9199bd620e03db/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":870573531258/;"	a	array:deps
-1430904780814706315	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	o	object:outputs
+1430904780814706315	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o	object:outputs
 15	target/riscv64imac-unknown-none-elf/debug/.fingerprint/coffer-7a06da2029fd5ec2/test-bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":875618249955676063,"profile"/;"	a	array:deps
 15	target/riscv64imac-unknown-none-elf/debug/.fingerprint/coffer-7ad958a61c270169/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":875618249955676063,"profile"/;"	a	array:deps
-17598535894874457435	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	o	object:outputs
+17598535894874457435	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o	object:outputs
 2	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	b	array:deps.0
 2	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	b	array:deps.0
 2	target/debug/.fingerprint/lazy_static-3d97cbb93e69fe72/lib-lazy_static.json	/^{"rustc":14626598257756768560,"features":"[\\"spin\\", \\"spin_no_std\\"]","target":331075826843/;"	b	array:deps.0
@@ -1984,7 +1984,7 @@
 2	target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-bc035c1335e5f767/lib-spin.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"ticket_mutex\\"]","target":85243370/;"	s	array:rustflags
 2	target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-f66f8612c3ed3ae0/lib-spin.json	/^{"rustc":14626598257756768560,"features":"[\\"barrier\\", \\"default\\", \\"lazy\\", \\"lock_api/;"	b	array:deps.0
 2	target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-6c290958baa7ecd6/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":1054765450/;"	s	array:rustflags
-2797684049618456168	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	o	object:outputs
+2797684049618456168	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o	object:outputs
 3	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	n	array:deps.0
 3	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	n	array:deps.0
 3	target/debug/.fingerprint/lazy_static-3d97cbb93e69fe72/lib-lazy_static.json	/^{"rustc":14626598257756768560,"features":"[\\"spin\\", \\"spin_no_std\\"]","target":331075826843/;"	n	array:deps.0
@@ -2466,7 +2466,7 @@
 6	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-631d93f17a38e999/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"sunxi\\"]","target":875618249955676/;"	a	array:deps
 6	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-978bff26e15e08f0/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":228515222820/;"	a	array:deps
 6	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-bf9199bd620e03db/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":870573531258/;"	a	array:deps
-6572305938076538090	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	o	object:outputs
+6572305938076538090	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o	object:outputs
 7	target/riscv64imac-unknown-none-elf/debug/.fingerprint/coffer-0b8b33b75d27565f/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":875618249955676063,"profile"/;"	a	array:deps
 7	target/riscv64imac-unknown-none-elf/debug/.fingerprint/coffer-1b9f51302700a857/test-bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":641534828839/;"	a	array:deps
 7	target/riscv64imac-unknown-none-elf/debug/.fingerprint/coffer-29ad113c6588a349/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"virt\\"]","target":8756182499556760/;"	a	array:deps
@@ -2515,7 +2515,7 @@
 9	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-631d93f17a38e999/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"sunxi\\"]","target":875618249955676/;"	a	array:deps
 9	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-978bff26e15e08f0/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":228515222820/;"	a	array:deps
 9	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-bf9199bd620e03db/bin-coffer.json	/^{"rustc":14626598257756768560,"features":"[]","target":875618249955676063,"profile":870573531258/;"	a	array:deps
-931469667778813386	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	o	object:outputs
+931469667778813386	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o	object:outputs
 CheckDepInfo	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	o	object:local.0
 CheckDepInfo	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	o	object:local.0
 CheckDepInfo	target/debug/.fingerprint/bitflags-14c53acb05618961/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":10088282520713642473,"profil/;"	o	object:local.0
@@ -2718,8 +2718,10 @@ Clint32	src/hal/clint32.rs	/^impl Timer for Clint32 {$/;"	c
 Clint32	src/hal/clint32.rs	/^pub struct Clint32 {$/;"	s
 ColdReboot	src/sbi/srst.rs	/^    ColdReboot = 0x0000_0001,$/;"	e	enum:ResetType
 Console	src/sbi/console.rs	/^pub trait Console: Send {$/;"	i
+Contact	README.md	/^## Contact$/;"	s
 Context	src/runtime/context.rs	/^impl Context {$/;"	c
 Context	src/runtime/context.rs	/^pub struct Context {$/;"	s
+Current Status	README.md	/^## Current Status$/;"	s
 DEVICE_TREE	src/platform/sunxi.rs	/^static DEVICE_TREE: &[u8] = include_bytes!("..\/..\/dtb\/sunxi.dtb");$/;"	v
 EXEC_FLAG	src/util/pmp_test.rs	/^static mut EXEC_FLAG: AtomicBool = AtomicBool::new(false);$/;"	v
 EmbeddedSerial	src/sbi/console.rs	/^impl<T> Console for EmbeddedSerial<T>$/;"	c
@@ -2734,8 +2736,6 @@ FenceInfo	src/sbi/fence_info.rs	/^pub struct FenceInfo {$/;"	s
 Frame	src/rvbt/frame.rs	/^impl Frame {$/;"	c
 Frame	src/rvbt/frame.rs	/^pub struct Frame {$/;"	s
 Framing	src/hal/ns16550a.rs	/^    Framing(u8),$/;"	e	enum:Error
-FusedSerial	src/sbi/console.rs	/^impl<T, R> Console for FusedSerial<T, R>$/;"	c
-FusedSerial	src/sbi/console.rs	/^struct FusedSerial<T, R>(T, R);$/;"	s
 HART_SCRATCH	src/sbi/hart_scratch.rs	/^static mut HART_SCRATCH: Vec<Mutex<HartScratch>> = Vec::new();$/;"	v
 HEAP_SPACE	src/platform/generic.rs	/^static mut HEAP_SPACE: [u8; SBI_HEAP_SIZE] = [0; SBI_HEAP_SIZE];$/;"	v
 HartMask	src/sbi/hart_mask.rs	/^impl HartMask {$/;"	c
@@ -2743,16 +2743,18 @@ HartMask	src/sbi/hart_mask.rs	/^pub struct HartMask {$/;"	s
 HartScratch	src/sbi/hart_scratch.rs	/^impl HartScratch {$/;"	c
 HartScratch	src/sbi/hart_scratch.rs	/^pub struct HartScratch {$/;"	s
 HartState	src/sbi/hsm.rs	/^pub enum HartState {$/;"	g
-Hsm	src/sbi/hsm.rs	/^pub trait Hsm : Send {$/;"	i
+Hsm	src/sbi/hsm.rs	/^pub trait Hsm: Send {$/;"	i
 IPI_RFENCE_I_EVENT_ID	src/sbi/rfence.rs	/^pub static IPI_RFENCE_I_EVENT_ID: RwLock<usize> = RwLock::new(XLEN);$/;"	v
 IPI_SFENCE_VMA_EVENT_ID	src/sbi/rfence.rs	/^pub static IPI_SFENCE_VMA_EVENT_ID: RwLock<usize> = RwLock::new(XLEN);$/;"	v
 IPI_SMODE_EVENT_ID	src/sbi/ipi.rs	/^pub static IPI_SMODE_EVENT_ID: RwLock<usize> = RwLock::new(XLEN);$/;"	v
 Ipi	src/sbi/ipi.rs	/^pub trait Ipi: Send {$/;"	i
 IpiEvent	src/sbi/ipi_event.rs	/^pub struct IpiEvent {$/;"	s
 IpiEventOps	src/sbi/ipi_event.rs	/^pub struct IpiEventOps {$/;"	s
-IpiScratch	src/sbi/hart_scratch.rs	/^impl IpiScratch{$/;"	c
-IpiScratch	src/sbi/hart_scratch.rs	/^pub struct IpiScratch{$/;"	s
+IpiScratch	src/sbi/hart_scratch.rs	/^impl IpiScratch {$/;"	c
+IpiScratch	src/sbi/hart_scratch.rs	/^pub struct IpiScratch {$/;"	s
+License and Copyright	README.md	/^## License and Copyright$/;"	s
 LocalFence	src/sbi/rfence.rs	/^pub trait LocalFence: Send {$/;"	i
+Make other stuff using Allwinner SDK	README.md	/^# Make other stuff using Allwinner SDK$/;"	c
 MemoryLayout	src/memory/memory_layout.rs	/^impl MemoryLayout {$/;"	c
 MemoryLayout	src/memory/memory_layout.rs	/^pub struct MemoryLayout {$/;"	s
 NoReason	src/sbi/srst.rs	/^    NoReason = 0x0000_0000,$/;"	e	enum:ResetReason
@@ -2786,6 +2788,8 @@ Precalculated	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-87
 Precalculated	target/riscv64imac-unknown-none-elf/release/.fingerprint/coffer-c880235d90c2ab72/run-build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"","target":0,"profile":0,"path":0,"deps":[[78076689516/;"	s	object:local.0
 Precalculated	target/riscv64imac-unknown-none-elf/release/.fingerprint/riscv-d9f6228e33c5f25b/run-build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"","target":0,"profile":0,"path":0,"deps":[[70931567251/;"	s	object:local.0
 Precalculated	target/riscv64imac-unknown-none-elf/release/.fingerprint/riscv-f3ec243decda8025/run-build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"","target":0,"profile":0,"path":0,"deps":[[70931567251/;"	s	object:local.0
+Quickstart with QEMU	README.md	/^## Quickstart with QEMU$/;"	s
+Quickstart with [Nezha D1](https://d1.docs.allwinnertech.com)	README.md	/^## Quickstart with [Nezha D1](https:\/\/d1.docs.allwinnertech.com)$/;"	s
 READ_FLAG	src/util/pmp_test.rs	/^static mut READ_FLAG: AtomicBool = AtomicBool::new(false);$/;"	v
 Region	src/memory/memory_layout.rs	/^impl Region {$/;"	c
 Region	src/memory/memory_layout.rs	/^pub struct Region {$/;"	s
@@ -2797,7 +2801,7 @@ RerunIfChanged	target/riscv64imac-unknown-none-elf/release/.fingerprint/log-3999
 RerunIfChanged	target/riscv64imac-unknown-none-elf/release/.fingerprint/log-91ac3229f0ee4102/run-build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"","target":0,"profile":0,"path":0,"deps":[[13203967679/;"	o	object:local.0
 ResetReason	src/sbi/srst.rs	/^pub enum ResetReason {$/;"	g
 ResetType	src/sbi/srst.rs	/^pub enum ResetType {$/;"	g
-ResumePending	src/sbi/hsm.rs	/^    ResumePending$/;"	e	enum:HartState
+ResumePending	src/sbi/hsm.rs	/^    ResumePending,$/;"	e	enum:HartState
 Return	src/runtime/runtime.rs	/^    type Return = ();$/;"	t	implementation:Runtime
 Runtime	src/runtime/runtime.rs	/^impl<Y> Generator for Runtime<Y> {$/;"	c
 Runtime	src/runtime/runtime.rs	/^impl<Y> Runtime<Y> {$/;"	c
@@ -2812,7 +2816,7 @@ SifiveUart	src/hal/sifive_uart.rs	/^impl Read<u8> for SifiveUart {$/;"	c
 SifiveUart	src/hal/sifive_uart.rs	/^impl SifiveUart {$/;"	c
 SifiveUart	src/hal/sifive_uart.rs	/^impl Write<u8> for SifiveUart {$/;"	c
 SifiveUart	src/hal/sifive_uart.rs	/^pub struct SifiveUart {$/;"	s
-Srst	src/sbi/srst.rs	/^pub trait Srst :Send {$/;"	i
+Srst	src/sbi/srst.rs	/^pub trait Srst: Send {$/;"	i
 StartPending	src/sbi/hsm.rs	/^    StartPending,$/;"	e	enum:HartState
 Started	src/sbi/hsm.rs	/^    Started = 0,$/;"	e	enum:HartState
 Stdout	src/sbi/console.rs	/^impl fmt::Write for Stdout {$/;"	c
@@ -2830,11 +2834,13 @@ Symbol	src/rvbt/symbol.rs	/^impl fmt::Display for Symbol {$/;"	c
 Symbol	src/rvbt/symbol.rs	/^pub struct Symbol {$/;"	s
 SystemFailure	src/sbi/srst.rs	/^    SystemFailure = 0x0000_0001,$/;"	e	enum:ResetReason
 TICKS	src/util/timer_test.rs	/^static mut TICKS: usize = 0;$/;"	v
+Table of contents	README.md	/^## Table of contents$/;"	s
 Timer	src/sbi/timer.rs	/^pub trait Timer: Send {$/;"	i
 Tlb	src/hal/tlb.rs	/^impl LocalFence for Tlb {$/;"	c
 Tlb	src/hal/tlb.rs	/^pub struct Tlb;$/;"	s
 WRITE_FLAG	src/util/pmp_test.rs	/^static mut WRITE_FLAG: AtomicBool = AtomicBool::new(false);$/;"	v
 WarmReboot	src/sbi/srst.rs	/^    WarmReboot = 0x0000_0002,$/;"	e	enum:ResetType
+What is Coffer?	README.md	/^## What is Coffer?$/;"	s
 Yield	src/runtime/runtime.rs	/^    type Yield = Y;$/;"	t	implementation:Runtime
 __global_pointer	linkscript/link-sunxi-64.ld	/^		PROVIDE(__global_pointer$ = . + 0x800);$/;"	s	section:.data	assignment:provide
 __global_pointer	linkscript/link-virt-64.ld	/^		PROVIDE(__global_pointer$ = . + 0x800);$/;"	s	section:.data	assignment:provide
@@ -2949,6 +2955,7 @@ _text_end	linkscript/link-virt-64.ld	/^		_text_end = .;$/;"	s	section:.text
 _text_start	linkscript/link-sunxi-64.ld	/^		_text_start = .;$/;"	s	section:.text
 _text_start	linkscript/link-virt-64.ld	/^		_text_start = .;$/;"	s	section:.text
 _write_test	src/util/pmp_test.rs	/^unsafe fn _write_test(addr: usize, expected: bool) {$/;"	f
+`Coffer` RISC-V Trusted Execution Environment Implementation	README.md	/^# `Coffer` RISC-V Trusted Execution Environment Implementation$/;"	c
 a0	src/runtime/context.rs	/^    pub a0: usize,  \/\/ x9$/;"	m	struct:Context
 a1	src/runtime/context.rs	/^    pub a1: usize,  \/\/ x10$/;"	m	struct:Context
 a2	src/runtime/context.rs	/^    pub a2: usize,  \/\/ x11$/;"	m	struct:Context
@@ -2982,12 +2989,11 @@ clear_soft_irq	src/sbi/ipi.rs	/^    fn clear_soft_irq(&self, hartid: usize);$/;"
 clear_triggered	src/sbi/hart_scratch.rs	/^    pub fn clear_triggered(&mut self) {$/;"	P	implementation:IpiScratch
 clint	src/hal/mod.rs	/^mod clint;$/;"	n
 clint32	src/hal/mod.rs	/^mod clint32;$/;"	n
-code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	n	object:outputs.1430904780814706315
-code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	n	object:outputs.17598535894874457435
-code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	n	object:outputs.2797684049618456168
-code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	n	object:outputs.6572305938076538090
-code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	n	object:outputs.931469667778813386
-coffer	README.md	/^# coffer$/;"	c
+code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	n	object:outputs.1430904780814706315
+code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	n	object:outputs.17598535894874457435
+code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	n	object:outputs.2797684049618456168
+code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	n	object:outputs.6572305938076538090
+code	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	n	object:outputs.931469667778813386
 compile_kind	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	n
 compile_kind	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	n
 compile_kind	target/debug/.fingerprint/bitflags-14c53acb05618961/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":10088282520713642473,"profil/;"	n
@@ -3433,8 +3439,6 @@ config	target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-f66f8612c3e
 config	target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-6c290958baa7ecd6/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":1054765450/;"	n
 config	target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-c30fb9ef0923318b/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":2285152228/;"	n
 console	src/sbi/mod.rs	/^pub mod console;$/;"	n
-console_getchar	src/sbi/console.rs	/^pub(crate) fn console_getchar() -> u8 {$/;"	f
-console_putchar	src/sbi/console.rs	/^pub(crate) fn console_putchar(ch: u8) {$/;"	f
 context	src/runtime/mod.rs	/^pub mod context;$/;"	n
 context	src/runtime/runtime.rs	/^    context: Context,$/;"	m	struct:Runtime
 create_ipi_event	src/sbi/ipi_event.rs	/^pub fn create_ipi_event(new_event: &'static IpiEvent) -> usize {$/;"	f
@@ -4097,7 +4101,7 @@ features	target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_t
 fence_info	src/sbi/mod.rs	/^pub mod fence_info;$/;"	n
 file	src/rvbt/symbol.rs	/^    pub file: String,$/;"	m	struct:Symbol
 flag_println	src/util/status.rs	/^macro_rules! flag_println {$/;"	M
-fmt	src/rvbt/symbol.rs	/^    fn fmt(&self, f:&mut fmt::Formatter) -> fmt::Result {$/;"	P	implementation:Symbol
+fmt	src/rvbt/symbol.rs	/^    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {$/;"	P	implementation:Symbol
 fp	src/runtime/context.rs	/^    pub fp: usize,  \/\/ x7$/;"	m	struct:Context
 fp	src/rvbt/frame.rs	/^    pub fp: usize,$/;"	m	struct:Frame
 frame	src/rvbt/mod.rs	/^pub mod frame;$/;"	n
@@ -4120,9 +4124,9 @@ gp	src/runtime/context.rs	/^    pub gp: usize,  \/\/ x2$/;"	m	struct:Context
 hal	src/main.rs	/^mod hal;$/;"	n
 handle_ecall	src/ecall/mod.rs	/^pub fn handle_ecall(ctx: *mut Context) -> SbiRet {$/;"	f
 handle_ecall_base	src/ecall/base.rs	/^pub fn handle_ecall_base(fid: usize, param0: usize) -> SbiRet {$/;"	f
-handle_ecall_hsm	src/ecall/hsm.rs	/^pub fn handle_ecall_hsm(fid: usize, param0: usize, param1: usize, param2:usize) -> SbiRet {$/;"	f
+handle_ecall_hsm	src/ecall/hsm.rs	/^pub fn handle_ecall_hsm(fid: usize, param0: usize, param1: usize, param2: usize) -> SbiRet {$/;"	f
 handle_ecall_ipi	src/ecall/ipi.rs	/^pub fn handle_ecall_ipi(fid: usize, param0: usize, param1: usize) -> SbiRet {$/;"	f
-handle_ecall_rfence	src/ecall/rfence.rs	/^pub fn handle_ecall_rfence(fid: usize, param0: usize, param1: usize, param2: usize, param3: usiz/;"	f
+handle_ecall_rfence	src/ecall/rfence.rs	/^pub fn handle_ecall_rfence($/;"	f
 handle_ecall_srst	src/ecall/srst.rs	/^pub fn handle_ecall_srst(fid: usize, param0: usize, param1: usize) -> SbiRet {$/;"	f
 handle_ecall_timer	src/ecall/timer.rs	/^pub fn handle_ecall_timer(fid: usize, param0: usize) -> SbiRet {$/;"	f
 hart_get_status	src/sbi/hsm.rs	/^    fn hart_get_status(&mut self, hartid: usize) -> SbiRet;$/;"	P	interface:Hsm
@@ -4130,7 +4134,7 @@ hart_get_status	src/sbi/hsm.rs	/^pub(crate) fn hart_get_status(hartid: usize) ->
 hart_mask	src/sbi/mod.rs	/^pub mod hart_mask;$/;"	n
 hart_scratch	src/sbi/mod.rs	/^pub mod hart_scratch;$/;"	n
 hart_start	src/sbi/hsm.rs	/^    fn hart_start(&mut self, hartid: usize, start_addr: usize, opaque: usize) -> SbiRet;$/;"	P	interface:Hsm
-hart_start	src/sbi/hsm.rs	/^pub(crate) fn hart_start(hartid: usize, start_addr: usize, opaque: usize) -> SbiRet{$/;"	f
+hart_start	src/sbi/hsm.rs	/^pub(crate) fn hart_start(hartid: usize, start_addr: usize, opaque: usize) -> SbiRet {$/;"	f
 hart_stop	src/sbi/hsm.rs	/^    fn hart_stop(&mut self) -> SbiRet;$/;"	P	interface:Hsm
 hart_stop	src/sbi/hsm.rs	/^pub(crate) fn hart_stop() -> SbiRet {$/;"	f
 hart_suspend	src/sbi/hsm.rs	/^    fn hart_suspend(&mut self, suspend_type: u32, resume_addr: usize, opaque: usize) -> SbiRet;$/;"	P	interface:Hsm
@@ -4141,7 +4145,6 @@ hsm	src/sbi/mod.rs	/^pub mod hsm;$/;"	n
 init	src/rvbt/mod.rs	/^pub mod init;$/;"	n
 init_bss	src/platform/generic.rs	/^fn init_bss() {$/;"	f
 init_console_embedded_serial	src/sbi/console.rs	/^pub fn init_console_embedded_serial<T>(serial: T)$/;"	f
-init_console_fused_serial	src/sbi/console.rs	/^pub fn init_console_fused_serial<T, R>(tx: T, rx: R)$/;"	f
 init_fdt	src/util/fdt.rs	/^pub fn init_fdt(fdt_addr: usize) -> Result<(), FdtError> {$/;"	f
 init_hart_scratch	src/sbi/hart_scratch.rs	/^pub fn init_hart_scratch() {$/;"	f
 init_heap	src/platform/generic.rs	/^fn init_heap() {$/;"	f
@@ -4408,7 +4411,7 @@ mcounteren	src/runtime/context.rs	/^    pub mcounteren: usize,$/;"	m	struct:Cont
 medeleg	src/runtime/context.rs	/^    pub medeleg: usize,$/;"	m	struct:Context
 memory	src/main.rs	/^mod memory;$/;"	n
 memory_layout	src/memory/mod.rs	/^pub mod memory_layout;$/;"	n
-mepc	src/runtime/context.rs	/^    pub mepc: usize,    \/\/ x32$/;"	m	struct:Context
+mepc	src/runtime/context.rs	/^    pub mepc: usize,      \/\/ x32$/;"	m	struct:Context
 metadata	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	n
 metadata	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	n
 metadata	target/debug/.fingerprint/bitflags-14c53acb05618961/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":10088282520713642473,"profil/;"	n
@@ -4632,7 +4635,7 @@ metadata	target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-f66f8612c
 metadata	target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-6c290958baa7ecd6/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":1054765450/;"	n
 metadata	target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-c30fb9ef0923318b/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":2285152228/;"	n
 mideleg	src/runtime/context.rs	/^    pub mideleg: usize,$/;"	m	struct:Context
-msp	src/runtime/context.rs	/^    pub msp: usize,     \/\/x33$/;"	m	struct:Context
+msp	src/runtime/context.rs	/^    pub msp: usize,       \/\/x33$/;"	m	struct:Context
 mstatus	src/runtime/context.rs	/^    pub mstatus: Mstatus, \/\/ x31$/;"	m	struct:Context
 mtimecmp_offset	src/hal/clint.rs	/^    mtimecmp_offset: usize,$/;"	m	struct:Clint
 mtimecmp_offset	src/hal/clint32.rs	/^    mtimecmp_offset: usize,$/;"	m	struct:Clint32
@@ -4664,7 +4667,7 @@ output	target/release/.fingerprint/proc-macro2-4f88b0d9cc3c9091/run-build-script
 output	target/riscv64imac-unknown-none-elf/debug/.fingerprint/log-03ad2ed4d4cc3ca2/run-build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"","target":0,"profile":0,"path":0,"deps":[[13203967679/;"	s	object:local.0.RerunIfChanged
 output	target/riscv64imac-unknown-none-elf/release/.fingerprint/log-3999d6e7adc21676/run-build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"","target":0,"profile":0,"path":0,"deps":[[13203967679/;"	s	object:local.0.RerunIfChanged
 output	target/riscv64imac-unknown-none-elf/release/.fingerprint/log-91ac3229f0ee4102/run-build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"","target":0,"profile":0,"path":0,"deps":[[13203967679/;"	s	object:local.0.RerunIfChanged
-outputs	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	o
+outputs	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o
 panic	src/platform/generic.rs	/^fn panic(info: &PanicInfo) -> ! {$/;"	f
 path	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	n
 path	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	n
@@ -4920,7 +4923,7 @@ probe_ipi	src/sbi/ipi.rs	/^pub(crate) fn probe_ipi() -> SbiRet {$/;"	f
 probe_rfence	src/sbi/rfence.rs	/^pub(crate) fn probe_rfence() -> SbiRet {$/;"	f
 probe_srst	src/sbi/srst.rs	/^pub(crate) fn probe_srst() -> SbiRet {$/;"	f
 probe_timer	src/sbi/timer.rs	/^pub(crate) fn probe_timer() -> SbiRet {$/;"	f
-process	src/sbi/ipi_event.rs	/^    pub process: fn()$/;"	m	struct:IpiEventOps
+process	src/sbi/ipi_event.rs	/^    pub process: fn(),$/;"	m	struct:IpiEventOps
 process_ipi	src/sbi/ipi.rs	/^pub(crate) fn process_ipi() {$/;"	f
 process_ipi_smode	src/sbi/ipi.rs	/^fn process_ipi_smode() {$/;"	f
 process_rfence_i	src/sbi/rfence.rs	/^pub fn process_rfence_i() {$/;"	f
@@ -5154,7 +5157,7 @@ ra	src/runtime/context.rs	/^    pub ra: usize,  \/\/ x0$/;"	m	struct:Context
 ra	src/rvbt/frame.rs	/^    pub ra: usize,$/;"	m	struct:Frame
 read_reg	src/util/reg.rs	/^pub unsafe fn read_reg<T>(addr: usize, offset: usize) -> T {$/;"	f
 reg	src/util/mod.rs	/^pub mod reg;$/;"	n
-regions	src/memory/memory_layout.rs	/^    regions: [Region; 16]$/;"	m	struct:MemoryLayout
+regions	src/memory/memory_layout.rs	/^    regions: [Region; 16],$/;"	m	struct:MemoryLayout
 remote_fence_i	src/sbi/rfence.rs	/^pub(crate) fn remote_fence_i(hart_mask: HartMask) -> SbiRet {$/;"	f
 remote_sfence_vma	src/sbi/rfence.rs	/^pub(crate) fn remote_sfence_vma(hart_mask: HartMask, start: usize, size: usize) -> SbiRet {$/;"	f
 res3	src/platform/sunxi.rs	/^    pub res3: u32,$/;"	m	struct:SunxiHead
@@ -5391,7 +5394,7 @@ rustc	target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-bc035c1335e5
 rustc	target/riscv64imac-unknown-none-elf/release/.fingerprint/spin-f66f8612c3ed3ae0/lib-spin.json	/^{"rustc":14626598257756768560,"features":"[\\"barrier\\", \\"default\\", \\"lazy\\", \\"lock_api/;"	n
 rustc	target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-6c290958baa7ecd6/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":1054765450/;"	n
 rustc	target/riscv64imac-unknown-none-elf/release/.fingerprint/stable_deref_trait-c30fb9ef0923318b/lib-stable_deref_trait.json	/^{"rustc":14626598257756768560,"features":"[]","target":10075112678076362941,"profile":2285152228/;"	n
-rustc_fingerprint	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	n
+rustc_fingerprint	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	n
 rustflags	target/debug/.fingerprint/aho-corasick-95e05f880ff50868/lib-aho_corasick.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\", \\"std\\"]","target":64681486403893272/;"	a
 rustflags	target/debug/.fingerprint/bare-metal-2e86fa2768946dfe/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[]","target":10088282520713642473,"profile":1371961075/;"	a
 rustflags	target/debug/.fingerprint/bitflags-14c53acb05618961/build-script-build-script-build.json	/^{"rustc":14626598257756768560,"features":"[\\"default\\"]","target":10088282520713642473,"profil/;"	a
@@ -5655,27 +5658,27 @@ srst	src/ecall/mod.rs	/^mod srst;$/;"	n
 srst	src/sbi/mod.rs	/^pub mod srst;$/;"	n
 start	src/sbi/fence_info.rs	/^    pub start: Option<usize>,$/;"	m	struct:FenceInfo
 status	src/util/mod.rs	/^pub mod status;$/;"	n
-status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.1430904780814706315
-status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.17598535894874457435
-status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.2797684049618456168
-status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.6572305938076538090
-status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.931469667778813386
-stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.1430904780814706315
-stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.17598535894874457435
-stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.2797684049618456168
-stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.6572305938076538090
-stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.931469667778813386
-stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.1430904780814706315
-stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.17598535894874457435
-stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.2797684049618456168
-stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.6572305938076538090
-stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	s	object:outputs.931469667778813386
-success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	b	object:outputs.1430904780814706315
-success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	b	object:outputs.17598535894874457435
-success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	b	object:outputs.2797684049618456168
-success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	b	object:outputs.6572305938076538090
-success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	b	object:outputs.931469667778813386
-successes	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"6572305938076538090":{"success":true,"stat/;"	o
+status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.1430904780814706315
+status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.17598535894874457435
+status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.2797684049618456168
+status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.6572305938076538090
+status	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.931469667778813386
+stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.1430904780814706315
+stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.17598535894874457435
+stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.2797684049618456168
+stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.6572305938076538090
+stderr	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.931469667778813386
+stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.1430904780814706315
+stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.17598535894874457435
+stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.2797684049618456168
+stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.6572305938076538090
+stdout	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	s	object:outputs.931469667778813386
+success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	b	object:outputs.1430904780814706315
+success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	b	object:outputs.17598535894874457435
+success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	b	object:outputs.2797684049618456168
+success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	b	object:outputs.6572305938076538090
+success	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	b	object:outputs.931469667778813386
+successes	target/.rustc_info.json	/^{"rustc_fingerprint":15979078817748239378,"outputs":{"17598535894874457435":{"success":true,"sta/;"	o
 sunxi	src/platform/mod.rs	/^pub mod sunxi;$/;"	n
 sunxi_init	src/platform/sunxi.rs	/^pub fn sunxi_init(dtb: usize) -> usize {$/;"	f
 sunxi_uart	src/hal/mod.rs	/^mod sunxi_uart;$/;"	n
@@ -5915,7 +5918,7 @@ test_pmp	src/util/pmp_test.rs	/^pub fn test_pmp() {$/;"	f
 test_timer	src/util/timer_test.rs	/^pub fn test_timer() {$/;"	f
 timer	src/ecall/mod.rs	/^mod timer;$/;"	n
 timer	src/sbi/mod.rs	/^pub mod timer;$/;"	n
-timer_test	src/util/mod.rs	/^pub mod timer_test; $/;"	n
+timer_test	src/util/mod.rs	/^pub mod timer_test;$/;"	n
 tlb	src/hal/mod.rs	/^mod tlb;$/;"	n
 to_machine	src/runtime/context.rs	/^pub(super) unsafe extern "C" fn to_machine() {$/;"	f
 to_napot	src/memory/memory_layout.rs	/^    fn to_napot(&self) -> usize {$/;"	P	implementation:Region
@@ -5937,7 +5940,7 @@ try_write	src/hal/sifive_uart.rs	/^    fn try_write(&mut self, word: u8) -> nb::
 try_write	src/hal/sunxi_uart.rs	/^    fn try_write(&mut self, word: u8) -> nb::Result<(), Self::Error> {$/;"	P	implementation:SunxiUart
 uboot_base	src/platform/sunxi.rs	/^    pub uboot_base: u32,$/;"	m	struct:SunxiHead
 util	src/main.rs	/^mod util;$/;"	n
-vaddr_deref	src/util/addr.rs	/^pub unsafe fn vaddr_deref(vaddr: *const usize, mode: MPP) -> usize  {$/;"	f
+vaddr_deref	src/util/addr.rs	/^pub unsafe fn vaddr_deref(vaddr: *const usize, mode: MPP) -> usize {$/;"	f
 value	src/sbi/sbiret.rs	/^    pub value: usize,$/;"	m	struct:SbiRet
 virt	src/platform/mod.rs	/^pub mod virt;$/;"	n
 virt_init	src/platform/virt.rs	/^pub fn virt_init(dtb: usize) -> usize {$/;"	f

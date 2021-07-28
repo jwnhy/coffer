@@ -3,7 +3,7 @@ use core::ops::Range;
 use bit_field::BitField;
 use riscv::register::pmpaddr0;
 
-use super::pmp::{PmpFlags, pmpaddr_write, pmpcfg_write};
+use super::pmp::{pmpaddr_write, pmpcfg_write, PmpFlags};
 use crate::{println, util::fdt::XLEN};
 
 #[repr(C)]
@@ -17,10 +17,17 @@ pub struct Region {
 
 impl Region {
     pub fn addr_range(&self) -> Range<usize> {
-        if self.pmp_cfg.contains(PmpFlags::MODE_NA4) || self.pmp_cfg.contains(PmpFlags::MODE_NAPOT) {
-            Range{ start: self.addr, end: self.addr + (1 << self.size)}
+        if self.pmp_cfg.contains(PmpFlags::MODE_NA4) || self.pmp_cfg.contains(PmpFlags::MODE_NAPOT)
+        {
+            Range {
+                start: self.addr,
+                end: self.addr + (1 << self.size),
+            }
         } else {
-            Range{ start: self.addr, end: self.addr + self.size }
+            Range {
+                start: self.addr,
+                end: self.addr + self.size,
+            }
         }
     }
 
@@ -33,8 +40,8 @@ impl Region {
         } else {
             let mut pmpaddr = self.addr;
             pmpaddr = pmpaddr >> 2;
-            pmpaddr.set_bit(self.size-3, false);
-            pmpaddr.set_bits(0..(self.size-3), (1 << (self.size-3))-1);
+            pmpaddr.set_bit(self.size - 3, false);
+            pmpaddr.set_bits(0..(self.size - 3), (1 << (self.size - 3)) - 1);
             pmpaddr
         }
     }
@@ -45,14 +52,15 @@ impl Region {
 
     pub fn enforce(&self, index: usize) {
         if !self.enabled {
-            return
+            return;
         }
         pmpcfg_write(index, self.pmp_cfg.bits());
-        if self.pmp_cfg.contains(PmpFlags::MODE_NA4) || self.pmp_cfg.contains(PmpFlags::MODE_NAPOT) {
+        if self.pmp_cfg.contains(PmpFlags::MODE_NA4) || self.pmp_cfg.contains(PmpFlags::MODE_NAPOT)
+        {
             pmpaddr_write(index, self.to_napot());
         } else {
             let (s, e) = self.to_tor();
-            pmpaddr_write(index-1, s);
+            pmpaddr_write(index - 1, s);
             pmpaddr_write(index, e);
         }
     }
@@ -65,7 +73,7 @@ impl Region {
 
 pub struct MemoryLayout {
     /* at most 16 pmp region is allowed */
-    regions: [Region; 16]
+    regions: [Region; 16],
 }
 
 impl MemoryLayout {

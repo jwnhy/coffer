@@ -1,5 +1,7 @@
 #![no_std]
 #![no_main]
+#![allow(unused)]
+#![allow(non_snake_case)]
 #![feature(default_alloc_error_handler)]
 #![feature(naked_functions)]
 #![feature(asm)]
@@ -20,9 +22,12 @@ mod util;
 #[macro_use]
 mod sbi;
 
-use crate::{memory::pmp::PmpFlags, sbi::{ipi::process_ipi, timer::process_timer}};
+use crate::{
+    memory::pmp::PmpFlags,
+    sbi::{ipi::process_ipi, timer::process_timer},
+};
 use alloc::boxed::Box;
-use core::{ops::Generator, pin::Pin, ptr::write_volatile};
+use core::{ops::Generator, pin::Pin};
 use ecall::handle_ecall;
 use platform::generic::generic_init;
 use riscv::register::{
@@ -69,8 +74,6 @@ fn kernel_runtime(hartid: usize, dtb: usize, kernel_addr: usize) -> Runtime<()> 
         riscv::register::sscratch::write(0x0);
         riscv::register::satp::write(0x0);
         stvec::write(kernel_addr, riscv::register::mtvec::TrapMode::Direct);
-        // TODO: SETUP PLIC
-        //write_volatile(0x101F_FFFC as *mut u32, 0x1);
     }
     let runtime = Runtime::<()>::new(
         ctx,

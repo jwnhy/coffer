@@ -33,15 +33,13 @@ pub fn get_hart_scratch(hartid: usize) -> &'static Mutex<HartScratch> {
     unsafe { &HART_SCRATCH[hartid] }
 }
 
-pub struct IpiScratch{
+pub struct IpiScratch {
     ipi_triggered: usize,
 }
 
-impl IpiScratch{
+impl IpiScratch {
     pub fn new() -> Self {
-        Self {
-            ipi_triggered: 0x0
-        }
+        Self { ipi_triggered: 0x0 }
     }
 
     #[inline]
@@ -57,6 +55,6 @@ impl IpiScratch{
     #[inline]
     pub fn trigger(&mut self, event_id: usize) {
         self.ipi_triggered.set_bit(event_id, true);
-        unsafe {asm!("fence w, w")};
+        unsafe { asm!("fence w, w") };
     }
 }

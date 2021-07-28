@@ -8,10 +8,10 @@ pub enum HartState {
     StopPending,
     Suspended,
     SuspendedPening,
-    ResumePending
+    ResumePending,
 }
 
-pub trait Hsm : Send {
+pub trait Hsm: Send {
     fn hart_start(&mut self, hartid: usize, start_addr: usize, opaque: usize) -> SbiRet;
     fn hart_stop(&mut self) -> SbiRet;
     fn hart_get_status(&mut self, hartid: usize) -> SbiRet;
@@ -21,17 +21,18 @@ pub trait Hsm : Send {
 use alloc::boxed::Box;
 use spin::Mutex;
 
-lazy_static::lazy_static!{
+lazy_static::lazy_static! {
     static ref HSM: Mutex<Option<Box<dyn Hsm>>> = Mutex::new(None);
 }
 
 pub fn init_hsm<T>(hsm: T)
-where T: Send + Hsm + 'static
+where
+    T: Send + Hsm + 'static,
 {
     *HSM.lock() = Some(Box::new(hsm));
 }
 
-pub(crate) fn hart_start(hartid: usize, start_addr: usize, opaque: usize) -> SbiRet{
+pub(crate) fn hart_start(hartid: usize, start_addr: usize, opaque: usize) -> SbiRet {
     if let Some(hsm) = HSM.lock().as_mut() {
         hsm.hart_start(hartid, start_addr, opaque)
     } else {

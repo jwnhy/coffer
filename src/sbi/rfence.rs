@@ -1,10 +1,10 @@
 use crate::{sbi::ipi_event::IpiEventOps, util::fdt::XLEN};
 
-use super::{fence_info::FenceInfo, ipi_event::create_ipi_event};
 use super::hart_mask::HartMask;
 use super::ipi::send_ipi_many;
 use super::ipi_event::IpiEvent;
 use super::sbiret::SbiRet;
+use super::{fence_info::FenceInfo, ipi_event::create_ipi_event};
 
 pub trait LocalFence: Send {
     fn local_sfence(&self, finfo: FenceInfo);

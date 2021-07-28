@@ -96,24 +96,25 @@ fn _str_offsets_section() -> DebugStrOffsets<EndianSlice<'static, LittleEndian>>
     DebugStrOffsets::from(EndianSlice::new(bytes, LittleEndian))
 }
 
-lazy_static::lazy_static!{
+lazy_static::lazy_static! {
     pub static ref DEBUG_CTX: Mutex<Option<Box<Context<EndianSlice<'static, LittleEndian>>>>> = Mutex::new(None);
 }
 
-
 pub fn debug_init() {
-    *DEBUG_CTX.lock() = Some(Box::new(Context::from_sections(
-        _abbrev_section(),
-        _addr_section(),
-        _aranges_section(),
-        _info_section(),
-        _line_section(),
-        _line_str_section(),
-        _ranges_section(),
-        _rnglists_section(),
-        _str_section(),
-        _str_offsets_section(),
-        EndianSlice::new(&[], LittleEndian),
-    ).unwrap()));
+    *DEBUG_CTX.lock() = Some(Box::new(
+        Context::from_sections(
+            _abbrev_section(),
+            _addr_section(),
+            _aranges_section(),
+            _info_section(),
+            _line_section(),
+            _line_str_section(),
+            _ranges_section(),
+            _rnglists_section(),
+            _str_section(),
+            _str_offsets_section(),
+            EndianSlice::new(&[], LittleEndian),
+        )
+        .unwrap(),
+    ));
 }
-

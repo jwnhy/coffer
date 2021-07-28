@@ -1,6 +1,5 @@
 use riscv::register::mstatus::Mstatus;
 
-
 #[repr(C)]
 pub struct Context {
     pub ra: usize,  // x0
@@ -36,8 +35,8 @@ pub struct Context {
     pub t6: usize,  // x30
 
     pub mstatus: Mstatus, // x31
-    pub mepc: usize,    // x32
-    pub msp: usize,     //x33
+    pub mepc: usize,      // x32
+    pub msp: usize,       //x33
 
     pub mideleg: usize,
     pub medeleg: usize,
@@ -153,7 +152,7 @@ pub(super) unsafe extern "C" fn to_user_or_supervisor(context: *mut Context) {
         options(noreturn)
     )
 }
- 
+
 #[cfg(target_arch = "riscv64")]
 #[naked]
 #[link_section = ".text"]
@@ -264,4 +263,3 @@ pub(super) unsafe extern "C" fn to_machine() {
         options(noreturn)
     )
 }
-

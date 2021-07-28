@@ -1,8 +1,8 @@
-use riscv::register::mstatus::{self, MPP};
 use core::ptr::read;
+use riscv::register::mstatus::{self, MPP};
 // TODO: This is untested
 #[inline]
-pub unsafe fn vaddr_deref(vaddr: *const usize, mode: MPP) -> usize  {
+pub unsafe fn vaddr_deref(vaddr: *const usize, mode: MPP) -> usize {
     let prev_mode = mstatus::read().mpp();
     mstatus::set_mpp(mode);
     let val = read(vaddr);

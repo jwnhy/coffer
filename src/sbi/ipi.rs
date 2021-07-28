@@ -89,7 +89,6 @@ pub(crate) fn process_ipi() {
         clear_ipi(ipi, hartid);
     }
     scratch.ipi_scratch.clear_triggered();
-
 }
 
 pub(crate) fn probe_ipi() -> SbiRet {

@@ -71,7 +71,8 @@ impl SbiRet {
     }
     pub fn legacy_void(self, a0: usize, a1: usize) -> SbiRet {
         SbiRet {
-            error: a0, value: a1
+            error: a0,
+            value: a1,
         }
     }
 }

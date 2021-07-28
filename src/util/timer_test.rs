@@ -2,7 +2,10 @@ use core::{ops::Generator, pin::Pin, ptr::write_volatile};
 
 use alloc::boxed::Box;
 use bit_field::BitField;
-use riscv::register::{mcause, mstatus::{self, MPP}};
+use riscv::register::{
+    mcause,
+    mstatus::{self, MPP},
+};
 
 use crate::{
     println,
@@ -20,10 +23,21 @@ unsafe extern "C" fn _test_timer() {
         let mip = riscv::register::mip::read();
         let mie = riscv::register::mie::read();
         let mstatus = riscv::register::mstatus::read();
-        println!("mip: {:?}, mie: {:?}, mstatus: {:?}", mip.mtimer(), mie.mtimer(), mstatus.mie());
+        println!(
+            "mip: {:?}, mie: {:?}, mstatus: {:?}",
+            mip.mtimer(),
+            mie.mtimer(),
+            mstatus.mie()
+        );
         let l = read_volatile(0x1400_4000 as *const u32) as u64;
         let h = read_volatile(0x1400_4004 as *const u32) as u64;
-        println!("{:x}, {:x}, {:x}, {:x}", riscv::register::time::read64(), (h<<32)+l, i, TICKS);
+        println!(
+            "{:x}, {:x}, {:x}, {:x}",
+            riscv::register::time::read64(),
+            (h << 32) + l,
+            i,
+            TICKS
+        );
         i += 1;
     }
 }

@@ -1,7 +1,7 @@
 use core::convert::Infallible;
 
-use embedded_hal::serial::{Read, Write};
 use crate::util::reg::{read_reg, write_reg};
+use embedded_hal::serial::{Read, Write};
 
 pub struct SunxiUart {
     base: usize,
@@ -27,8 +27,7 @@ impl SunxiUart {
 impl Read<u8> for SunxiUart {
     type Error = Infallible;
     fn try_read(&mut self) -> nb::Result<u8, Self::Error> {
-
-        let read_ready = unsafe {read_reg::<u32>(self.base, offset::USR * 0x04) & mask::RXNE};
+        let read_ready = unsafe { read_reg::<u32>(self.base, offset::USR * 0x04) & mask::RXNE };
         if read_ready != 0 {
             let word = unsafe { read_reg::<u32>(self.base, offset::RBR) };
             Ok(word as u8)
@@ -41,8 +40,7 @@ impl Read<u8> for SunxiUart {
 impl Write<u8> for SunxiUart {
     type Error = Infallible;
     fn try_write(&mut self, word: u8) -> nb::Result<(), Self::Error> {
-
-        let write_ready = unsafe {read_reg::<u32>(self.base, offset::USR * 0x04) & mask::TXNF};
+        let write_ready = unsafe { read_reg::<u32>(self.base, offset::USR * 0x04) & mask::TXNF };
         if write_ready != 0 {
             unsafe { write_reg::<u32>(self.base, offset::THR, word as u32) };
             Ok(())
@@ -51,7 +49,7 @@ impl Write<u8> for SunxiUart {
         }
     }
     fn try_flush(&mut self) -> nb::Result<(), Self::Error> {
-        let write_ready = unsafe {read_reg::<u32>(self.base, offset::USR * 0x04) & mask::TXNF};
+        let write_ready = unsafe { read_reg::<u32>(self.base, offset::USR * 0x04) & mask::TXNF };
         if write_ready != 0 {
             Ok(())
         } else {

@@ -1,6 +1,5 @@
 use bit_field::BitField;
 
-
 #[derive(Debug, Clone)]
 pub struct HartMask {
     mask: usize,
@@ -9,10 +8,7 @@ pub struct HartMask {
 
 impl HartMask {
     pub unsafe fn new(mask: usize, base: usize) -> Self {
-        HartMask {
-            mask,
-            base,
-        }
+        HartMask { mask, base }
     }
 
     pub fn has(&self, hartid: usize) -> bool {

@@ -4,7 +4,10 @@ use crate::sbi::hsm::probe_hsm;
 use crate::sbi::ipi::probe_ipi;
 use crate::sbi::rfence::probe_rfence;
 use crate::sbi::srst::probe_srst;
-use crate::sbi::{COFFER_IMPL_ID, COFFER_VERSION, SBI_SPEC_MAJOR, SBI_SPEC_MINOR, sbiret::SbiRet, timer::probe_timer};
+use crate::sbi::{
+    sbiret::SbiRet, timer::probe_timer, COFFER_IMPL_ID, COFFER_VERSION, SBI_SPEC_MAJOR,
+    SBI_SPEC_MINOR,
+};
 
 const FID_BASE_GET_SPEC_VERSION: usize = 0x0;
 const FID_BASE_GET_SBI_IMPL_ID: usize = 0x1;
@@ -13,7 +16,6 @@ const FID_BASE_PROBE_EXTENSION: usize = 0x3;
 const FID_BASE_GET_MVENDORID: usize = 0x4;
 const FID_BASE_GET_MARCHID: usize = 0x5;
 const FID_BASE_GET_MIMPID: usize = 0x6;
-
 
 #[inline]
 pub fn handle_ecall_base(fid: usize, param0: usize) -> SbiRet {
@@ -26,7 +28,7 @@ pub fn handle_ecall_base(fid: usize, param0: usize) -> SbiRet {
         FID_BASE_GET_MARCHID => get_marchid(),
         FID_BASE_GET_MIMPID => get_mimpid(),
         _ => SbiRet::not_supported(),
-    } 
+    }
 }
 
 #[inline]
