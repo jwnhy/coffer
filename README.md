@@ -19,7 +19,7 @@ Coffer is designed to be an flexible, software-based trusted execution environme
 It requires a minimal hardware primitive (PMP is all you need!)
 to provide a powerful software interface for TEE.
 
-[![asciicast](https://asciinema.org/a/427542.svg)](https://asciinema.org/a/427542)
+[![asciicast](https://asciinema.org/a/427543.svg)](https://asciinema.org/a/427543)
 
 ## Quickstart with QEMU <a name="quickqemu"></a>
 
