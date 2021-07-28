@@ -19,6 +19,8 @@ Coffer is designed to be an flexible, software-based trusted execution environme
 It requires a minimal hardware primitive (PMP is all you need!)
 to provide a powerful software interface for TEE.
 
+[![asciicast](https://asciinema.org/a/427542.svg)](https://asciinema.org/a/427542)
+
 ## Quickstart with QEMU <a name="quickqemu"></a>
 
 To run Linux with Coffer, you will need to prepare a Linux image and a rootfs.
