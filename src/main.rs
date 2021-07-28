@@ -27,6 +27,7 @@ use crate::{
     sbi::{ipi::process_ipi, timer::process_timer},
 };
 use alloc::boxed::Box;
+use util::banner::print_banner;
 use core::{ops::Generator, pin::Pin};
 use ecall::handle_ecall;
 use platform::generic::generic_init;
@@ -43,6 +44,7 @@ pub extern "C" fn main(hartid: usize, dtb: usize) -> ! {
     let hartid = riscv::register::mhartid::read();
     if hartid == 0 {
         let jump_addr = generic_init(dtb);
+        print_banner();
         let global_region = Region {
             addr: 0x0,
             size: 56,

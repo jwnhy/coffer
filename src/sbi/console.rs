@@ -56,6 +56,21 @@ impl fmt::Write for Stdout {
         Ok(())
     }
 }
+
+pub(crate) fn console_putchar(ch: u8) {
+    if let Some(serial) = CONSOLE.lock().as_mut() {
+        serial.putchar(ch)
+    }
+}
+
+pub(crate) fn console_getchar() -> u8 {
+    if let Some(serial) = CONSOLE.lock().as_mut() {
+        serial.getchar()
+    } else {
+        0
+    }
+}
+
 #[doc(hidden)]
 pub fn _print(args: fmt::Arguments) {
     use fmt::Write;

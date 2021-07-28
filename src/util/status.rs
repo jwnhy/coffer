@@ -53,7 +53,6 @@ pub fn print_misa() {
 
 pub fn print_mstatus() {
     let mstatus = riscv::register::mstatus::read();
-    println!("mstatus: {:?}", mstatus);
 
     println!("[xIE] Interrupt Status:");
     flag_println!("\tMachine Mode Interrupt: {}", mstatus.mie());

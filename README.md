@@ -1,5 +1,9 @@
 # `Coffer` RISC-V Trusted Execution Environment
 
+![Issue](https://img.shields.io/github/issues/jwnhy/coffer)
+![Rust](https://img.shields.io/badge/language-rust-yellowgreen)
+![riscv64](https://img.shields.io/badge/platform-riscv64-lightgrey)
+
 ## Table of contents
 
 1. [What is Coffer?](#whatiscoffer)
