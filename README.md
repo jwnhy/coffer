@@ -69,7 +69,7 @@ Coffer has serveral goals to archive in terms of both security and functionality
 
 ## Contact <a name="contact"></a>
 
-You can email <11712009@mail.sustech.edu.cn> if you have any questions about Coffer.
+You can email <luhy2017@mail.sustech.edu.cn> if you have any questions about Coffer.
 
 ## License and Copyright <a name="license"></a>
 
