@@ -13,6 +13,7 @@
 extern crate alloc;
 
 mod ecall;
+mod fdt;
 mod hal;
 mod memory;
 mod platform;
@@ -27,7 +28,6 @@ use crate::{
     sbi::{ipi::process_ipi, timer::process_timer},
 };
 use alloc::boxed::Box;
-use util::banner::print_banner;
 use core::{ops::Generator, pin::Pin};
 use ecall::handle_ecall;
 use platform::generic::generic_init;
@@ -37,6 +37,7 @@ use riscv::register::{
     stvec,
 };
 use runtime::{context::Context, runtime::Runtime};
+use util::banner::print_banner;
 
 use crate::memory::memory_layout::Region;
 
@@ -44,7 +45,14 @@ pub extern "C" fn main(hartid: usize, dtb: usize) -> ! {
     let hartid = riscv::register::mhartid::read();
     if hartid == 0 {
         let jump_addr = generic_init(dtb);
-        print_banner();
+        static DEVICE_TREE: &[u8] = include_bytes!("../dtb/sunxi.dtb");
+        let mut dt = unsafe { fdt::Fdt::from_ptr(DEVICE_TREE.as_ptr()).unwrap() };
+        for mem_rsv in dt.memory_reserve_mut().iter_mut() {
+            println!("0x{:x} 0x{:x}", mem_rsv.address(), mem_rsv.size());
+            mem_rsv.set_address(1);
+            mem_rsv.set_size(1);
+        }
+        //print_banner();
         let global_region = Region {
             addr: 0x0,
             size: 56,

@@ -1,8 +1,6 @@
 use core::panic::PanicInfo;
 
 use crate::main;
-use crate::platform::sunxi::sunxi_init;
-use crate::platform::virt::virt_init;
 use crate::println;
 use crate::sbi::hart_scratch::init_hart_scratch;
 use buddy_system_allocator::LockedHeap;
@@ -15,7 +13,7 @@ const SBI_STACK_SIZE: usize = NUM_CORES * HART_STACK_SIZE;
 #[link_section = ".bss.uninit"]
 static mut SBI_STACK: [u8; SBI_STACK_SIZE] = [0; SBI_STACK_SIZE];
 
-const SBI_HEAP_SIZE: usize = 8 * 1024;
+const SBI_HEAP_SIZE: usize = 128 * 1024;
 
 #[no_mangle]
 #[link_section = ".bss.uninit"]
@@ -63,9 +61,9 @@ pub fn generic_init(dtb: usize) -> usize {
     init_heap();
     let jump_addr = match () {
         #[cfg(feature = "sunxi")]
-        () => sunxi_init(dtb),
+        () => crate::platform::sunxi::sunxi_init(dtb),
         #[cfg(feature = "virt")]
-        () => virt_init(dtb),
+        () => crate::platform::virt::virt_init(dtb),
         #[cfg(feature = "sifive")]
         () => sifive_init(dtb),
         _ => unreachable!(),

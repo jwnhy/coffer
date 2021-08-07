@@ -31,9 +31,10 @@ static SUNXI_HEAD: SunxiHead = SunxiHead {
     res6: [0; 8],
     opensbi_base: 0x4000_0000,
 };
-
+#[cfg(feature="sunxi")]
 static DEVICE_TREE: &[u8] = include_bytes!("../../dtb/sunxi.dtb");
 
+#[cfg(feature="sunxi")]
 pub fn sunxi_init(dtb: usize) -> usize {
     init_fdt(DEVICE_TREE.as_ptr() as usize);
     detect_sunxi_uart();
