@@ -1,4 +1,5 @@
 use core::intrinsics::atomic_xchg;
+use core::arch::asm;
 
 use crate::util::fdt::detect_hart;
 use alloc::vec::Vec;

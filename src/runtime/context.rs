@@ -1,4 +1,5 @@
 use riscv::register::mstatus::Mstatus;
+use core::arch::asm;
 
 #[repr(C)]
 pub struct Context {

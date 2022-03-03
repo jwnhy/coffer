@@ -1,47 +1,38 @@
-use core::ops::Add;
+use core::slice;
 
-use self::{header::FdtHeader, memory_reserve::FdtMemoryReserveBlock, node::FdtNode};
+use self::{
+    header::FdtHeader,
+    memory_reserve::{FdtMemoryReserveEntry, FdtMemoryReserveIter},
+    node::{FdtNode, FdtNodeIter},
+};
 
+mod cstr;
 pub mod header;
 pub mod memory_reserve;
 pub mod node;
 pub mod prop;
-mod endian;
-mod cstr;
 mod token;
 
-pub struct Fdt<'a, 'b> {
-    header: FdtHeader<'a>,
-    memory_reserve: FdtMemoryReserveBlock,
-    root: FdtNode<'b>
+pub struct Fdt {
+    header: &'static FdtHeader,
+    inner_buffer: &'static [u8]
 }
 
-impl<'a, 'b> Fdt<'a,'b> {
-    pub unsafe fn from_ptr(fdt_ptr: *const u8) -> Result<Self, &'static str>{
+impl Fdt {
+    pub unsafe fn from_ptr(fdt_ptr: *const u8) -> Result<Self, &'static str> {
         let header = FdtHeader::from_ptr(fdt_ptr)?;
-        let memory_reserve = FdtMemoryReserveBlock::from_header(&header)?;
-        let root = FdtNode::from_header(&header)?;
-        Ok(Fdt::<'a, 'b> {
-            header,
-            memory_reserve,
-            root,
-        })
+        Ok(Fdt { header, inner_buffer: slice::from_raw_parts_mut(fdt_ptr as *mut _, header.total_size()) })
     }
 
     pub fn header(&self) -> &FdtHeader {
         &self.header
     }
 
-    pub fn header_mut(&mut self) -> &'a mut FdtHeader {
-        &mut self.header
+    pub fn memory_reserve_iter(&self) -> impl Iterator<Item = &'static FdtMemoryReserveEntry> {
+        unsafe { FdtMemoryReserveIter::from_ptr(self.header().memory_reserve_ptr()) }
     }
 
-    pub fn memory_reserve(&self) -> &FdtMemoryReserveBlock {
-        &self.memory_reserve
+    pub fn node_iter(&self) -> impl Iterator<Item = &'static FdtNode> {
+        unsafe { FdtNodeIter::from_ptr(self.header.fdt_node_ptr()) }
     }
-
-    pub fn memory_reserve_mut(&mut self) -> &mut FdtMemoryReserveBlock {
-        &mut self.memory_reserve
-    }
-
 }

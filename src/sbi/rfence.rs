@@ -1,5 +1,6 @@
 use crate::{sbi::ipi_event::IpiEventOps, util::fdt::XLEN};
 
+use core::arch::asm;
 use super::hart_mask::HartMask;
 use super::ipi::send_ipi_many;
 use super::ipi_event::IpiEvent;

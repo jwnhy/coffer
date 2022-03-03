@@ -1,18 +1,20 @@
 use core::intrinsics::size_of;
-
 use alloc::format;
+use endiantype::*;
+use super::{
+    cstr::CStr,
+    header::FdtHeader,
+    token::{align, skip_nop, FDT_PROP},
+};
 
-use crate::util::addr::align;
-
-use super::{cstr::CStr, endian::types::u32_be, header::FdtHeader, token::FDT_PROP};
 #[repr(C)]
-struct FdtPropInner {
+pub struct FdtProp {
     magic: u32_be,
     len: u32_be,
     nameoff: u32_be,
 }
 
-impl FdtPropInner {
+impl FdtProp {
     pub fn len(&self) -> usize {
         self.len.to_native() as usize
     }
@@ -22,30 +24,44 @@ impl FdtPropInner {
     }
 }
 
-pub struct FdtProp<'a> {
-    inner: &'a FdtPropInner,
-    name: &'static CStr,
-    data: *mut u8,
+pub(crate) struct FdtPropIter {
+    raw_ptr: *const u8,
 }
 
-impl<'a> FdtProp<'a> {
-    pub unsafe fn from_ptr(prop_ptr: *const u8, header: &FdtHeader) -> Result<FdtProp<'a>, &'static str> {
-        let magic = u32_be::new(*(prop_ptr as *const u32)); 
+impl Iterator for FdtPropIter {
+    type Item = &'static FdtProp;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        self.raw_ptr = skip_nop(self.raw_ptr);
+        let result = unsafe { FdtProp::from_ptr(self.raw_ptr) };
+        if let Ok(prop) = result {
+            self.raw_ptr = unsafe { self.raw_ptr.add(prop.size()) };
+            Some(prop)
+        } else {
+            None
+        }
+    }
+}
+
+impl FdtPropIter {
+    pub unsafe fn from_ptr(raw_ptr: *const u8) -> Self {
+        FdtPropIter { raw_ptr }
+    }
+}
+
+impl FdtProp {
+    pub unsafe fn from_ptr(prop_ptr: *const u8) -> Result<&'static FdtProp, &'static str> {
+        let prop_ptr = skip_nop(prop_ptr);
+        let magic = u32_be::new(*(prop_ptr as *const u32));
         if magic != FDT_PROP {
             return Err("[ERROR]: prop does not start with FDT_PROP");
         }
-        let inner_ptr =  prop_ptr as *mut FdtPropInner;
-        let inner = &*inner_ptr;
-        let data_ptr = prop_ptr.add(size_of::<FdtPropInner>()) as *mut u8;
-        Ok(Self {
-            inner,
-            name: header.str_at_offset(inner.name_offset()),
-            data: data_ptr
-        })
+        let prop_ptr = prop_ptr as *mut FdtProp;
+        Ok(&*prop_ptr)
     }
 
     pub fn size(&self) -> usize {
-        let unaligned = self.inner.len() + size_of::<FdtPropInner>();
+        let unaligned = self.len() + size_of::<FdtProp>();
         align(unaligned, 4)
     }
 }

@@ -1,6 +1,7 @@
 use core::ops::Generator;
 use core::pin::Pin;
 use core::sync::atomic::AtomicBool;
+use core::arch::asm;
 
 use alloc::boxed::Box;
 use riscv::register::mcause::Exception::*;

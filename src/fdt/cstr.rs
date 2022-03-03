@@ -1,4 +1,6 @@
-use core::fmt::{self, Display};
+use core::{fmt::{self, Display}, iter::FromIterator};
+
+use alloc::string::String;
 
 #[repr(transparent)]
 pub struct CStr {
@@ -35,3 +37,4 @@ impl Display for CStr {
         Ok(())
     }
 }
+

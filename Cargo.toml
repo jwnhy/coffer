@@ -8,7 +8,7 @@ edition = "2018"
 
 [dependencies]
 r0 = "1.0.0"
-riscv = { path="/home/john/Documents/riscv/" }
+riscv = "0.7.0" 
 embedded-hal = "1.0.0-alpha.4"
 nb = "1"
 spin = "0.9.1"
@@ -18,6 +18,8 @@ fdt = "0.1.3"
 if_chain = "1.0.1"
 bit_field = "0.10.1"
 bitflags = "1.2.1"
+endiantype = { version = "0.1.2", default-features = false }
+
 
 gimli = { version = "0.24", default-features = false, features = ["read", "endian-reader", "stable_deref_trait"] }
 addr2line = { version = "0.15.2", default-features = false, features = ["rustc-demangle"] }
@@ -27,3 +29,4 @@ goblin = { version = "0.4.2", default-features = false, features = ["elf32", "el
 default = []
 sunxi = []
 virt = []
+sifive = []

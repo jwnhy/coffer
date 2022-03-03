@@ -4,11 +4,11 @@
 #![allow(non_snake_case)]
 #![feature(default_alloc_error_handler)]
 #![feature(naked_functions)]
-#![feature(asm)]
-#![feature(arbitrary_enum_discriminant)]
 #![feature(generator_trait)]
 #![feature(fn_align)]
 #![feature(core_intrinsics)]
+#![feature(asm_sym)]
+#![feature(asm_const)]
 
 extern crate alloc;
 
@@ -31,29 +31,19 @@ use alloc::boxed::Box;
 use core::{ops::Generator, pin::Pin};
 use ecall::handle_ecall;
 use platform::generic::generic_init;
-use riscv::register::{
+use riscv::{asm::wfi, register::{
     mcause::{self, Exception, Interrupt, Trap},
     mstatus::MPP,
     stvec,
-};
+}};
 use runtime::{context::Context, runtime::Runtime};
 use util::banner::print_banner;
-
+use core::arch::asm;
 use crate::memory::memory_layout::Region;
 
 pub extern "C" fn main(hartid: usize, dtb: usize) -> ! {
     let hartid = riscv::register::mhartid::read();
-    if hartid == 0 {
-        let jump_addr = generic_init(dtb);
-        static DEVICE_TREE: &[u8] = include_bytes!("../dtb/sunxi.dtb");
-        let mut dt = unsafe { fdt::Fdt::from_ptr(DEVICE_TREE.as_ptr()).unwrap() };
-        for mem_rsv in dt.memory_reserve_mut().iter_mut() {
-            println!("0x{:x} 0x{:x}", mem_rsv.address(), mem_rsv.size());
-            mem_rsv.set_address(1);
-            mem_rsv.set_size(1);
-        }
-        //print_banner();
-        let global_region = Region {
+    let global_region = Region {
             addr: 0x0,
             size: 56,
             enabled: true,
@@ -62,11 +52,13 @@ pub extern "C" fn main(hartid: usize, dtb: usize) -> ! {
                 | PmpFlags::WRITABLE
                 | PmpFlags::MODE_NAPOT,
         };
-        global_region.enforce(0);
+    global_region.enforce(0);
+    if hartid == 0 {
+        let jump_addr = generic_init(dtb);
         let mut rt = kernel_runtime(hartid, dtb, jump_addr);
         Pin::new(&mut rt).resume(());
     }
-    loop {}
+    loop {unsafe {wfi()};}
 }
 
 fn kernel_runtime(hartid: usize, dtb: usize, kernel_addr: usize) -> Runtime<()> {
@@ -77,13 +69,10 @@ fn kernel_runtime(hartid: usize, dtb: usize, kernel_addr: usize) -> Runtime<()> 
     ctx.mstatus.set_mpp(MPP::Supervisor);
     ctx.mstatus.set_fs(riscv::register::sstatus::FS::Dirty);
     ctx.mcounteren = 0xffff_ffff;
-    ctx.medeleg = 0xb1ff;
-    ctx.mideleg = 0x222;
+    //ctx.medeleg = 0xb1ff;
+    //ctx.mideleg = 0x222;
     unsafe {
         riscv::register::mie::set_msoft();
-        riscv::register::sscratch::write(0x0);
-        riscv::register::satp::write(0x0);
-        stvec::write(kernel_addr, riscv::register::mtvec::TrapMode::Direct);
     }
     let runtime = Runtime::<()>::new(
         ctx,

@@ -3,6 +3,7 @@ use core::panic::PanicInfo;
 use crate::main;
 use crate::println;
 use crate::sbi::hart_scratch::init_hart_scratch;
+use core::arch::asm;
 use buddy_system_allocator::LockedHeap;
 
 const HART_STACK_SIZE: usize = 8 * 1024;
@@ -65,7 +66,7 @@ pub fn generic_init(dtb: usize) -> usize {
         #[cfg(feature = "virt")]
         () => crate::platform::virt::virt_init(dtb),
         #[cfg(feature = "sifive")]
-        () => sifive_init(dtb),
+        () => crate::platform::sifive::sifive_init(dtb),
         _ => unreachable!(),
     };
     init_hart_scratch();

@@ -80,13 +80,13 @@ pub fn _print(args: fmt::Arguments) {
 #[macro_export(local_inner_macro)]
 macro_rules! print {
     ($($arg:tt)*) => ({
-        $crate::sbi::console::_print(core::format_args!($($arg)*));
+        $crate::sbi::console::_print(core::format_args!($($arg)*))
     });
 }
 
 #[macro_export(local_inner_macro)]
 macro_rules! println {
     ($fmt: literal $(, $($arg: tt)+)?) => {
-        $crate::sbi::console::_print(core::format_args!(core::concat!($fmt, "\r\n") $(, $($arg)+)?));
+        $crate::sbi::console::_print(core::format_args!(core::concat!($fmt, "\r\n") $(, $($arg)+)?))
     }
 }
